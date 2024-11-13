@@ -192,7 +192,17 @@
 
 12. ### How do you navigate programmatically in Next.js?
 
-    Using useRouter().push(‘/path’).
+    Using useRouter() hook.
+
+    ```jsx
+    const router = userRouter();
+
+    function handleClick() {
+      router.push(`/path`);
+    }
+
+    <button onClick={handleClick}>Go There</button>
+    ```
 
     [:arrow_up: Back to Top](#table-of-contents)
 
