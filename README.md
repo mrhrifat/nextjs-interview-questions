@@ -160,7 +160,7 @@
 
    ```jsx
    export async function getStaticProps() {
-     const res = await fetch('https://api.github.com/repos/vercel/next.js');
+     const res = await fetch("https://api.github.com/repos/vercel/next.js");
      const repo = await res.json();
      return { props: { repo } };
    }
@@ -170,590 +170,586 @@
    }
    ```
 
-[:arrow_up: Back to Top](#table-of-contents)
+   [:arrow_up: Back to Top](#table-of-contents)
 
 7. ### What is getServerSideProps?
 
-A function used for server-side rendering to fetch data on each request.
+   A function used for server-side rendering to fetch data on each request.
 
-[:arrow_up: Back to Top](#table-of-contents)
+   [:arrow_up: Back to Top](#table-of-contents)
 
 8. ### What is getStaticPaths?
 
-A function used with getStaticProps to specify dynamic routes to be pre-rendered.
+   A function used with getStaticProps to specify dynamic routes to be pre-rendered.
 
-[:arrow_up: Back to Top](#table-of-contents)
+   [:arrow_up: Back to Top](#table-of-contents)
 
 9. ### What is the difference between getStaticProps and getServerSideProps?
 
-getStaticProps fetches data at build time, while getServerSideProps fetches data on each request.
+   getStaticProps fetches data at build time, while getServerSideProps fetches data on each request.
 
-[:arrow_up: Back to Top](#table-of-contents)
+   [:arrow_up: Back to Top](#table-of-contents)
 
 10. ### What is the Link component in Next.js?
 
-A component for client-side navigation between pages.
+    A component for client-side navigation between pages.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 11. ### What is the useRouter hook in Next.js?
 
-A hook that allows access to the router object and perform navigation.
+    A hook that allows access to the router object and perform navigation.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 12. ### How do you navigate programmatically in Next.js?
 
-Using useRouter() hook.
+    Using useRouter() hook.
 
-```jsx
-const router = userRouter();
+    ```jsx
+    const router = userRouter();
 
-function handleClick() {
-  router.push(`/path`);
-}
+    function handleClick() {
+      router.push(`/path`);
+    }
 
-<button onClick={handleClick}>Go There</button>;
-```
+    <button onClick={handleClick}>Go There</button>;
+    ```
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 13. ### What is the \_app.js file in Next.js?
 
-A custom App component that initializes pages and can add global styles or layout components.
+    A custom App component that initializes pages and can add global styles or layout components.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 14. ### What is the \_document.js file in Next.js?
 
-A custom Document component that allows customization of the HTML document structure.
+    A custom Document component that allows customization of the HTML document structure.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 15. ### How do you add global CSS in Next.js?
 
-By importing the CSS file in \_app.js.
+    By importing the CSS file in \_app.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 16. ### How do you add component-level CSS in Next.js?
 
-Using CSS modules with a .module.css file extension.
+    Using CSS modules with a .module.css file extension.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 17. ### What is static site generation (SSG) in Next.js?
 
-Pre-rendering pages at build time.
+    Pre-rendering pages at build time.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 18. ### What is server-side rendering (SSR) in Next.js?
 
-Rendering pages on each request.
+    Rendering pages on each request.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 19. ### What is incremental static regeneration (ISR) in Next.js?
 
-Re-generating static pages at runtime as traffic comes in.
+    Re-generating static pages at runtime as traffic comes in.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 20. ### What is the Image component in Next.js?
 
-A component that optimizes images for faster loading.
+    A component that optimizes images for faster loading.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 21. ### What is next.config.js?
 
-A configuration file to customize Next.js settings.
+    A configuration file to customize Next.js settings.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 22. ### How do you enable TypeScript in a Next.js project?
 
-By adding a tsconfig.json file.
+    By adding a tsconfig.json file.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 23. ### What is API Routes in Next.js?
 
-A feature to create API endpoints in the pages/api directory.
+    A feature to create API endpoints in the pages/api directory.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 24. ### How do you deploy a Next.js app to Vercel?
 
-By connecting the repository to Vercel and deploying it.
+    By connecting the repository to Vercel and deploying it.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 25. ### What is pre-rendering in Next.js?
 
-Generating HTML for pages in advance, instead of on each request.
+    Generating HTML for pages in advance, instead of on each request.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 26. ### What is the difference between static generation and server-side rendering?
 
-Static generation pre-renders at build time, SSR pre-renders on each request.
+    Static generation pre-renders at build time, SSR pre-renders on each request.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 27. ### How do you handle redirects in Next.js?
 
-By configuring redirects in next.config.js.
+    By configuring redirects in next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 28. ### What is the Head component in Next.js?
 
-A component for modifying the of a page.
+    A component for modifying the of a page.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 29. ### How do you fetch data in a Next.js page?
 
-Using getStaticProps or getServerSideProps.
+    Using getStaticProps or getServerSideProps.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 30. ### What is dynamic import in Next.js?
 
-A feature to load components or modules dynamically.
+    A feature to load components or modules dynamically.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 31. ### How do you handle environment variables in Next.js?
 
-By adding them to .env.local and accessing via process.env.
+    By adding them to .env.local and accessing via process.env.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 32. ### What is fallback in getStaticPaths?
 
-Determines how to handle missing paths, with true, false, or ‘blocking’.
+    Determines how to handle missing paths, with true, false, or ‘blocking’.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 33. ### What is a custom server in Next.js?
 
-A way to customize the server-side behavior, e.g., with Express.
+    A way to customize the server-side behavior, e.g., with Express.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 34. ### What is the next/head package used for?
 
-To manage the document head for meta tags, title, etc.
+    To manage the document head for meta tags, title, etc.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 35. ### How do you create a 404 page in Next.js?
 
-By adding a 404.js file in the pages directory.
+    By adding a 404.js file in the pages directory.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 36. ### What is the use of next export command?
 
-To export a static version of the Next.js app.
+    To export a static version of the Next.js app.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 37. ### How do you optimize fonts in Next.js?
 
-By using the built-in font optimization feature.
+    By using the built-in font optimization feature.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 38. ### What is the default port for a Next.js app?
 
-Port 3000.
+    Port 3000.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 39. ### How do you add custom headers in Next.js?
 
-By configuring headers in next.config.js.
+    By configuring headers in next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 40. ### What is Fast Refresh in Next.js?
 
-A feature for quick feedback when editing React components.
+    A feature for quick feedback when editing React components.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 41. ### What is the public folder in Next.js?
 
-A folder for static assets served from the root URL.
+    A folder for static assets served from the root URL.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 42. ### How do you configure a custom Babel setup in Next.js?
 
-By adding a babel.config.js file.
+    By adding a babel.config.js file.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 43. ### How do you handle internationalization (i18n) in Next.js?
 
-By configuring i18n settings in next.config.js.
+    By configuring i18n settings in next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 44. ### What is React Strict Mode in Next.js?
 
-A development mode that highlights potential problems in an application.
+    A development mode that highlights potential problems in an application.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 45. ### What is a singleton router in Next.js?
 
-A single router instance accessible across the application.
+    A single router instance accessible across the application.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 46. ### What is the useTranslation hook in Next.js?
 
-A hook for handling translations when using i18n.
+    A hook for handling translations when using i18n.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 47. ### How do you create custom error pages in Next.js?
 
-By adding \_error.js in the pages directory.
+    By adding \_error.js in the pages directory.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 48. ### What is AMP in Next.js?
 
-Accelerated Mobile Pages, a framework for fast-loading mobile pages.
+    Accelerated Mobile Pages, a framework for fast-loading mobile pages.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 49. ### How do you enable AMP in Next.js?
 
-By adding amp attribute to a page component.
+    By adding amp attribute to a page component.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 50. ### What is the next/image component used for?
 
-To optimize and serve images in a Next.js application.
+    To optimize and serve images in a Next.js application.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 51. ### What is the next/link component used for?
 
-For client-side navigation between pages.
+    For client-side navigation between pages.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 52. ### What is the difference between pages and components directories?
 
-pages contains routable components, components contains reusable UI components.
+    pages contains routable components, components contains reusable UI components.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 53. ### How do you handle middleware in Next.js?
 
-Using middleware functions in next.config.js.
+    Using middleware functions in next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 54. ### How do you add polyfills in Next.js?
 
-By customizing the webpack configuration in next.config.js.
+    By customizing the webpack configuration in next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 55. ### What is the difference between client-side and server-side rendering in next.js?
 
-Client-side rendering happens in the browser, server-side rendering happens on the server.
+    Client-side rendering happens in the browser, server-side rendering happens on the server.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 56. ### What is static optimization in Next.js?
 
-Automatically determining if a page can be statically generated.
+    Automatically determining if a page can be statically generated.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 57. ### How do you fetch data on the client-side in Next.js?
 
-Using useEffect and fetch or other data fetching libraries.
+    Using useEffect and fetch or other data fetching libraries.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 58. ### How do you implement authentication in Next.js?
 
-Using libraries like NextAuth.js or custom authentication logic.
+    Using libraries like NextAuth.js or custom authentication logic.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 59. ### What is the difference between \_app.js and \_document.js?
 
-\_app.js is for global components, \_document.js is for modifying the HTML document structure.
+    \_app.js is for global components, \_document.js is for modifying the HTML document structure.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 60. ### How do you create API endpoints in Next.js?
 
-By adding files to the pages/api directory.
+    By adding files to the pages/api directory.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 61. ### What is ISR in Next.js?
 
-Incremental Static Regeneration, updating static pages after build without redeploying.
+    Incremental Static Regeneration, updating static pages after build without redeploying.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 62. ### How do you configure Webpack in Next.js?
 
-By extending the Webpack configuration in next.config.js.
+    By extending the Webpack configuration in next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 63. ### What is the purpose of next-env.d.ts?
 
-It provides type definitions for TypeScript support in Next.js.
+    It provides type definitions for TypeScript support in Next.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 64. ### How do you handle routing in a Next.js app?
 
-Using the file-based routing system in the pages directory.
+    Using the file-based routing system in the pages directory.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 65. ### What is the purpose of next/dynamic?
 
-To enable dynamic imports and code splitting.
+    To enable dynamic imports and code splitting.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 66. ### How do you add meta tags in Next.js?
 
-Using the Head component from next/head.
+    Using the Head component from next/head.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 67. ### What is the purpose of next-compose-plugins?
 
-To compose multiple plugins in next.config.js.
+    To compose multiple plugins in next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 68. ### How do you handle form submissions in Next.js?
 
-Using client-side form handling or API routes for server-side handling.
+    Using client-side form handling or API routes for server-side handling.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 69. ### How do you set up Redux in a Next.js project?
 
-By creating a Redux store and integrating it with \_app.js.
+    By creating a Redux store and integrating it with \_app.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 70. ### What is the purpose of next/router?
 
-To handle routing and navigation within a Next.js app.
+    To handle routing and navigation within a Next.js app.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 71. ### How do you use CSS-in-JS with Next.js?
 
-Using libraries like styled-components or Emotion.
+    Using libraries like styled-components or Emotion.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 72. ### How do you handle redirects in Next.js?
 
-By adding a redirects property in next.config.js.
+    By adding a redirects property in next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 73. ### How do you use Sass in a Next.js project?
 
-By installing sass and importing .scss files in your components.
+    By installing sass and importing .scss files in your components.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 74. ### What is the basePath option in Next.js?
 
-It allows you to specify a base path for the application.
+    It allows you to specify a base path for the application.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 75. ### How do you customize the 500 error page in Next.js?
 
-By creating a 500.js file in the pages directory.
+    By creating a 500.js file in the pages directory.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 76. ### What is the trailingSlash option in Next.js?
 
-It configures whether to include a trailing slash in the URLs.
+    It configures whether to include a trailing slash in the URLs.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 77. ### What is the difference between push and replace in useRouter?
 
-push adds a new entry in the history stack, replace replaces the current entry.
+    push adds a new entry in the history stack, replace replaces the current entry.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 78. ### What is ssr: false in dynamic import?
 
-It disables server-side rendering for the dynamically imported component.
+    It disables server-side rendering for the dynamically imported component.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 79. ### How do you configure PWA in Next.js?
 
-By using plugins like next-pwa and configuring next.config.js.
+    By using plugins like next-pwa and configuring next.config.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 80. ### How do you add Google Analytics to a Next.js project?
 
-By including the Google Analytics script in \_app.js or \_document.js.
+    By including the Google Analytics script in \_app.js or \_document.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 81. ### What is the purpose of middleware in Next.js?
 
-To run code before a request is completed.
+    To run code before a request is completed.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 82. ### How do you use Apollo Client with Next.js?
 
-By setting up Apollo Provider in \_app.js and creating a client.
+    By setting up Apollo Provider in \_app.js and creating a client.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 83. ### What is the publicRuntimeConfig in Next.js?
 
-Configuration exposed to the browser.
+    Configuration exposed to the browser.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 84. ### What is the serverRuntimeConfig in Next.js?
 
-Configuration only available on the server side.
+    Configuration only available on the server side.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 85. ### What is the purpose of \_error.js in Next.js?
 
-To customize the error page for HTTP errors.
+    To customize the error page for HTTP errors.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 86. ### How do you perform client-side data fetching in Next.js?
 
-Using useEffect and fetch or any other data-fetching library.
+    Using useEffect and fetch or any other data-fetching library.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 87. ### What is the use of next-seo in Next.js?
 
-To manage SEO metadata in a Next.js application.
+    To manage SEO metadata in a Next.js application.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 88. ### How do you use Tailwind CSS in Next.js?
 
-By installing tailwindcss and configuring it with PostCSS.
+    By installing tailwindcss and configuring it with PostCSS.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 89. ### How do you configure next-i18next in Next.js?
 
-By installing next-i18next and setting up the configuration in next.config.js.
+    By installing next-i18next and setting up the configuration in next.config. js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 90. ### What is next/script used for?
 
-To optimize loading third-party scripts.
+    To optimize loading third-party scripts.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 91. ### How do you enable custom fonts in Next.js?
 
-By using the next/font package or including fonts in the public directory.
+    By using the next/font package or including fonts in the public directory.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 92. ### How do you set up GraphQL in Next.js?
 
-By using Apollo Client or another GraphQL client.
+    By using Apollo Client or another GraphQL client.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 93. ### What is swcMinify in next.config.js?
 
-It enables the use of the SWC compiler for minification.
+    It enables the use of the SWC compiler for minification.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 94. ### What is the use of next-compose-plugins?
 
-To enable composition of multiple plugins in Next.js configuration.
+    To enable composition of multiple plugins in Next.js configuration.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 95. ### What is a hybrid application in Next.js?
 
-An application that uses both static generation and server-side rendering.
+    An application that uses both static generation and server-side rendering.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 96. ### How do you handle CORS in Next.js API routes?
 
-By setting headers in the API route handlers.
+    By setting headers in the API route handlers.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 97. ### What is the purpose of rewrites in next.config.js?
 
-To map an incoming request path to a different destination path.
+    To map an incoming request path to a different destination path.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 98. ### How do you manage cookies in Next.js?
 
-Using libraries like cookie or js-cookie to set and retrieve cookies.
+    Using libraries like cookie or js-cookie to set and retrieve cookies.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 99. ### How do you handle authentication tokens in Next.js?
 
-By storing tokens in cookies or local storage and sending them with requests.
+    By storing tokens in cookies or local storage and sending them with requests.
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
 100. ### What is next-pwa used for?
 
-To configure and enable Progressive Web App features in Next.js.
+     To configure and enable Progressive Web App features in Next.js.
 
-[:arrow_up: Back to Top](#table-of-contents)
+     [:arrow_up: Back to Top](#table-of-contents)
 
 101. ### What is the next-sitemap package used for?
 
-To generate sitemaps for a Next.js application.
+     To generate sitemaps for a Next.js application.
 
-[:arrow_up: Back to Top](#table-of-contents)
+     [:arrow_up: Back to Top](#table-of-contents)
 
 <!-- Question & Answers End -->
-
-```
-
-```
