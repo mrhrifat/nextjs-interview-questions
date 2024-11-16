@@ -200,6 +200,30 @@
 
    A function used with getStaticProps to specify dynamic routes to be pre-rendered.
 
+   ```jsx
+   export async function getStaticPaths() {
+     return {
+       paths: [
+         {
+           params: {
+             name: "next.js",
+           },
+         },
+       ],
+     };
+   }
+
+   export async function getStaticProps() {
+     const res = await fetch("https://api.github.com/repos/vercel/next.js");
+     const repo = await res.json();
+     return { props: { repo } };
+   }
+
+   export default function Page({ repo }) {
+     return repo.stargazers_count;
+   }
+   ```
+
    [:arrow_up: Back to Top](#table-of-contents)
 
 9. ### What is the difference between getStaticProps and getServerSideProps?
