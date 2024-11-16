@@ -236,6 +236,13 @@
 
     A component for client-side navigation between pages.
 
+    ```jsx
+    import Link from 'next/link'
+
+    <Link href="/">Home</Link>
+    <Link href="/about">About</Link>
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 11. ### What is the useRouter hook in Next.js?
