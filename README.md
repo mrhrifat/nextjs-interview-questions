@@ -12,7 +12,7 @@
 | --: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |   1 | [What is NextJS](#what-is-nextjs)                                                                                                                                   |
 |   2 | [How do you create a new Next.js project?](#how-do-you-create-a-new-nextjs-project)                                                                                 |
-|   3 | [What is the purpose of the pages/app directory in Next.js?](#what-is-the-purpose-of-the-pages/app-directory-in-nextjs)                                                     |
+|   3 | [What is the purpose of the `pages or app` directory in Next.js?](#what-is-the-purpose-of-the-`pages-or-app`-directory-in-nextjs)                                                     |
 |   4 | [What is file-based routing in Next.js?](#what-is-file-based-routing-in-nextjs)                                                                                     |
 |   5 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                                       |
 |   6 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                                                  |
@@ -132,7 +132,7 @@
 
    [:arrow_up: Back to Top](#table-of-contents)
 
-3. ### What is the purpose of the `pages/app` directory in Next.js?
+3. ### What is the purpose of the `pages or app` directory in Next.js?
 
    It contains React components that are automatically routed based on their file name.
 
