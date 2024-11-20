@@ -162,81 +162,81 @@
 
 9. ### What is getStaticProps?
 
-   A function used for static site generation to fetch data at build time.
-
-   ```jsx
-   export async function getStaticProps() {
-     const res = await fetch("https://api.github.com/repos/vercel/next.js");
-     const repo = await res.json();
-     return { props: { repo } };
-   }
-
-   export default function Page({ repo }) {
-     return repo.stargazers_count;
-   }
-   ```
+      A function used for static site generation to fetch data at build time.
+   
+      ```jsx
+      export async function getStaticProps() {
+        const res = await fetch("https://api.github.com/repos/vercel/next.js");
+        const repo = await res.json();
+        return { props: { repo } };
+      }
+   
+      export default function Page({ repo }) {
+        return repo.stargazers_count;
+      }
+      ```
 
    [:arrow_up: Back to Top](#table-of-contents)
 
 10. ### What is getServerSideProps?
 
-   A function used for server-side rendering to fetch data on each request.
-
-   ```jsx
-   export async function getServerSideProps() {
-     // Fetch data from external API
-     const res = await fetch("https://api.github.com/repos/vercel/next.js");
-     const repo = await res.json();
-     // Pass data to the page via props
-     return { props: { repo } };
-   }
-
-   export default function Page({ repo }) {
-     return (
-       <main>
-         <p>{repo.stargazers_count}</p>
-       </main>
-     );
-   }
-   ```
+      A function used for server-side rendering to fetch data on each request.
+   
+      ```jsx
+      export async function getServerSideProps() {
+        // Fetch data from external API
+        const res = await fetch("https://api.github.com/repos/vercel/next.js");
+        const repo = await res.json();
+        // Pass data to the page via props
+        return { props: { repo } };
+      }
+   
+      export default function Page({ repo }) {
+        return (
+          <main>
+            <p>{repo.stargazers_count}</p>
+          </main>
+        );
+      }
+      ```
 
    [:arrow_up: Back to Top](#table-of-contents)
 
 11. ### What is getStaticPaths?
 
-   A function used with getStaticProps to specify dynamic routes to be pre-rendered.
-
-   ```jsx
-   export async function getStaticPaths() {
-     return {
-       paths: [
-         {
-           params: {
-             name: "next.js",
-           },
-         },
-       ],
-     };
-   }
-
-   export async function getStaticProps() {
-     const res = await fetch("https://api.github.com/repos/vercel/next.js");
-     const repo = await res.json();
-     return { props: { repo } };
-   }
-
-   export default function Page({ repo }) {
-     return repo.stargazers_count;
-   }
-   ```
+      A function used with getStaticProps to specify dynamic routes to be pre-rendered.
+   
+      ```jsx
+      export async function getStaticPaths() {
+        return {
+          paths: [
+            {
+              params: {
+                name: "next.js",
+              },
+            },
+          ],
+        };
+      }
+   
+      export async function getStaticProps() {
+        const res = await fetch("https://api.github.com/repos/vercel/next.js");
+        const repo = await res.json();
+        return { props: { repo } };
+      }
+   
+      export default function Page({ repo }) {
+        return repo.stargazers_count;
+      }
+      ```
 
    [:arrow_up: Back to Top](#table-of-contents)
 
 11. ### What is the difference between getStaticProps and getServerSideProps?
 
-   getStaticProps fetches data at build time, while getServerSideProps fetches data on each request.
-
-   [:arrow_up: Back to Top](#table-of-contents)
+      getStaticProps fetches data at build time, while getServerSideProps fetches data on each request.
+   
+      [:arrow_up: Back to Top](#table-of-contents)
 
 11. ### What is the Link component in Next.js?
 
@@ -275,7 +275,19 @@
 
 14. ### What is the \_app.js file in Next.js?
 
-    A custom App component that initializes pages and can add global styles or layout components.
+    The _app.js file in a Next.js application is used to initialize pages and configure global settings for your app. It wraps every page with a common layout or context providers, allowing you to manage global styles, state, or functionality that should be shared across all pages.
+      ```jsx
+      
+      // pages/_app.js
+      import '../styles/globals.css';
+      
+      function MyApp({ Component, pageProps }) {
+        return <Component {...pageProps} />;
+      }
+      
+      export default MyApp;
+      ```
+      In this example, _app.js imports global CSS and defines the MyApp component that renders the current page (Component) with its associated props (pageProps). This setup ensures that global styles and common functionality are applied across all pages in your Next.js application.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
