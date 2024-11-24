@@ -133,7 +133,28 @@
    [:arrow_up: Back to Top](#table-of-contents)
 
 3. ### What is the purpose of the `pages or app` directory in Next.js?
-4. ### What are the key features of Next.js?
+
+   It contains React components that are automatically routed based on their file name.
+
+   [:arrow_up: Back to Top](#table-of-contents)
+
+4. ### What is file-based routing in Next.js?
+
+   Routing based on the file structure in the pages directory.
+
+   [:arrow_up: Back to Top](#table-of-contents)
+
+5. ### How do you create a dynamic route in Next.js?
+
+   By using square brackets in the filename
+
+   > blogs/[id].js.
+
+   > blogs/[id]/index.js
+
+   [:arrow_up: Back to Top](#table-of-contents)
+
+6. ### What are the key features of Next.js?
 
 - Server-Side Rendering (SSR): Next.js allows rendering React components on the server before sending them to the client, improving performance and SEO.
 - Static Site Generation (SSG): It pre-renders pages at build time, useful for blogs or e-commerce sites.
@@ -148,7 +169,7 @@
 
   [:arrow_up: Back to Top](#table-of-contents)
 
-4. ### What are the Differences Between Next.js and React.js
+7. ### What are the Differences Between Next.js and React.js
 
    | Feature            | Next.js                                                                                                         | React.js                                                                                               |
    | ------------------ | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -162,28 +183,6 @@
    | Code Splitting     | Automatically splits code into smaller bundles, loading only what’s needed for a specific page.                 | Requires manual code splitting or use of lazy loading to optimize performance.                         |
    | Deployment         | Optimized for easy deployment on platforms like Vercel (creators of Next.js) and supports serverless functions. | Deployment typically requires additional configuration for optimized hosting and SSR.                  |
    | Image Optimization | Has a built-in Image component for automatic image resizing and optimization.                                   | Does not provide image optimization; developers need third-party libraries for that.                   |
-
-   [:arrow_up: Back to Top](#table-of-contents)
-
-5. ### What is the purpose of the pages directory in Next.js?
-
-   It contains React components that are automatically routed based on their file name.
-
-   [:arrow_up: Back to Top](#table-of-contents)
-
-6. ### What is file-based routing in Next.js?
-
-   Routing based on the file structure in the pages directory.
-
-   [:arrow_up: Back to Top](#table-of-contents)
-
-7. ### How do you create a dynamic route in Next.js?
-
-   By using square brackets in the filename
-
-   > blogs/[id].js.
-
-   > blogs/[id]/index.js
 
    [:arrow_up: Back to Top](#table-of-contents)
 
@@ -227,9 +226,8 @@
    }
    ```
 
-[:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#table-of-contents)
 
-11. ### What is getStaticPaths?
 12. ### What is getStaticPaths?
 
     A function used with getStaticProps to specify dynamic routes to be pre-rendered.
