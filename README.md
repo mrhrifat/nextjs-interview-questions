@@ -12,15 +12,19 @@
 | --: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |   1 | [What is NextJS](#what-is-nextjs)                                                                                                                                   |
 |   2 | [How do you create a new Next.js project?](#how-do-you-create-a-new-nextjs-project)                                                                                 |
-|   3 | [What is the purpose of the pages directory in Next.js?](#what-is-the-purpose-of-the-pages-directory-in-nextjs)                                                     |
-|   4 | [What is file-based routing in Next.js?](#what-is-file-based-routing-in-nextjs)                                                                                     |
-|   5 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                                       |
-|   6 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                                                  |
-|   7 | [What is getServerSideProps?](#what-is-getserversideprops)                                                                                                          |
-|   8 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                                                  |
-|   9 | [What is the difference between getStaticProps and getServerSideProps?](#what-is-the-difference-between-getstaticprops-and-getserversideprops)                      |
-|  10 | [What is the Link component in Next.js?](#what-is-the-link-component-in-nextjs)                                                                                     |
-|  11 | [What is the useRouter hook in Next.js?](#what-is-the-userouter-hook-in-nextjs)                                                                                     |
+|   3 | [What is the purpose of the `pages or app` directory in Next.js?](#what-is-the-purpose-of-the-pages-or-app-directory-in-nextjs)                                     |
+|   4 | [What is file based routing in Next.js?](#what-is-file-based-routing-in-nextjs)                                                                                     |
+|   5 | [What do you create route at pages based routing in Next.js?](#what-do-you-create-route-at-pages-based-routing-in-nextjs)                                           |
+|   6 | [What do you create route at app based routing in Next.js?](#what-do-you-create-route-at-app-based-routing-in-nextjs)                                               |
+|   7 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                                       |
+|   8 | [What are the key features of Next.js?](#what-are-the-key-features-of-nextjs)                                                                                       |
+|   9 | [What are the Differences Between Next.js and React.js](#what-are-the-differences-between-nextjs-and-reactjs)                                                       |
+|  10 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                                                  |
+|  11 | [What is getServerSideProps?](#what-is-getserversideprops)                                                                                                          |
+|  12 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                                                  |
+|  13 | [What is the difference between getStaticProps and getServerSideProps?](#what-is-the-difference-between-getstaticprops-and-getserversideprops)                      |
+|  14 | [What is the Link component in Next.js?](#what-is-the-link-component-in-nextjs)                                                                                     |
+|  15 | [What is the useRouter hook in Next.js?](#what-is-the-userouter-hook-in-nextjs)                                                                                     |
 |  12 | [How do you navigate programmatically in Next.js?](#how-do-you-navigate-programmatically-in-nextjs)                                                                 |
 |  13 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                                         |
 |  14 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                                               |
@@ -128,7 +132,7 @@
 
    Using command
 
-   > npx create-next-app
+   > npx create-next-app@latest
 
    [:arrow_up: Back to Top](#table-of-contents)
 
@@ -138,23 +142,37 @@
 
    [:arrow_up: Back to Top](#table-of-contents)
 
-4. ### What is file-based routing in Next.js?
+4. ### What is file based routing in Next.js?
 
-   Routing based on the file structure in the pages directory.
+   Routing based on the file structure in the pages or app directory.
 
    [:arrow_up: Back to Top](#table-of-contents)
 
-5. ### How do you create a dynamic route in Next.js?
+5. ### What do you create route at pages based routing in Next.js?
+
+   Create a directory into pages directory & create index file.
+
+   > pages/index.jsx // /
+   > pages/blog/index.jsx // /blog
+
+6. ### What do you create route at app based routing in Next.js?
+
+   Create a directory into app directory & create page file.
+
+   > app/page.jsx // /
+   > app/blog/page.jsx // /blog
+
+7. ### How do you create a dynamic route in Next.js?
 
    By using square brackets in the filename
 
-   > blogs/[id].js.
-
-   > blogs/[id]/index.js
+   > pages/blogs/[id].js. // /blogs/1, /blogs/2, /blogs/...
+   > pages/blogs/[id]/index.js // /blogs/1, /blogs/2, /blogs/...
+   > app/products[id]/page.jsx // /products/1, /products/2, /products/...
 
    [:arrow_up: Back to Top](#table-of-contents)
 
-6. ### What are the key features of Next.js?
+8. ### What are the key features of Next.js?
 
 - Server-Side Rendering (SSR): Next.js allows rendering React components on the server before sending them to the client, improving performance and SEO.
 - Static Site Generation (SSG): It pre-renders pages at build time, useful for blogs or e-commerce sites.
