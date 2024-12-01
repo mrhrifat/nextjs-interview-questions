@@ -152,7 +152,7 @@
 
    Create a directory into pages directory & create index file.
 
-   ```json
+   ```
         pages / index.jsx; // /
         pages / blog / index.jsx; // /blog
    ```
@@ -163,7 +163,7 @@
 
    Create a directory into app directory & create page file.
 
-   ```json
+   ```
        app/page.jsx // /
        app/blog/page.jsx // /blog
    ```
@@ -174,7 +174,7 @@
 
    By using square brackets in the filename
 
-   ```json
+   ```
         pages /
         blogs /
         [id].js.pages / // /blogs/1, /blogs/2, /blogs/...
