@@ -152,23 +152,37 @@
 
    Create a directory into pages directory & create index file.
 
-   > pages/index.jsx // /
-   > pages/blog/index.jsx // /blog
+   ```json
+        pages / index.jsx; // /
+        pages / blog / index.jsx; // /blog
+   ```
+
+   [:arrow_up: Back to Top](#table-of-contents)
 
 6. ### What do you create route at app based routing in Next.js?
 
    Create a directory into app directory & create page file.
 
-   > app/page.jsx // /
-   > app/blog/page.jsx // /blog
+   ```json
+       app/page.jsx // /
+       app/blog/page.jsx // /blog
+   ```
+
+   [:arrow_up: Back to Top](#table-of-contents)
 
 7. ### How do you create a dynamic route in Next.js?
 
    By using square brackets in the filename
 
-   > pages/blogs/[id].js. // /blogs/1, /blogs/2, /blogs/...
-   > pages/blogs/[id]/index.js // /blogs/1, /blogs/2, /blogs/...
-   > app/products[id]/page.jsx // /products/1, /products/2, /products/...
+   ```json
+        pages /
+        blogs /
+        [id].js.pages / // /blogs/1, /blogs/2, /blogs/...
+        blogs /
+        [id] /
+        index.js; // /blogs/1, /blogs/2, /blogs/...
+        app / products[id] / page.jsx; // /products/1, /products/2, /products/...
+   ```
 
    [:arrow_up: Back to Top](#table-of-contents)
 
