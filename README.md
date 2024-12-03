@@ -122,7 +122,7 @@
 
 <!-- Question & Answers Start -->
 
-1. ### What is NextJS
+1. ### What is NextJS?
 
    Next.js is a React framework for building full-stack web applications.
 
@@ -190,11 +190,11 @@
 
 8. ### What are the key features of Next.js?
 
-- Server-Side Rendering (SSR): Next.js allows rendering React components on the server before sending them to the client, improving performance and SEO.
+- Server Side Rendering (SSR): Next.js allows rendering React components on the server before sending them to the client, improving performance and SEO.
 - Static Site Generation (SSG): It pre-renders pages at build time, useful for blogs or e-commerce sites.
 - API Routes: You can build a backend using API routes in the same codebase without needing an external server.
-- File-Based Routing: Next.js automatically creates routes based on the file structure inside the pages directory.
-- Client-Side Rendering (CSR): Like React, Next.js also supports traditional client-side rendering.
+- File Based Routing: Next.js automatically creates routes based on the file structure inside the pages directory.
+- Client Side Rendering (CSR): Like React, Next.js also supports traditional client-side rendering.
 - Incremental Side Rendering:
 - Image Optimization: Built-in image optimization capabilities that reduce image sizes and enhance loading times.
 - Automatic Code Splitting: Next.js splits the code into smaller bundles, which are loaded only when required, improving performance.
@@ -204,7 +204,7 @@
 
   [:arrow_up: Back to Top](#table-of-contents)
 
-7. ### What are the Differences Between Next.js and React.js
+7. ### What are the Differences Between Next.js and React.js?
 
    | Feature            | Next.js                                                                                                         | React.js                                                                                               |
    | ------------------ | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -299,7 +299,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-12. ### What is Incremental Side Rendering
+12. ### What is Incremental Side Rendering?
 
     Incremental Static Regeneration is a technique in Next.js that allows you to update static pages at runtime without rebuilding the entire site.
     This feature introduces a seamless way to serve both static and dynamic content by revalidating and regenerating pages in the background.
