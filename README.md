@@ -31,6 +31,7 @@
 |  15 | [How do you add global CSS in Next.js?](#how-do-you-add-global-css-in-nextjs)                                                                                       |
 |  16 | [How do you add component-level CSS in Next.js?](#how-do-you-add-component-level-css-in-nextjs)                                                                     |
 |  17 | [What is static site generation (SSG) in Next.js?](#what-is-static-site-generation-ssg-in-nextjs)                                                                   |
+|  18 | [What is middleware?](#what-is-middleware)                                                                   |
 |  18 | [What is server-side rendering (SSR) in Next.js?](#what-is-server-side-rendering-ssr-in-nextjs)                                                                     |
 |  19 | [What is incremental static regeneration (ISR) in Next.js?](#what-is-incremental-static-regeneration-isr-in-nextjs)                                                 |
 |  20 | [What is the Image component in Next.js?](#what-is-the-image-component-in-nextjs)                                                                                   |
@@ -356,6 +357,12 @@
 18. ### How do you add global CSS in Next.js?
 
     By importing the CSS file in \_app.js.
+
+    [:arrow_up: Back to Top](#table-of-contents)
+
+18. ### What is middleware?
+
+    Middleware allows you to run code before a request is completed. Then, based on the incoming request, you can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
