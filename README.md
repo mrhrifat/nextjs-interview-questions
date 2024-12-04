@@ -387,6 +387,21 @@
 
     A component that optimizes images for faster loading.
 
+    ```jsx
+    export default function Page() {
+      return (
+        <Image
+          src={profilePic}
+          alt="Picture of the author"
+          // width={500} automatically provided
+          // height={500} automatically provided
+          // blurDataURL="data:..." automatically provided
+          // placeholder="blur" // Optional blur-up while loading
+        />
+      );
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 24. ### What is next.config.js?
@@ -403,7 +418,7 @@
 
 26. ### What is API Routes in Next.js?
 
-    A feature to create API endpoints in the pages/api directory.
+    A feature to create API endpoints in the `pages/api` directory.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
@@ -427,7 +442,7 @@
 
 30. ### How do you handle redirects in Next.js?
 
-    By configuring redirects in next.config.js.
+    There are a few ways you can handle redirects in Next.js. One of them is by configuring redirects in next.config.js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
