@@ -500,6 +500,11 @@
 34. ### What is dynamic import in Next.js?
 
     A feature to load components or modules dynamically.
+    
+    ```jsx
+    const ComponentA = dynamic(() => import('../components/A'))
+    const ComponentB = dynamic(() => import('../components/B'))
+    ```
 
     [:arrow_up: Back to Top](#table-of-contents)
 
