@@ -4,6 +4,21 @@
 
 ---
 
+<!-- Group Start -->
+
+### Groups
+
+|  No | Contents                      |
+| --: | ----------------------------- |
+|   1 | [Common](#common)             |
+|   2 | [Pages Router](#pages-router) |
+|   3 | [App Router](#app-router)     |
+|   4 | [Others](#others)             |
+
+<!-- Group End -->
+
+---
+
 <!-- TOC Start -->
 
 ### Table of Contents
@@ -122,6 +137,10 @@
 ---
 
 <!-- Question & Answers Start -->
+
+### [Common](#common)
+
+[:arrow_up: Back to Top](#groups)
 
 1. ### What is NextJS?
 
@@ -500,10 +519,10 @@
 34. ### What is dynamic import in Next.js?
 
     A feature to load components or modules dynamically.
-    
+
     ```jsx
-    const ComponentA = dynamic(() => import('../components/A'))
-    const ComponentB = dynamic(() => import('../components/B'))
+    const ComponentA = dynamic(() => import("../components/A"));
+    const ComponentB = dynamic(() => import("../components/B"));
     ```
 
     [:arrow_up: Back to Top](#table-of-contents)
@@ -597,6 +616,10 @@
     A single router instance accessible across the application.
 
     [:arrow_up: Back to Top](#table-of-contents)
+
+### Pages Router
+
+[:arrow_up: Back to Top](#groups)
 
 50. ### What is the useTranslation hook in Next.js?
 
@@ -898,13 +921,17 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-100. ### How do you handle CORS in Next.js API routes?
+### App Router
 
-     By setting headers in the API route handlers.
+[:arrow_up: Back to Top](#groups)
 
-     [:arrow_up: Back to Top](#table-of-contents)
+100.  ### How do you handle CORS in Next.js API routes?
 
-101. ### What is the purpose of rewrites in next.config.js?
+      By setting headers in the API route handlers.
+
+      [:arrow_up: Back to Top](#table-of-contents)
+
+101.  ### What is the purpose of rewrites in next.config.js?
 
 
     To map an incoming request path to a different destination path.
@@ -924,17 +951,19 @@
      [:arrow_up: Back to Top](#table-of-contents)
 
 103. ### What is next-pwa used for?
-104. ### What is next-pwa used for?
 
      To configure and enable Progressive Web App features in Next.js.
 
      [:arrow_up: Back to Top](#table-of-contents)
 
-105. ### What is the next-sitemap package used for?
-106. ### What is the next-sitemap package used for?
+104. ### What is the next-sitemap package used for?
 
      To generate sitemaps for a Next.js application.
 
      [:arrow_up: Back to Top](#table-of-contents)
+
+### Others
+
+[:arrow_up: Back to Top](#groups)
 
 <!-- Question & Answers End -->
