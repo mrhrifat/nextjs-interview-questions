@@ -23,32 +23,49 @@
 
 ### Table of Contents
 
+---
+
+### Common
+
+|  No | Contents                                                                                                                        |
+| --: | ------------------------------------------------------------------------------------------------------------------------------- |
+|   1 | [What is NextJS](#what-is-nextjs)                                                                                               |
+|   2 | [How do you create a new Next.js project?](#how-do-you-create-a-new-nextjs-project)                                             |
+|   3 | [What is the purpose of the `pages or app` directory in Next.js?](#what-is-the-purpose-of-the-pages-or-app-directory-in-nextjs) |
+|   4 | [What is file based routing in Next.js?](#what-is-file-based-routing-in-nextjs)                                                 |
+
+---
+
+### Pages Router
+
+|  No | Contents                                                                                                                                       |
+| --: | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+|   5 | [What do you create route at pages based routing in Next.js?](#what-do-you-create-route-at-pages-based-routing-in-nextjs)                      |
+|   7 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                  |
+|   8 | [What are the key features of Next.js?](#what-are-the-key-features-of-nextjs)                                                                  |
+|   9 | [What are the Differences Between Next.js and React.js](#what-are-the-differences-between-nextjs-and-reactjs)                                  |
+|  10 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                             |
+|  11 | [What is getServerSideProps?](#what-is-getserversideprops)                                                                                     |
+|  12 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                             |
+|  13 | [What is the difference between getStaticProps and getServerSideProps?](#what-is-the-difference-between-getstaticprops-and-getserversideprops) |
+|  14 | [What is the Link component in Next.js?](#what-is-the-link-component-in-nextjs)                                                                |
+|  15 | [What is the useRouter hook in Next.js?](#what-is-the-userouter-hook-in-nextjs)                                                                |
+|  12 | [How do you navigate programmatically in Next.js?](#how-do-you-navigate-programmatically-in-nextjs)                                            |
+|  13 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                    |
+|  14 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                          |
+|  15 | [How do you add global CSS in Next.js?](#how-do-you-add-global-css-in-nextjs)                                                                  |
+|  16 | [How do you add component-level CSS in Next.js?](#how-do-you-add-component-level-css-in-nextjs)                                                |
+|  17 | [What is static site generation (SSG) in Next.js?](#what-is-static-site-generation-ssg-in-nextjs)                                              |
+|  18 | [What is middleware?](#what-is-middleware)                                                                                                     |
+|  18 | [What is server-side rendering (SSR) in Next.js?](#what-is-server-side-rendering-ssr-in-nextjs)                                                |
+|  19 | [What is incremental static regeneration (ISR) in Next.js?](#what-is-incremental-static-regeneration-isr-in-nextjs)                            |
+
+---
+
+### App
+
 |  No | Contents                                                                                                                                                            |
 | --: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|   1 | [What is NextJS](#what-is-nextjs)                                                                                                                                   |
-|   2 | [How do you create a new Next.js project?](#how-do-you-create-a-new-nextjs-project)                                                                                 |
-|   3 | [What is the purpose of the `pages or app` directory in Next.js?](#what-is-the-purpose-of-the-pages-or-app-directory-in-nextjs)                                     |
-|   4 | [What is file based routing in Next.js?](#what-is-file-based-routing-in-nextjs)                                                                                     |
-|   5 | [What do you create route at pages based routing in Next.js?](#what-do-you-create-route-at-pages-based-routing-in-nextjs)                                           |
-|   6 | [What do you create route at app based routing in Next.js?](#what-do-you-create-route-at-app-based-routing-in-nextjs)                                               |
-|   7 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                                       |
-|   8 | [What are the key features of Next.js?](#what-are-the-key-features-of-nextjs)                                                                                       |
-|   9 | [What are the Differences Between Next.js and React.js](#what-are-the-differences-between-nextjs-and-reactjs)                                                       |
-|  10 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                                                  |
-|  11 | [What is getServerSideProps?](#what-is-getserversideprops)                                                                                                          |
-|  12 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                                                  |
-|  13 | [What is the difference between getStaticProps and getServerSideProps?](#what-is-the-difference-between-getstaticprops-and-getserversideprops)                      |
-|  14 | [What is the Link component in Next.js?](#what-is-the-link-component-in-nextjs)                                                                                     |
-|  15 | [What is the useRouter hook in Next.js?](#what-is-the-userouter-hook-in-nextjs)                                                                                     |
-|  12 | [How do you navigate programmatically in Next.js?](#how-do-you-navigate-programmatically-in-nextjs)                                                                 |
-|  13 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                                         |
-|  14 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                                               |
-|  15 | [How do you add global CSS in Next.js?](#how-do-you-add-global-css-in-nextjs)                                                                                       |
-|  16 | [How do you add component-level CSS in Next.js?](#how-do-you-add-component-level-css-in-nextjs)                                                                     |
-|  17 | [What is static site generation (SSG) in Next.js?](#what-is-static-site-generation-ssg-in-nextjs)                                                                   |
-|  18 | [What is middleware?](#what-is-middleware)                                                                                                                          |
-|  18 | [What is server-side rendering (SSR) in Next.js?](#what-is-server-side-rendering-ssr-in-nextjs)                                                                     |
-|  19 | [What is incremental static regeneration (ISR) in Next.js?](#what-is-incremental-static-regeneration-isr-in-nextjs)                                                 |
 |  20 | [What is the Image component in Next.js?](#what-is-the-image-component-in-nextjs)                                                                                   |
 |  21 | [What is next.config.js?](#what-is-nextconfigjs)                                                                                                                    |
 |  22 | [How do you enable TypeScript in a Next.js project?](#how-do-you-enable-typescript-in-a-nextjs-project)                                                             |
