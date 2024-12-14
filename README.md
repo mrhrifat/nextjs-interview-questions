@@ -725,6 +725,36 @@
 
     To enable dynamic imports and code splitting.
 
+    ```jsx
+    "use client";
+
+    import { useState } from "react";
+    import dynamic from "next/dynamic";
+
+    // Client Components:
+    const ComponentA = dynamic(() => import("../components/A"));
+    const ComponentB = dynamic(() => import("../components/B"));
+    const ComponentC = dynamic(() => import("../components/C"), { ssr: false });
+
+    export default function ClientComponentExample() {
+      const [showMore, setShowMore] = useState(false);
+
+      return (
+        <div>
+          {/* Load immediately, but in a separate client bundle */}
+          <ComponentA />
+
+          {/* Load on demand, only when/if the condition is met */}
+          {showMore && <ComponentB />}
+          <button onClick={() => setShowMore(!showMore)}>Toggle</button>
+
+          {/* Load only on the client side */}
+          <ComponentC />
+        </div>
+      );
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 31. ### How do you add meta tags in Next.js?
@@ -784,6 +814,12 @@
 40. ### How do you customize the 500 error page in Next.js?
 
     By creating a 500.js file in the pages directory.
+
+    ```jsx
+    export default function Custom500() {
+      return <h1>500 - Server-side error occurred</h1>;
+    }
+    ```
 
     [:arrow_up: Back to Top](#table-of-contents)
 
