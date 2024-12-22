@@ -341,7 +341,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-25. ### How do you fetch data in a Next.js page?
+25. ### What is the public folder in Next.js?
+
+    A folder for static assets served from the root URL.
+
+    [:arrow_up: Back to Top](#table-of-contents)
+
+26. ### How do you fetch data in a Next.js page?
 
     Using getStaticProps or getServerSideProps.
 
@@ -379,7 +385,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-26. ### What is dynamic import in Next.js?
+27. ### What is dynamic import in Next.js?
 
     A feature to load components or modules dynamically.
 
@@ -390,63 +396,57 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-27. ### How do you handle environment variables in Next.js?
+28. ### How do you handle environment variables in Next.js?
 
     By adding them to .env.local and accessing via process.env.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-28. ### What is fallback in getStaticPaths?
+29. ### What is fallback in getStaticPaths?
 
     Determines how to handle missing paths, with true, false, or ‘blocking’.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-29. ### What is a custom server in Next.js?
+30. ### What is a custom server in Next.js?
 
     A way to customize the server-side behavior, e.g., with Express.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-30. ### What is the next/head package used for?
+31. ### What is the next/head package used for?
 
     To manage the document head for meta tags, title, etc.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-31. ### What is the use of next export command?
+32. ### What is the use of next export command?
 
     To export a static version of the Next.js app.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-32. ### How do you optimize fonts in Next.js?
+33. ### How do you optimize fonts in Next.js?
 
     By using the built-in font optimization feature.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-33. ### What is the default port for a Next.js app?
+34. ### What is the default port for a Next.js app?
 
     Port 3000.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-34. ### How do you add custom headers in Next.js?
+35. ### How do you add custom headers in Next.js?
 
     By configuring headers in next.config.js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-35. ### What is Fast Refresh in Next.js?
+36. ### What is Fast Refresh in Next.js?
 
     A feature for quick feedback when editing React components.
-
-    [:arrow_up: Back to Top](#table-of-contents)
-
-36. ### What is the public folder in Next.js?
-
-    A folder for static assets served from the root URL.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
