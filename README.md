@@ -297,6 +297,17 @@
 
     A configuration file to customize Next.js settings.
 
+    ```ts
+    // @ts-check
+
+    /** @type {import('next').NextConfig} */
+    const nextConfig = {
+      /* config options here */
+    };
+
+    module.exports = nextConfig;
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 18. ### How do you enable TypeScript in a Next.js project?
@@ -333,6 +344,20 @@
 
     There are a few ways you can handle redirects in Next.js. One of them is by configuring redirects in next.config.js.
 
+    ```js
+    module.exports = {
+      async redirects() {
+        return [
+          {
+            source: "/about",
+            destination: "/about-us",
+            permanent: true,
+          },
+        ];
+      },
+    };
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 24. ### What is the Head component in Next.js?
@@ -343,13 +368,13 @@
 
 25. ### What is the public folder in Next.js?
 
-    A folder for static assets served from the root URL.
+    A folder for static assets to be served from the root URL.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
 26. ### How do you fetch data in a Next.js page?
 
-    Using getStaticProps or getServerSideProps.
+    Using getStaticProps or getServerSideProps in server side.
 
     ```jsx
     // getStaticProps
