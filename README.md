@@ -860,6 +860,12 @@
 
     It configures whether to include a trailing slash in the URLs.
 
+    ```js
+    module.exports = {
+      trailingSlash: true,
+    };
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 41. ### What is the difference between push and replace in useRouter?
