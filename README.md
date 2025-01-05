@@ -222,7 +222,7 @@
 
 9. ### What is the useRouter hook in Next.js?
 
-   A hook that allows access to the router object and perform navigation.
+   A hook that allows access to the router object and perform navigation. The useRouter hook allows you to programmatically change routes inside Client Components.
 
    [:arrow_up: Back to Top](#table-of-contents)
 
@@ -238,6 +238,10 @@
     }
 
     <button onClick={handleClick}>Go There</button>;
+    ```
+
+    ```jsx
+    router.push(href: string, { scroll: boolean })
     ```
 
     [:arrow_up: Back to Top](#table-of-contents)
