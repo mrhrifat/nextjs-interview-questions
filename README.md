@@ -554,6 +554,10 @@
 
         pages/blog/index.jsx // /blog
 
+        pages/[...products]/index.js // (products/1, products/2, products/...)
+
+        pages/[[...products]]/index.js // (products, products/1, products/2, products/...)
+
    ```
 
    [:arrow_up: Back to Top](#table-of-contents)
