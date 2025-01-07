@@ -554,9 +554,7 @@
 
         pages/blog/index.jsx // /blog
 
-        pages/[...products]/index.js // (products/1, products/2, products/...)
 
-        pages/[[...products]]/index.js // (products, products/1, products/2, products/...)
 
    ```
 
@@ -572,6 +570,10 @@
         blogs/[id]/index.js // /blogs/1, /blogs/2, /blogs/...
 
         app/products[id]/page.jsx // /products/1, /products/2, /products/...
+
+        pages/[...products]/index.js // (products/1, products/2, products/...)
+
+        pages/[[...products]]/index.js // (products, products/1, products/2, products/...)
    ```
 
    [:arrow_up: Back to Top](#table-of-contents)
@@ -867,6 +869,40 @@
 37. ### How do you use Sass in a Next.js project?
 
     By installing sass and importing .scss files in your components.
+
+    > next.config.js
+
+    ```js
+    import type { NextConfig } from "next";
+
+    const nextConfig: NextConfig = {
+      sassOptions: {
+        implementation: "sass-embedded",
+      },
+    };
+
+    export default nextConfig;
+    ```
+
+    > app/variables.module.scss
+
+    ```scss
+    $primary-color: #64ff00;
+
+    :export {
+      primaryColor: $primary-color;
+    }
+    ```
+
+    > app/page.jsx
+
+    ```jsx
+    import variables from "./variables.module.scss";
+
+    export default function Page() {
+      return <h1 style={{ color: variables.primaryColor }}>Hello, Next.js!</h1>;
+    }
+    ```
 
     [:arrow_up: Back to Top](#table-of-contents)
 
