@@ -336,13 +336,13 @@
 
 19. ### What is API Routes in Next.js?
 
-    A feature to create API endpoints in the `pages/api` directory.
+    A feature to create API endpoints in the `pages/api` or `app/api` directory.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
 20. ### How do you deploy a Next.js app to Vercel?
 
-    By connecting the repository to Vercel and deploying it.
+    By connecting the git/github repository to Vercel and deploying it.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
@@ -352,9 +352,9 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-22. ### What is the difference between static generation and server side rendering?
+22. ### What is the difference between static site generation and server side rendering?
 
-    Static generation pre-renders at build time, SSR pre-renders on each request.
+    Static site generation (SSG) pre-renders at build time, server side rendering (SSR) pre-renders on each request.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
