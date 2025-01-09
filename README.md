@@ -483,7 +483,7 @@
 
 31. ### What is the next/head package used for?
 
-    To manage the document head for meta tags, title, etc.
+    To manage the document head for meta tags, title,description, og etc.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
@@ -754,19 +754,21 @@
 
 23. ### How do you implement authentication in Next.js?
 
-    Using libraries like NextAuth.js or custom authentication logic.
+    Using libraries like AuthJS, JWT or custom authentication logic.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
 24. ### What is the difference between \_app.js and \_document.js?
 
-    \_app.js is for global components, \_document.js is for modifying the HTML document structure.
+    \_app.js is for global components, 
+
+    \_document.js is for modifying the HTML document structure.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
 25. ### How do you create API endpoints in Next.js?
 
-    By adding files to the pages/api directory.
+    By adding files to the `pages/api` or `app/api` directory.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
