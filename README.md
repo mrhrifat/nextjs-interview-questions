@@ -1094,13 +1094,7 @@
 
    Using libraries like cookie or js-cookie to set and retrieve cookies.
 
-   [:arrow_up: Back to Top](#table-of-contents)
-
-5. ### How do you handle authentication tokens in Next.js?
-
-   By storing tokens in cookies or local storage and sending them with requests.
-
-   [:arrow_up: Back to Top](#table-of-contents)
+   [:arrow_up: Back to Top](#table-of-content
 
 6. ### What is next-pwa used for?
 
