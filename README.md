@@ -950,6 +950,15 @@
 
     Using the Head component from next/head.
 
+    ```jsx
+    export const metadata = {
+      title: "NextJS",
+      description: "A React Framework for building full-stack web applications",
+    };
+
+    export default function Page() {}
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 32. ### What is the purpose of next-compose-plugins?
