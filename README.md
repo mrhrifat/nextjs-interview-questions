@@ -569,6 +569,18 @@
 
     To optimize loading third-party scripts.
 
+    ```jsx
+    import Script from "next/script";
+
+    export default function Dashboard() {
+      return (
+        <>
+          <Script src="https://example.com/script.js" />
+        </>
+      );
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 45. ### How do you enable custom fonts in Next.js?
@@ -615,7 +627,7 @@
 
 51. ### What is the difference between push and replace in useRouter?
 
-    push adds a new entry in the history stack, replace replaces the current entry.
+    `push` adds a new entry in the history stack, `replace` replaces the current entry.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
@@ -1096,13 +1108,13 @@
 
    [:arrow_up: Back to Top](#table-of-content
 
-6. ### What is next-pwa used for?
+5. ### What is next-pwa used for?
 
    To configure and enable Progressive Web App features in Next.js.
 
    [:arrow_up: Back to Top](#table-of-contents)
 
-7. ### What is the next-sitemap package used for?
+6. ### What is the next-sitemap package used for?
 
    To generate sitemaps for a Next.js application.
 
