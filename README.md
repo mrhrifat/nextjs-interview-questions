@@ -541,31 +541,31 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-    50. ### How do you perform client-side data fetching in Next.js?
+41. ### How do you perform client-side data fetching in Next.js?
 
     Using `useEffect` and fetch or any other data fetching library like `axios`.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-41. ### What is the use of next-seo in Next.js?
+42. ### What is the use of next-seo in Next.js?
 
     To manage SEO metadata in a Next.js application.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-42. ### How do you use Tailwind CSS in Next.js?
+43. ### How do you use Tailwind CSS in Next.js?
 
     By installing tailwindcss and configuring it with PostCSS.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-43. ### How do you configure next-i18next in Next.js?
+44. ### How do you configure next-i18next in Next.js?
 
     By installing next-i18next and setting up the configuration in next.config. js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-44. ### What is next/script used for?
+45. ### What is next/script used for?
 
     To optimize loading third-party scripts.
 
@@ -583,37 +583,37 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-45. ### How do you enable custom fonts in Next.js?
+46. ### How do you enable custom fonts in Next.js?
 
     By using the next/font package or including fonts in the public directory.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-46. ### How do you set up GraphQL in Next.js?
+47. ### How do you set up GraphQL in Next.js?
 
     By using Apollo Client or another GraphQL client.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-47. ### What is swcMinify in next.config.js?
+48. ### What is swcMinify in next.config.js?
 
     It enables the use of the SWC compiler for minification.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-48. ### What is the use of next-compose-plugins?
+49. ### What is the use of next-compose-plugins?
 
     To enable composition of multiple plugins in Next.js configuration.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-49. ### What is a hybrid application in Next.js?
+50. ### What is a hybrid application in Next.js?
 
     An application that uses both static generation and server side rendering.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-50. ### What is the trailingSlash option in Next.js?
+51. ### What is the trailingSlash option in Next.js?
 
     It configures whether to include a trailing slash in the URLs.
 
@@ -625,43 +625,43 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-51. ### What is the difference between push and replace in useRouter?
+52. ### What is the difference between push and replace in useRouter?
 
     `push` adds a new entry in the history stack, `replace` replaces the current entry.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-52. ### What is `ssr: false` in dynamic import?
+53. ### What is `ssr: false` in dynamic import?
 
     It disabled server-side rendering for the dynamically imported component.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-53. ### How do you configure PWA in Next.js?
+54. ### How do you configure PWA in Next.js?
 
     By using plugins like next-pwa and configuring next.config.js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-54. ### How do you add Google Analytics to a Next.js project?
+55. ### How do you add Google Analytics to a Next.js project?
 
     By including the Google Analytics script in \_app.js or \_document.js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-55. ### What is the purpose of middleware in Next.js?
+56. ### What is the purpose of middleware in Next.js?
 
     To run code before a request is completed.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-56. ### How do you use Apollo Client with Next.js?
+57. ### How do you use Apollo Client with Next.js?
 
     By setting up Apollo Provider in \_app.js and creating a client.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-57. ### What is the publicRuntimeConfig in Next.js?
+58. ### What is the publicRuntimeConfig in Next.js?
 
     Configuration exposed to the browser.
 
