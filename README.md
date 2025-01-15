@@ -543,7 +543,7 @@
 
 41. ### How do you perform client-side data fetching in Next.js?
 
-    Using `useEffect` and fetch or any other data fetching library like `axios`.
+    Using `useEffect` and fetch or any other data fetching library like `axios`,`fetch` or `swr` by Next.js team.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
@@ -586,6 +586,24 @@
 46. ### How do you enable custom fonts in Next.js?
 
     By using the next/font package or including fonts in the public directory.
+
+    ```jsx
+    import localFont from "next/font/local";
+
+    // Font files can be colocated inside of `app`
+    const myFont = localFont({
+      src: "./my-font.woff2",
+      display: "swap",
+    });
+
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en" className={myFont.className}>
+          <body>{children}</body>
+        </html>
+      );
+    }
+    ```
 
     [:arrow_up: Back to Top](#table-of-contents)
 
