@@ -222,7 +222,7 @@
 
 9. ### What is the useRouter hook in Next.js?
 
-   A hook that allows access to the router object and perform navigation. The useRouter hook allows you to programmatically change routes inside Client Components.
+   A hook that allows access to the router object and perform navigation. The `useRouter` hook allows you to programmatically change routes inside Client Components.
 
    [:arrow_up: Back to Top](#table-of-contents)
 
@@ -336,7 +336,7 @@
 
 19. ### What is API Routes in Next.js?
 
-    A feature to create API endpoints in the `pages/api` or `app/api` directory.
+    A feature to create API endpoints in the `pages/api` or `app/api` directory. It allow you to create custom request handlers for a given route using the Web Request and Response APIs.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
