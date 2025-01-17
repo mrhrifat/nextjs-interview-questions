@@ -653,6 +653,12 @@
 
     It disabled server-side rendering for the dynamically imported component.
 
+    ```jsx
+    const ComponentC = dynamic(() => import("../components/C"), { ssr: false });
+    ```
+
+    **Note**: ssr: false option will only work for client components, move it into client components ensure the client code-splitting working properly.
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 54. ### How do you configure PWA in Next.js?
