@@ -671,6 +671,19 @@
 
     By including the Google Analytics script in \_app.js or \_document.js.
 
+    ```jsx
+    import { GoogleAnalytics } from "@next/third-parties/google";
+
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en">
+          <body>{children}</body>
+          <GoogleAnalytics gaId="G-XYZ" />
+        </html>
+      );
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 56. ### What is the purpose of middleware in Next.js?
