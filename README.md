@@ -533,6 +533,14 @@
 
     A development mode only feature for highlighting potential problems in an application. It helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
 
+    ```js
+    module.exports = {
+      reactStrictMode: true,
+    };
+    ```
+
+    **Note**: Since Next.js 13.5.1, Strict Mode is true by default with app router, so the above configuration is only necessary for pages. You can still disable Strict Mode by setting reactStrictMode: false.
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 40. ### What is a singleton router in Next.js?
