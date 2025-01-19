@@ -531,7 +531,7 @@
 
 39. ### What is React Strict Mode in Next.js?
 
-    A development mode that highlights potential problems in an application.
+    A development mode only feature for highlighting potential problems in an application. It helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
