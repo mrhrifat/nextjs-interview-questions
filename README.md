@@ -982,6 +982,18 @@
 
     By extending the Webpack configuration in next.config.js.
 
+    ```js
+    module.exports = {
+      webpack: (
+        config,
+        { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+      ) => {
+        // Important: return the modified config
+        return config;
+      },
+    };
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 28. ### What is the purpose of next-env.d.ts?
