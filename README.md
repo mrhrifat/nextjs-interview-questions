@@ -209,7 +209,7 @@
 
 8. ### What is the Link component in Next.js?
 
-   A component for client-side navigation between pages.
+   A component for client side navigation between pages.
 
    ```jsx
    import Link from 'next/link'
@@ -222,7 +222,7 @@
 
 9. ### What is the useRouter hook in Next.js?
 
-   A hook that allows access to the router object and perform navigation. The `useRouter` hook allows you to programmatically change routes inside Client Components.
+   A hook that allows access to the router object and perform navigation. The `useRouter` hook allows you to programmatically change routes inside **client** components.
 
    [:arrow_up: Back to Top](#table-of-contents)
 
@@ -248,7 +248,7 @@
 
 11. ### What is middleware?
 
-    Middleware allows you to run code before a request is completed. Then, based on the incoming request, you can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
+    Middleware allows you to run code before a request is completed. Then, based on the incoming request, you can modify the response by rewriting, redirecting, modifying the request or response headers or responding directly.
 
     ```js
     import { NextResponse } from "next/server";
