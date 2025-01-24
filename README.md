@@ -268,7 +268,21 @@
 
 12. ### How do you add component-level CSS in Next.js?
 
-    Using CSS modules with a .module.css file extension.
+    Using CSS modules with a `.module.css` file extension.
+
+    ```
+    // styles.module.css
+    .example {
+      color: red;
+    }
+
+    // Component.js
+    import styles from './styles.module.css';
+
+    export default function Component() {
+      return <div className={styles.example}>Hello World!</div>;
+    }
+    ```
 
     [:arrow_up: Back to Top](#table-of-contents)
 
