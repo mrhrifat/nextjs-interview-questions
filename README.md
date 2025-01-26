@@ -290,6 +290,18 @@
 
     Pre-rendering pages at build time. If a page uses Static Generation, the page HTML is generated at build time.
 
+    ```jsx
+    export async function getStaticProps() {
+      const res = await fetch("https://api.github.com/repos/vercel/next.js");
+      const repo = await res.json();
+      return { props: { repo } };
+    }
+
+    export default function Page({ repo }) {
+      return <p>{repo.stargazers_count} Stars</p>;
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 14. ### What is server side rendering (SSR) in Next.js?
