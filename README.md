@@ -308,11 +308,31 @@
 
     Rendering pages on each request. If a page uses Server-side Rendering, the page HTML is generated on each request.
 
+    ```jsx
+    export async function getServerSideProps() {
+      const res = await fetch("https://api.github.com/repos/vercel/next.js");
+      const repo = await res.json();
+      return { props: { repo } };
+    }
+
+    export default function Page({ repo }) {
+      return <p>{repo.stargazers_count} Stars</p>;
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 15. ### What is incremental static regeneration (ISR) in Next.js?
 
     Re-generating static pages at runtime as traffic comes in.
+
+    ```jsx
+    export async function getStaticProps() {
+      const res = await fetch("https://api.github.com/repos/vercel/next.js");
+      const repo = await res.json();
+      return { props: { repo }, revalidate: 1 };
+    }
+    ```
 
     [:arrow_up: Back to Top](#table-of-contents)
 
