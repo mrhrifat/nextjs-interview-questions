@@ -396,6 +396,18 @@
 
     Generating HTML for pages in advance, instead of on each request.
 
+    ```jsx
+    export async function getStaticProps() {
+      const res = await fetch("https://api.github.com/repos/vercel/next.js");
+      const repo = await res.json();
+      return { props: { repo } };
+    }
+
+    export default function Page({ repo }) {
+      return <p>{repo.stargazers_count} Stars</p>;
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 22. ### What is the difference between static site generation and server side rendering?
