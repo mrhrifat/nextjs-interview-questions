@@ -440,11 +440,28 @@
 
     A component for modifying the of a page.
 
+    ```
+    import Head from 'next/head'
+
+    <Head>
+      <title>My page title</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 25. ### What is the public folder in Next.js?
 
     A folder for static assets to be served from the root URL.
+
+    ```
+    public/
+    ├── favicon.ico
+    |── robots.txt
+    |── images/
+    |   └── profile.jpg
+    ```
 
     [:arrow_up: Back to Top](#table-of-contents)
 
