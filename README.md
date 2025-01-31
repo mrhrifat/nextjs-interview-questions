@@ -524,6 +524,36 @@
 
     Determines how to handle missing paths, with true, false, or ‘blocking’.
 
+    ```jsx
+    export async function getStaticPaths() {
+      const paths = await getAllPostIds();
+      return {
+        paths,
+        fallback: true, // this will enable fallback for all paths which are not generated at build time
+      };
+    }
+    ```
+
+    ```jsx
+    export async function getStaticPaths() {
+      const paths = await getAllPostIds();
+      return {
+        paths,
+        fallback: false, // this will return 404 for all paths which are not generated at build time
+      };
+    }
+    ```
+
+    ```jsx
+    export async function getStaticPaths() {
+      const paths = await getAllPostIds();
+      return {
+        paths,
+        fallback: "blocking", // this will return a static page for all paths which are not generated at build time
+      };
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 30. ### What is a custom server in Next.js?
