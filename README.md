@@ -590,6 +590,22 @@
 
     To manage the document head for meta tags, title,description, og etc.
 
+    ```jsx
+    import Head from "next/head";
+
+    export default function Home() {
+      return (
+        <div>
+          <Head>
+            <title>My page title</title>
+            <meta name="description" content="My description" />
+          </Head>
+          <h1>Hello World!</h1>
+        </div>
+      );
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 32. ### What is the use of next export command?
