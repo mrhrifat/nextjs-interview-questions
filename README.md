@@ -648,6 +648,15 @@
 
     By configuring i18n settings in next.config.js.
 
+    ```js
+    module.exports = {
+      i18n: {
+        locales: ["en", "fr"],
+        defaultLocale: "en",
+      },
+    };
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 39. ### What is React Strict Mode in Next.js?
