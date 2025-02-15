@@ -683,6 +683,22 @@
 
     Using `useEffect` and fetch or any other data fetching library like `axios`,`fetch` or `swr` by Next.js team.
 
+    ```
+    import { useEffect, useState } from "react";
+
+    export default function Page() {
+      const [data, setData] = useState(null);
+
+      useEffect(() => {
+        fetch("https://api.github.com/repos/vercel/next.js")
+          .then((res) => res.json())
+          .then((data) => setData(data));
+      }, []);
+
+      return <p>{data ? data.stargazers_count : "Loading..."}</p>;
+    }
+    ```
+
     [:arrow_up: Back to Top](#table-of-contents)
 
 42. ### What is the use of next-seo in Next.js?
