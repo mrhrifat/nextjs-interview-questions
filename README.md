@@ -630,7 +630,7 @@
 
     ```js
     "scripts": {
-       "dev": "next dev -p 8080", // for dev 
+       "dev": "next dev -p 8080", // for dev
        "start": "next start -p 8080" // for prod
     },
     ```
@@ -1366,5 +1366,17 @@
 ### Others
 
 [:arrow_up: Back to Top](#groups)
+
+7. ### What is the difference between Next.js and React?
+
+   Next.js is a framework built on top of React that provides additional features like server-side rendering, static site generation, and API routes.
+
+   [:arrow_up: Back to Top](#table-of-contents)
+
+8. ### What is the difference between Next.js and Gatsby?
+
+   Next.js is a full-stack framework that supports both server-side rendering and static site generation, while Gatsby is primarily focused on static site generation with a strong emphasis on performance and data sourcing.
+
+   [:arrow_up: Back to Top](#table-of-contents)
 
 <!-- Question & Answers End -->
