@@ -1396,4 +1396,43 @@
 
    [:arrow_up: Back to Top](#table-of-contents)
 
+9. ### What is the difference between the pages and app directories in Next.js?
+
+The `pages` directory uses file-based routing, while the `app` directory uses a more flexible routing system with support for layouts, nested routes, and server components.
+
+[:arrow_up: Back to Top](#table-of-contents)
+
+11. ### How do you handle redirects in Next.js?
+
+    By configuring redirects in next.config.js or using the middleware feature.
+
+    ```js
+    // next.config.js
+    module.exports = {
+      async redirects() {
+        return [
+          {
+            source: "/old-path",
+            destination: "/new-path",
+            permanent: true,
+          },
+        ];
+      },
+    };
+    ```
+
+    Or using middleware:
+
+    ```js
+    // middleware.js
+    import { NextResponse } from "next/server";
+    export function middleware(request) {
+      if (request.nextUrl.pathname === "/old-path") {
+        return NextResponse.redirect(new URL("/new-path", request.url));
+      }
+    }
+    ```
+
+    [:arrow_up: Back to Top](#table-of-contents)
+
 <!-- Question & Answers End -->
