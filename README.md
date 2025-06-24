@@ -1385,4 +1385,15 @@
 
    [:arrow_up: Back to Top](#table-of-contents)
 
+   9. ### What is the difference between CSR, SSR, SSG, ISR and RSC?
+      | Term                                  | Description                                                                                                                                                                          |
+      | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+      | CSR (Client-Side Rendering)           | Rendering happens in the browser, fetching data after the initial page load. This can lead to slower initial load times but allows for dynamic content updates.                      |
+      | SSR (Server-Side Rendering)           | Rendering happens on the server for each request, providing a fully rendered page to the client. This improves initial load times and SEO but can be slower for subsequent requests. |
+      | SSG (Static Site Generation)          | Pre-rendering pages at build time, serving static HTML files. This is fast and efficient for content that doesn't change often, but requires a rebuild to update content.            |
+      | ISR (Incremental Static Regeneration) | Allows static pages to be updated at runtime without a full rebuild. This combines the benefits of SSG with the ability to update content dynamically.                               |
+      | RSC (React Server Components)         | A new experimental feature in React that allows components to be rendered on the server and sent to the client, enabling better performance and reduced bundle size.                 |
+
+   [:arrow_up: Back to Top](#table-of-contents)
+
 <!-- Question & Answers End -->
