@@ -410,13 +410,76 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-22. ### What is the difference between static site generation and server side rendering?
+22. ### How to add authjs in nextjs app router?
+
+    To add authjs in nextjs app router, you can use the `next-auth` package. First, install it:
+
+    ```bash
+    npm install next-auth
+    ```
+
+    Then, create a file named `[...nextauth].js` in the `app/api/auth` directory and configure your authentication providers.
+
+    ```js
+    import NextAuth from "next-auth";
+    import Providers from "next-auth/providers";
+
+    export default NextAuth({
+      providers: [
+        Providers.Google({
+          clientId: process.env.GOOGLE_CLIENT_ID,
+          clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        }),
+      ],
+      // Add more configuration options as needed
+      callbacks: {
+        async session(session, user) {
+          // Add custom session properties here
+          return session;
+        },
+      },
+      pages: {
+        signIn: "/auth/signin", // Custom sign-in page
+        error: "/auth/error", // Error page
+      },
+      secret: process.env.NEXTAUTH_SECRET, // Required for JWT encryption
+      session: {
+        jwt: true, // Use JWT for session management
+      },
+      jwt: {
+        secret: process.env.NEXTAUTH_JWT_SECRET, // Required for JWT encryption
+      },
+      events: {
+        signIn: async (message) => {
+          // Custom logic after sign-in
+          console.log("User signed in:", message);
+        },
+      },
+      debug: process.env.NODE_ENV === "development", // Enable debug mode in development
+      theme: {
+        colorScheme: "light", // Change to "dark" for dark mode
+        brandColor: "#0000FF", // Custom brand color
+        logo: "/logo.png", // Custom logo URL
+      },
+      pages: {
+        signIn: "/auth/signin", // Custom sign-in page
+        signOut: "/auth/signout", // Custom sign-out page
+        error: "/auth/error", // Error page
+        verifyRequest: "/auth/verify-request", // Verification request page
+        newUser: null, // Will disable the new account creation screen
+      },
+    });
+    ```
+
+    [:arrow_up: Back to Top](#table-of-contents)
+
+23. ### What is the difference between static site generation and server side rendering?
 
     Static site generation (SSG) pre-renders at build time, server side rendering (SSR) pre-renders on each request.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-23. ### How do you handle redirects in Next.js?
+24. ### How do you handle redirects in Next.js?
 
     There are a few ways you can handle redirects in Next.js. One of them is by configuring redirects in next.config.js.
 
@@ -436,7 +499,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-24. ### What is the Head component in Next.js?
+25. ### What is the Head component in Next.js?
 
     A component for modifying the of a page.
 
@@ -451,7 +514,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-25. ### What is the public folder in Next.js?
+26. ### What is the public folder in Next.js?
 
     A folder for static assets to be served from the root URL.
 
@@ -465,7 +528,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-26. ### How do you fetch data in a Next.js page?
+27. ### How do you fetch data in a Next.js page?
 
     Using getStaticProps or getServerSideProps in server side.
 
@@ -503,7 +566,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-27. ### What is dynamic import in Next.js?
+28. ### What is dynamic import in Next.js?
 
     A feature to load components or modules dynamically.
 
@@ -514,13 +577,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-28. ### How do you handle environment variables in Next.js?
+29. ### How do you handle environment variables in Next.js?
 
     By adding them to .env.local and accessing via process.env.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-29. ### What is fallback in getStaticPaths?
+30. ### What is fallback in getStaticPaths?
 
     Determines how to handle missing paths, with true, false, or ‘blocking’.
 
@@ -556,7 +619,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-30. ### What is a custom server in Next.js?
+31. ### What is a custom server in Next.js?
 
     A way to customize the server-side behavior, e.g., with Express.
 
@@ -586,7 +649,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-31. ### What is the next/head package used for?
+32. ### What is the next/head package used for?
 
     To manage the document head for meta tags, title,description, og etc.
 
@@ -608,25 +671,25 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-32. ### What is the use of next export command?
+33. ### What is the use of next export command?
 
     To export a static version of the Next.js app.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-33. ### How do you optimize fonts in Next.js?
+34. ### How do you optimize fonts in Next.js?
 
     By using the built-in font optimization feature.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-34. ### What is the default port for a Next.js app?
+35. ### What is the default port for a Next.js app?
 
     Port 3000.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-35. ### How to change default port for a Next.js app?
+36. ### How to change default port for a Next.js app?
 
     ```js
     "scripts": {
@@ -637,25 +700,25 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-36. ### How do you add custom headers in Next.js?
+37. ### How do you add custom headers in Next.js?
 
     By configuring headers in next.config.js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-37. ### What is Fast Refresh in Next.js?
+38. ### What is Fast Refresh in Next.js?
 
     A feature for quick feedback when editing React components.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-38. ### How do you configure a custom Babel setup in Next.js?
+39. ### How do you configure a custom Babel setup in Next.js?
 
     By adding a babel.config.js file.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-39. ### How do you handle internationalization (i18n) in Next.js?
+40. ### How do you handle internationalization (i18n) in Next.js?
 
     By configuring i18n settings in next.config.js.
 
@@ -670,7 +733,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-40. ### What is React Strict Mode in Next.js?
+41. ### What is React Strict Mode in Next.js?
 
     A development mode only feature for highlighting potential problems in an application. It helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
 
@@ -684,13 +747,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-41. ### What is a singleton router in Next.js?
+42. ### What is a singleton router in Next.js?
 
     A single router instance accessible across the application.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-42. ### How do you perform client-side data fetching in Next.js?
+43. ### How do you perform client-side data fetching in Next.js?
 
     Using `useEffect` and fetch or any other data fetching library like `axios`,`fetch` or `swr` by Next.js team.
 
@@ -712,25 +775,25 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-43. ### What is the use of next-seo in Next.js?
+44. ### What is the use of next-seo in Next.js?
 
     To manage SEO metadata in a Next.js application.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-44. ### How do you use Tailwind CSS in Next.js?
+45. ### How do you use Tailwind CSS in Next.js?
 
     By installing tailwindcss and configuring it with PostCSS.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-45. ### How do you configure next-i18next in Next.js?
+46. ### How do you configure next-i18next in Next.js?
 
     By installing next-i18next and setting up the configuration in next.config. js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-46. ### What is next/script used for?
+47. ### What is next/script used for?
 
     To optimize loading third-party scripts.
 
@@ -748,7 +811,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-47. ### How do you enable custom fonts in Next.js?
+48. ### How do you enable custom fonts in Next.js?
 
     By using the next/font package or including fonts in the public directory.
 
@@ -772,31 +835,31 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-48. ### How do you set up GraphQL in Next.js?
+49. ### How do you set up GraphQL in Next.js?
 
     By using Apollo Client or another GraphQL client.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-49. ### What is swcMinify in next.config.js?
+50. ### What is swcMinify in next.config.js?
 
     It enables the use of the SWC compiler for minification.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-50. ### What is the use of next-compose-plugins?
+51. ### What is the use of next-compose-plugins?
 
     To enable composition of multiple plugins in Next.js configuration.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-51. ### What is a hybrid application in Next.js?
+52. ### What is a hybrid application in Next.js?
 
     An application that uses both static generation and server side rendering.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-52. ### What is the trailingSlash option in Next.js?
+53. ### What is the trailingSlash option in Next.js?
 
     It configures whether to include a trailing slash in the URLs.
 
@@ -808,13 +871,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-53. ### What is the difference between push and replace in useRouter?
+54. ### What is the difference between push and replace in useRouter?
 
     `push` adds a new entry in the history stack, `replace` replaces the current entry.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-54. ### What is `ssr: false` in dynamic import?
+55. ### What is `ssr: false` in dynamic import?
 
     It disabled server-side rendering for the dynamically imported component.
 
@@ -826,13 +889,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-55. ### How do you configure PWA in Next.js?
+56. ### How do you configure PWA in Next.js?
 
     By using plugins like next-pwa and configuring next.config.js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-56. ### How do you add Google Analytics to a Next.js project?
+57. ### How do you add Google Analytics to a Next.js project?
 
     By including the Google Analytics script in \_app.js or \_document.js.
 
@@ -851,19 +914,19 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-57. ### What is the purpose of middleware in Next.js?
+58. ### What is the purpose of middleware in Next.js?
 
     To run code before a request is completed.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-58. ### How do you use Apollo Client with Next.js?
+59. ### How do you use Apollo Client with Next.js?
 
     By setting up Apollo Provider in \_app.js and creating a client.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-59. ### What is the publicRuntimeConfig in Next.js?
+60. ### What is the publicRuntimeConfig in Next.js?
 
     Configuration exposed to the browser.
 
