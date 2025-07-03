@@ -624,7 +624,56 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-29. ### What is the Head component in Next.js?
+29. ### Difference between using & not using use server in Next.js?
+
+    - **Using `use server`**: The function is executed on the server side, allowing access to server-side resources and APIs. It can be used to perform operations that require server-side logic, such as database queries or API calls.
+    - **Not using `use server`**: The function is executed on the client side, meaning it cannot access server-side resources directly. It can only perform operations that are available in the client environment, such as manipulating the DOM or making client-side API calls.
+
+    - **Example with `use server`**:
+
+      ```jsx
+      "use server";
+      export async function fetchData() {
+        const response = await fetch("https://api.example.com/data");
+        const data = await response.json();
+        return data;
+      }
+      ```
+
+    - **Example without `use server`**:
+
+      ```jsx
+      export async function fetchData() {
+        const response = await fetch("https://api.example.com/data");
+        const data = await response.json();
+        return data;
+      }
+      ```
+
+    - Example with `use server` In Component:
+
+      ```jsx
+        import { fetchData } from "./path/to/your/file";
+
+        export default function MyComponent() {
+          const data = await fetchData(); // This will run on the server side
+          return <div>{data}</div>;
+        }
+      ```
+
+    - Example without `use server` In Component:
+
+      ```jsx
+      import { fetchData } from "./path/to/your/file";
+      export default function MyComponent() {
+        const data = fetchData(); // This will run on the client side
+        return <div>{data}</div>;
+      }
+      ```
+
+    [:arrow_up: Back to Top](#table-of-contents)
+
+30. ### What is the Head component in Next.js?
 
     A component for modifying the of a page.
 
@@ -639,7 +688,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-30. ### What is the public folder in Next.js?
+31. ### What is the public folder in Next.js?
 
     A folder for static assets to be served from the root URL.
 
@@ -653,7 +702,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-31. ### How do you fetch data in a Next.js page?
+32. ### How do you fetch data in a Next.js page?
 
     Using getStaticProps or getServerSideProps in server side.
 
@@ -691,7 +740,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-32. ### What is dynamic import in Next.js?
+33. ### What is dynamic import in Next.js?
 
     A feature to load components or modules dynamically.
 
@@ -702,13 +751,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-33. ### How do you handle environment variables in Next.js?
+34. ### How do you handle environment variables in Next.js?
 
     By adding them to .env.local and accessing via process.env.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-34. ### What is fallback in getStaticPaths?
+35. ### What is fallback in getStaticPaths?
 
     Determines how to handle missing paths, with true, false, or ‘blocking’.
 
@@ -744,7 +793,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-35. ### What is a custom server in Next.js?
+36. ### What is a custom server in Next.js?
 
     A way to customize the server-side behavior, e.g., with Express.
 
@@ -774,7 +823,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-36. ### What is the next/head package used for?
+37. ### What is the next/head package used for?
 
     To manage the document head for meta tags, title,description, og etc.
 
@@ -796,25 +845,25 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-37. ### What is the use of next export command?
+38. ### What is the use of next export command?
 
     To export a static version of the Next.js app.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-38. ### How do you optimize fonts in Next.js?
+39. ### How do you optimize fonts in Next.js?
 
     By using the built-in font optimization feature.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-39. ### What is the default port for a Next.js app?
+40. ### What is the default port for a Next.js app?
 
     Port 3000.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-40. ### How to change default port for a Next.js app?
+41. ### How to change default port for a Next.js app?
 
     ```js
     "scripts": {
@@ -825,25 +874,25 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-41. ### How do you add custom headers in Next.js?
+42. ### How do you add custom headers in Next.js?
 
     By configuring headers in next.config.js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-42. ### What is Fast Refresh in Next.js?
+43. ### What is Fast Refresh in Next.js?
 
     A feature for quick feedback when editing React components.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-43. ### How do you configure a custom Babel setup in Next.js?
+44. ### How do you configure a custom Babel setup in Next.js?
 
     By adding a babel.config.js file.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-44. ### How do you handle internationalization (i18n) in Next.js?
+45. ### How do you handle internationalization (i18n) in Next.js?
 
     By configuring i18n settings in next.config.js.
 
@@ -858,7 +907,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-45. ### What is React Strict Mode in Next.js?
+46. ### What is React Strict Mode in Next.js?
 
     A development mode only feature for highlighting potential problems in an application. It helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
 
@@ -872,13 +921,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-46. ### What is a singleton router in Next.js?
+47. ### What is a singleton router in Next.js?
 
     A single router instance accessible across the application.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-47. ### How do you perform client-side data fetching in Next.js?
+48. ### How do you perform client-side data fetching in Next.js?
 
     Using `useEffect` and fetch or any other data fetching library like `axios`,`fetch` or `swr` by Next.js team.
 
@@ -900,25 +949,25 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-48. ### What is the use of next-seo in Next.js?
+49. ### What is the use of next-seo in Next.js?
 
     To manage SEO metadata in a Next.js application.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-49. ### How do you use Tailwind CSS in Next.js?
+50. ### How do you use Tailwind CSS in Next.js?
 
     By installing tailwindcss and configuring it with PostCSS.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-50. ### How do you configure next-i18next in Next.js?
+51. ### How do you configure next-i18next in Next.js?
 
     By installing next-i18next and setting up the configuration in next.config. js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-51. ### What is next/script used for?
+52. ### What is next/script used for?
 
     To optimize loading third-party scripts.
 
@@ -936,7 +985,7 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-52. ### How do you enable custom fonts in Next.js?
+53. ### How do you enable custom fonts in Next.js?
 
     By using the next/font package or including fonts in the public directory.
 
@@ -960,31 +1009,31 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-53. ### How do you set up GraphQL in Next.js?
+54. ### How do you set up GraphQL in Next.js?
 
     By using Apollo Client or another GraphQL client.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-54. ### What is swcMinify in next.config.js?
+55. ### What is swcMinify in next.config.js?
 
     It enables the use of the SWC compiler for minification.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-55. ### What is the use of next-compose-plugins?
+56. ### What is the use of next-compose-plugins?
 
     To enable composition of multiple plugins in Next.js configuration.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-56. ### What is a hybrid application in Next.js?
+57. ### What is a hybrid application in Next.js?
 
     An application that uses both static generation and server side rendering.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-57. ### What is the trailingSlash option in Next.js?
+58. ### What is the trailingSlash option in Next.js?
 
     It configures whether to include a trailing slash in the URLs.
 
@@ -996,13 +1045,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-58. ### What is the difference between push and replace in useRouter?
+59. ### What is the difference between push and replace in useRouter?
 
     `push` adds a new entry in the history stack, `replace` replaces the current entry.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-59. ### What is `ssr: false` in dynamic import?
+60. ### What is `ssr: false` in dynamic import?
 
     It disabled server-side rendering for the dynamically imported component.
 
@@ -1014,13 +1063,13 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-60. ### How do you configure PWA in Next.js?
+61. ### How do you configure PWA in Next.js?
 
     By using plugins like next-pwa and configuring next.config.js.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-61. ### How do you add Google Analytics to a Next.js project?
+62. ### How do you add Google Analytics to a Next.js project?
 
     By including the Google Analytics script in \_app.js or \_document.js.
 
@@ -1039,19 +1088,19 @@
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-62. ### What is the purpose of middleware in Next.js?
+63. ### What is the purpose of middleware in Next.js?
 
     To run code before a request is completed.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-63. ### How do you use Apollo Client with Next.js?
+64. ### How do you use Apollo Client with Next.js?
 
     By setting up Apollo Provider in \_app.js and creating a client.
 
     [:arrow_up: Back to Top](#table-of-contents)
 
-64. ### What is the publicRuntimeConfig in Next.js?
+65. ### What is the publicRuntimeConfig in Next.js?
 
     Configuration exposed to the browser.
 
