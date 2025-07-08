@@ -980,7 +980,7 @@ A hook that allows access to the router object and perform navigation. The `useR
 
 4. ### What is the \_error.js file in Next.js?
 
-   A custom error page for handling errors.
+   The `_error.js` file is used to create a custom error page for handling errors such as 404 and 500 in Next.js applications.
 
    [:arrow_up: Back to Top](#table-of-contents)
 
@@ -1152,40 +1152,39 @@ A hook that allows access to the router object and perform navigation. The `useR
 
 4. ### How do you fetch data on the client-side in Next.js?
 
+   Using React hooks like useState and useEffect with fetch.
 
-    Using React hooks like useState and useEffect with fetch.
+   ```jsx
+   import { useState, useEffect } from "react";
 
-    ```jsx
-    import { useState, useEffect } from 'react';
+   function Profile() {
+     const [data, setData] = useState(null);
+     const [isLoading, setLoading] = useState(true);
 
-    function Profile() {
-      const [data, setData] = useState(null);
-      const [isLoading, setLoading] = useState(true);
+     useEffect(() => {
+       fetch("/api/profile")
+         .then((res) => res.json())
+         .then((data) => {
+           setData(data);
+           setLoading(false);
+         });
+     }, []);
 
-      useEffect(() => {
-        fetch('/api/profile')
-          .then((res) => res.json())
-          .then((data) => {
-            setData(data);
-            setLoading(false);
-          });
-      }, []);
+     if (isLoading) return <p>Loading...</p>;
+     if (!data) return <p>No profile data</p>;
 
-      if (isLoading) return <p>Loading...</p>;
-      if (!data) return <p>No profile data</p>;
+     return (
+       <div>
+         <h1>{data.name}</h1>
+         <p>{data.bio}</p>
+       </div>
+     );
+   }
+   ```
 
-      return (
-        <div>
-          <h1>{data.name}</h1>
-          <p>{data.bio}</p>
-        </div>
-      );
-    }
-    ```
+   [:arrow_up: Back to Top](#table-of-contents)
 
-    [:arrow_up: Back to Top](#table-of-contents)
-
-104. ### How do you implement authentication in Next.js?
+5. ### How do you implement authentication in Next.js?
 
 Using next-auth or a custom authentication solution.
 
