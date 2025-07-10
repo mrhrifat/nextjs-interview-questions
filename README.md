@@ -36,8 +36,12 @@
 |  65 | [What is the difference between push and replace in useRouter?](#what-is-the-difference-between-push-and-replace-in-userouter)                                       |
 |  16 | [How do you navigate programmatically in Next.js?](#how-do-you-navigate-programmatically-in-nextjs)                                                                  |
 |  24 | [How do you enable TypeScript in a Next.js project?](#how-do-you-enable-typescript-in-a-nextjs-project)                                                              |
+|  40 | [How do you handle environment variables in Next.js?](#how-do-you-handle-environment-variables-in-nextjs)                                                            |
 |  25 | [What is API Routes in Next.js?](#what-is-api-routes-in-nextjs)                                                                                                      |
 |  37 | [What is the public folder in Next.js?](#what-is-the-public-folder-in-nextjs)                                                                                        |
+|  39 | [What is dynamic import in Next.js?](#what-is-dynamic-import-in-nextjs)                                                                                              |
+|  46 | [What is the default port for a Next.js app?](#what-is-the-default-port-for-a-nextjs-app)                                                                            |
+|  47 | [How to change default port for a Next.js app?](#how-to-change-default-port-for-a-nextjs-app)                                                                        |
 |  17 | [What is middleware?](#what-is-middleware)                                                                                                                           |
 |  18 | [How do you add component-level CSS in Next.js?](#how-do-you-add-component-level-css-in-nextjs)                                                                      |
 |  19 | [What is static site generation (SSG) in Next.js?](#what-is-static-site-generation-ssg-in-nextjs)                                                                    |
@@ -55,14 +59,10 @@
 |  34 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                                                                      |
 |  35 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)                                             |
 |  36 | [What is the Head component in Next.js?](#what-is-the-head-component-in-nextjs)                                                                                      |
-|  39 | [What is dynamic import in Next.js?](#what-is-dynamic-import-in-nextjs)                                                                                              |
-|  40 | [How do you handle environment variables in Next.js?](#how-do-you-handle-environment-variables-in-nextjs)                                                            |
 |  42 | [What is a custom server in Next.js?](#what-is-a-custom-server-in-nextjs)                                                                                            |
 |  43 | [What is the next/head package used for?](#what-is-the-nexthead-package-used-for)                                                                                    |
 |  44 | [What is the use of next export command?](#what-is-the-use-of-next-export-command)                                                                                   |
 |  45 | [How do you optimize fonts in Next.js?](#how-do-you-optimize-fonts-in-nextjs)                                                                                        |
-|  46 | [What is the default port for a Next.js app?](#what-is-the-default-port-for-a-nextjs-app)                                                                            |
-|  47 | [How to change default port for a Next.js app?](#how-to-change-default-port-for-a-nextjs-app)                                                                        |
 |  48 | [How do you add custom headers in Next.js?](#how-do-you-add-custom-headers-in-nextjs)                                                                                |
 |  49 | [What is Fast Refresh in Next.js?](#what-is-fast-refresh-in-nextjs)                                                                                                  |
 |  50 | [How do you configure a custom Babel setup in Next.js?](#how-do-you-configure-a-custom-babel-setup-in-nextjs)                                                        |
