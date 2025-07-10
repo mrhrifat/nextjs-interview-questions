@@ -30,9 +30,14 @@
 |   4 | [What is file based routing in Next.js?](#what-is-file-based-routing-in-nextjs)                                                                                      |
 |   5 | [What are the key features of Next.js?](#what-are-the-key-features-of-nextjs)                                                                                        |
 |   8 | [What are the differences between Next.js and React.js](#what-are-the-differences-between-nextjs-and-reactjs)                                                        |
+|   6 | [What is the difference between client-side and server-side rendering in Next.js?](#what-is-the-difference-between-client-side-and-server-side-rendering-in-nextjs)  |
 |  14 | [What is the Link component in Next.js?](#what-is-the-link-component-in-nextjs)                                                                                      |
 |  15 | [What is the useRouter hook in Next.js?](#what-is-the-userouter-hook-in-nextjs)                                                                                      |
+|  65 | [What is the difference between push and replace in useRouter?](#what-is-the-difference-between-push-and-replace-in-userouter)                                       |
 |  16 | [How do you navigate programmatically in Next.js?](#how-do-you-navigate-programmatically-in-nextjs)                                                                  |
+|  24 | [How do you enable TypeScript in a Next.js project?](#how-do-you-enable-typescript-in-a-nextjs-project)                                                              |
+|  25 | [What is API Routes in Next.js?](#what-is-api-routes-in-nextjs)                                                                                                      |
+|  37 | [What is the public folder in Next.js?](#what-is-the-public-folder-in-nextjs)                                                                                        |
 |  17 | [What is middleware?](#what-is-middleware)                                                                                                                           |
 |  18 | [How do you add component-level CSS in Next.js?](#how-do-you-add-component-level-css-in-nextjs)                                                                      |
 |  19 | [What is static site generation (SSG) in Next.js?](#what-is-static-site-generation-ssg-in-nextjs)                                                                    |
@@ -41,8 +46,6 @@
 |   9 | [What is Incremental Side Rendering?](#what-is-incremental-side-rendering)                                                                                           |
 |  22 | [What is the Image component in Next.js?](#what-is-the-image-component-in-nextjs)                                                                                    |
 |  23 | [What is next.config.js?](#what-is-nextconfigjs)                                                                                                                     |
-|  24 | [How do you enable TypeScript in a Next.js project?](#how-do-you-enable-typescript-in-a-nextjs-project)                                                              |
-|  25 | [What is API Routes in Next.js?](#what-is-api-routes-in-nextjs)                                                                                                      |
 |  26 | [How do you deploy a Next.js app to Vercel?](#how-do-you-deploy-a-nextjs-app-to-vercel)                                                                              |
 |  27 | [What is pre-rendering in Next.js?](#what-is-pre-rendering-in-nextjs)                                                                                                |
 |  28 | [How to add authjs in nextjs app router?](#how-to-add-authjs-in-nextjs-app-router)                                                                                   |
@@ -52,7 +55,6 @@
 |  34 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                                                                      |
 |  35 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)                                             |
 |  36 | [What is the Head component in Next.js?](#what-is-the-head-component-in-nextjs)                                                                                      |
-|  37 | [What is the public folder in Next.js?](#what-is-the-public-folder-in-nextjs)                                                                                        |
 |  39 | [What is dynamic import in Next.js?](#what-is-dynamic-import-in-nextjs)                                                                                              |
 |  40 | [How do you handle environment variables in Next.js?](#how-do-you-handle-environment-variables-in-nextjs)                                                            |
 |  42 | [What is a custom server in Next.js?](#what-is-a-custom-server-in-nextjs)                                                                                            |
@@ -74,7 +76,6 @@
 |  60 | [How do you set up GraphQL in Next.js?](#how-do-you-set-up-graphql-in-nextjs)                                                                                        |
 |  59 | [How do you enable custom fonts in Next.js?](#how-do-you-enable-custom-fonts-in-nextjs)                                                                              |
 |  32 | [How to consider security in nextjs app router?](#how-to-consider-security-in-nextjs-app-router)                                                                     |
-|  65 | [What is the difference between push and replace in useRouter?](#what-is-the-difference-between-push-and-replace-in-userouter)                                       |
 |  78 | [What is next/script used for?](#what-is-nextscript-used-for)                                                                                                        |
 |  97 | [What is the next/image component used for?](#what-is-the-nextimage-component-used-for)                                                                              |
 |  31 | [How to add sitemap in nextjs app router?](#how-to-add-sitemap-in-nextjs-app-router)                                                                                 |
