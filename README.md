@@ -42,14 +42,17 @@
 |  39 | [What is dynamic import in Next.js?](#what-is-dynamic-import-in-nextjs)                                                                                              |
 |  46 | [What is the default port for a Next.js app?](#what-is-the-default-port-for-a-nextjs-app)                                                                            |
 |  47 | [How to change default port for a Next.js app?](#how-to-change-default-port-for-a-nextjs-app)                                                                        |
-|  17 | [What is middleware?](#what-is-middleware)                                                                                                                           |
+|  49 | [What is Fast Refresh in Next.js?](#what-is-fast-refresh-in-nextjs)                                                                                                  |
+|  23 | [What is next.config.js?](#what-is-nextconfigjs)                                                                                                                     |
 |  18 | [How do you add component-level CSS in Next.js?](#how-do-you-add-component-level-css-in-nextjs)                                                                      |
+|  92 | [How do you add global CSS in Next.js?](#how-do-you-add-global-css-in-nextjs)                                                                                        |
+|  56 | [How do you use Tailwind CSS in Next.js?](#how-do-you-use-tailwind-css-in-nextjs)                                                                                    |
+|  17 | [What is middleware?](#what-is-middleware)                                                                                                                           |
 |  19 | [What is static site generation (SSG) in Next.js?](#what-is-static-site-generation-ssg-in-nextjs)                                                                    |
 |  20 | [What is server side rendering (SSR) in Next.js?](#what-is-server-side-rendering-ssr-in-nextjs)                                                                      |
 |  21 | [What is incremental static regeneration (ISR) in Next.js?](#what-is-incremental-static-regeneration-isr-in-nextjs)                                                  |
 |   9 | [What is Incremental Side Rendering?](#what-is-incremental-side-rendering)                                                                                           |
 |  22 | [What is the Image component in Next.js?](#what-is-the-image-component-in-nextjs)                                                                                    |
-|  23 | [What is next.config.js?](#what-is-nextconfigjs)                                                                                                                     |
 |  26 | [How do you deploy a Next.js app to Vercel?](#how-do-you-deploy-a-nextjs-app-to-vercel)                                                                              |
 |  27 | [What is pre-rendering in Next.js?](#what-is-pre-rendering-in-nextjs)                                                                                                |
 |  28 | [How to add authjs in nextjs app router?](#how-to-add-authjs-in-nextjs-app-router)                                                                                   |
@@ -64,14 +67,11 @@
 |  44 | [What is the use of next export command?](#what-is-the-use-of-next-export-command)                                                                                   |
 |  45 | [How do you optimize fonts in Next.js?](#how-do-you-optimize-fonts-in-nextjs)                                                                                        |
 |  48 | [How do you add custom headers in Next.js?](#how-do-you-add-custom-headers-in-nextjs)                                                                                |
-|  49 | [What is Fast Refresh in Next.js?](#what-is-fast-refresh-in-nextjs)                                                                                                  |
 |  50 | [How do you configure a custom Babel setup in Next.js?](#how-do-you-configure-a-custom-babel-setup-in-nextjs)                                                        |
 |  51 | [How do you handle internationalization (i18n) in Next.js?](#how-do-you-handle-internationalization-i18n-in-nextjs)                                                  |
 |  52 | [What is React Strict Mode in Next.js?](#what-is-react-strict-mode-in-nextjs)                                                                                        |
 |  53 | [What is a singleton router in Next.js?](#what-is-a-singleton-router-in-nextjs)                                                                                      |
 |  54 | [How do you perform client-side data fetching in Next.js?](#how-do-you-perform-client-side-data-fetching-in-nextjs)                                                  |
-|  92 | [How do you add global CSS in Next.js?](#how-do-you-add-global-css-in-nextjs)                                                                                        |
-|  56 | [How do you use Tailwind CSS in Next.js?](#how-do-you-use-tailwind-css-in-nextjs)                                                                                    |
 |  58 | [What is next/script used for?](#what-is-nextscript-used-for)                                                                                                        |
 |  60 | [How do you set up GraphQL in Next.js?](#how-do-you-set-up-graphql-in-nextjs)                                                                                        |
 |  59 | [How do you enable custom fonts in Next.js?](#how-do-you-enable-custom-fonts-in-nextjs)                                                                              |
