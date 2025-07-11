@@ -47,18 +47,17 @@
 |  18 | [How do you add component-level CSS in Next.js?](#how-do-you-add-component-level-css-in-nextjs)                                                                      |
 |  92 | [How do you add global CSS in Next.js?](#how-do-you-add-global-css-in-nextjs)                                                                                        |
 |  56 | [How do you use Tailwind CSS in Next.js?](#how-do-you-use-tailwind-css-in-nextjs)                                                                                    |
-|  17 | [What is middleware?](#what-is-middleware)                                                                                                                           |
-|  19 | [What is static site generation (SSG) in Next.js?](#what-is-static-site-generation-ssg-in-nextjs)                                                                    |
 |  20 | [What is server side rendering (SSR) in Next.js?](#what-is-server-side-rendering-ssr-in-nextjs)                                                                      |
+|  19 | [What is static site generation (SSG) in Next.js?](#what-is-static-site-generation-ssg-in-nextjs)                                                                    |
+|  30 | [What is the difference between static site generation and server side rendering?](#what-is-the-difference-between-static-site-generation-and-server-side-rendering) |
+|  27 | [What is pre-rendering in Next.js?](#what-is-pre-rendering-in-nextjs)                                                                                                |
 |  21 | [What is incremental static regeneration (ISR) in Next.js?](#what-is-incremental-static-regeneration-isr-in-nextjs)                                                  |
-|   9 | [What is Incremental Side Rendering?](#what-is-incremental-side-rendering)                                                                                           |
 |  22 | [What is the Image component in Next.js?](#what-is-the-image-component-in-nextjs)                                                                                    |
 |  26 | [How do you deploy a Next.js app to Vercel?](#how-do-you-deploy-a-nextjs-app-to-vercel)                                                                              |
-|  27 | [What is pre-rendering in Next.js?](#what-is-pre-rendering-in-nextjs)                                                                                                |
+|  17 | [What is middleware?](#what-is-middleware)                                                                                                                           |
+|  33 | [How do you handle redirects in Next.js?](#how-do-you-handle-redirects-in-nextjs)                                                                                    |
 |  28 | [How to add authjs in nextjs app router?](#how-to-add-authjs-in-nextjs-app-router)                                                                                   |
 |  29 | [How to add credentials in nextjs app router?](#how-to-add-credentials-in-nextjs-app-router)                                                                         |
-|  30 | [What is the difference between static site generation and server side rendering?](#what-is-the-difference-between-static-site-generation-and-server-side-rendering) |
-|  33 | [How do you handle redirects in Next.js?](#how-do-you-handle-redirects-in-nextjs)                                                                                    |
 |  34 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                                                                      |
 |  35 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)                                             |
 |  36 | [What is the Head component in Next.js?](#what-is-the-head-component-in-nextjs)                                                                                      |
