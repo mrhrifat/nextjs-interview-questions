@@ -100,6 +100,9 @@
 
 |  No | Contents                                                                                                                             |
 | --: | ------------------------------------------------------------------------------------------------------------------------------------ |
+|  23 | [What is the App Router in Next.js?](#what-is-the-app-router-in-nextjs)                                                              |
+|  22 | [How do you create a route in the App Router?](#how-do-you-create-a-route-in-the-app-router)                                         |
+|  39 | [How do you create a dynamic route in Next.js App Router?](#how-do-you-create-a-dynamic-route-in-nextjs-app-router)                  |
 |  94 | [How do you create custom error pages in Next.js?](#how-do-you-create-custom-error-pages-in-nextjs)                                  |
 |  55 | [What is the use of next-seo in Next.js?](#what-is-the-use-of-next-seo-in-nextjs)                                                    |
 |  57 | [How do you configure next-i18next in Next.js?](#how-do-you-configure-next-i18next-in-nextjs)                                        |
@@ -823,6 +826,12 @@
 
 [:arrow_up: Back to Top](#groups)
 
+1. ### What is the Pages Router in Next.js?
+
+   The Pages Router is a file-based routing system in Next.js that automatically creates routes based on the file structure inside the `pages` directory.
+
+   [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
 1. ### What do you create route at pages based routing in Next.js?
 
    In Next.js pages router, you create routes by adding files to the `pages` directory:
@@ -834,7 +843,7 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-2. ### How do you create a dynamic route in Next.js?
+1. ### How do you create a dynamic route in Next.js?
 
    In the pages directory, you can add bracket syntax to create dynamic routes:
 
@@ -847,37 +856,37 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-3. ### What is the \_app.js file in Next.js?
+1. ### What is the \_app.js file in Next.js?
 
    A special file for initializing pages. It's used for layout, state, or custom error handling.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-4. ### What is the \_document.js file in Next.js?
+1. ### What is the \_document.js file in Next.js?
 
    A custom document for augmenting the application's HTML and body tags.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-5. ### What is the difference between \_app.js and \_document.js?
+1. ### What is the difference between \_app.js and \_document.js?
 
    \_app.js is for page initialization, \_document.js is for custom document structure.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-6. ### What is the \_error.js file in Next.js?
+1. ### What is the \_error.js file in Next.js?
 
    The `_error.js` file is used to create a custom error page for handling errors such as 404 and 500 in Next.js applications.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-7. ### How do you create a 404 page in Next.js?
+1. ### How do you create a 404 page in Next.js?
 
    By adding a `pages/404.js` file.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-8. ### How do you fetch data in a Next.js page?
+1. ### How do you fetch data in a Next.js page?
 
    Using getStaticProps or getServerSideProps in server side.
 
@@ -915,7 +924,7 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-9. ### What is getStaticProps?
+1. ### What is getStaticProps?
 
    A function that runs at build time to fetch data for a page.
 
@@ -938,92 +947,92 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-10. ### What is getServerSideProps?
+1. ### What is getServerSideProps?
 
-    A function that runs on each request to fetch data for a page.
+   A function that runs on each request to fetch data for a page.
 
-    ```jsx
-    export async function getServerSideProps(context) {
-      const res = await fetch(`https://...`);
-      const data = await res.json();
+   ```jsx
+   export async function getServerSideProps(context) {
+     const res = await fetch(`https://...`);
+     const data = await res.json();
 
-      if (!data) {
-        return {
-          notFound: true,
-        };
-      }
+     if (!data) {
+       return {
+         notFound: true,
+       };
+     }
 
-      return {
-        props: { data }, // will be passed to the page component as props
-      };
-    }
-    ```
+     return {
+       props: { data }, // will be passed to the page component as props
+     };
+   }
+   ```
 
-    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+   [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-11. ### What is the difference between getStaticProps and getServerSideProps?
+1. ### What is the difference between getStaticProps and getServerSideProps?
 
-    getStaticProps runs at build time, getServerSideProps runs on each request.
+   getStaticProps runs at build time, getServerSideProps runs on each request.
 
-    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+   [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-12. ### What is getStaticPaths?
+1. ### What is getStaticPaths?
 
-    A function that specifies dynamic routes to pre-render based on data.
+   A function that specifies dynamic routes to pre-render based on data.
 
-    ```jsx
-    export async function getStaticPaths() {
-      const res = await fetch("https://.../posts");
-      const posts = await res.json();
+   ```jsx
+   export async function getStaticPaths() {
+     const res = await fetch("https://.../posts");
+     const posts = await res.json();
 
-      // Get the paths we want to pre-render based on posts
-      const paths = posts.map((post) => ({
-        params: { id: post.id },
-      }));
+     // Get the paths we want to pre-render based on posts
+     const paths = posts.map((post) => ({
+       params: { id: post.id },
+     }));
 
-      // We'll pre-render only these paths at build time.
-      // { fallback: false } means other routes should 404.
-      return { paths, fallback: false };
-    }
-    ```
+     // We'll pre-render only these paths at build time.
+     // { fallback: false } means other routes should 404.
+     return { paths, fallback: false };
+   }
+   ```
 
-    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+   [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-13. ### What is fallback in getStaticPaths?
+1. ### What is fallback in getStaticPaths?
 
-    Determines how to handle missing paths, with true, false, or 'blocking'.
+   Determines how to handle missing paths, with true, false, or 'blocking'.
 
-    ```jsx
-    export async function getStaticPaths() {
-      const paths = await getAllPostIds();
-      return {
-        paths,
-        fallback: true, // this will enable fallback for all paths which are not generated at build time
-      };
-    }
-    ```
+   ```jsx
+   export async function getStaticPaths() {
+     const paths = await getAllPostIds();
+     return {
+       paths,
+       fallback: true, // this will enable fallback for all paths which are not generated at build time
+     };
+   }
+   ```
 
-    ```jsx
-    export async function getStaticPaths() {
-      const paths = await getAllPostIds();
-      return {
-        paths,
-        fallback: false, // this will return 404 for all paths which are not generated at build time
-      };
-    }
-    ```
+   ```jsx
+   export async function getStaticPaths() {
+     const paths = await getAllPostIds();
+     return {
+       paths,
+       fallback: false, // this will return 404 for all paths which are not generated at build time
+     };
+   }
+   ```
 
-    ```jsx
-    export async function getStaticPaths() {
-      const paths = await getAllPostIds();
-      return {
-        paths,
-        fallback: "blocking", // this will return a static page for all paths which are not generated at build time
-      };
-    }
-    ```
+   ```jsx
+   export async function getStaticPaths() {
+     const paths = await getAllPostIds();
+     return {
+       paths,
+       fallback: "blocking", // this will return a static page for all paths which are not generated at build time
+     };
+   }
+   ```
 
-    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+   [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
 ### [App Router](#app-router)
 
@@ -1035,7 +1044,37 @@
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-2. ### What is the use of next-seo in Next.js?
+2. ### How do you create a route in the App Router?
+
+   In the App Router, you create routes by adding files to the `app` directory. Each file corresponds to a route, and you can create nested routes by creating subdirectories.
+
+   ```
+   app/
+   ├── page.js          // Home page
+   ├── about/
+   │   └── page.js      // About page
+   └── blog/
+       ├── page.js      // Blog index page
+       └── [slug]/
+           └── page.js  // Dynamic blog post page
+   ```
+
+   [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+3. ### How do you create a dynamic route in the App Router?
+
+   In the App Router, you create dynamic routes by using square brackets in the file name. For example, to create a dynamic blog post route, you would create a file named `[slug]/page.js` inside the `blog` directory.
+
+   ```
+   app/
+   └── blog/
+       └── [slug]/
+           └── page.js  // Dynamic blog post page
+   ```
+
+   [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+4. ### What is the use of next-seo in Next.js?
 
    next-seo is a plugin for managing SEO metadata in Next.js applications, making it easier to set and manage meta tags, Open Graph tags, and other SEO-related elements.
 
@@ -1065,13 +1104,13 @@
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-3. ### How do you handle routing in a Next.js app?
+5. ### How do you handle routing in a Next.js app?
 
    Using file-based routing in the pages or app directory.
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-4. ### How do you handle authentication tokens in Next.js?
+6. ### How do you handle authentication tokens in Next.js?
 
    By using cookies or local storage to store authentication tokens and accessing them in API routes or server-side functions.
 
@@ -1087,7 +1126,7 @@
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-5. ### How do you configure next-i18next in Next.js?
+7. ### How do you configure next-i18next in Next.js?
 
    By creating a next-i18next.config.js file and initializing it in the app.
 
@@ -1116,7 +1155,7 @@
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-6. ### What is ssr: false in dynamic import?
+8. ### What is ssr: false in dynamic import?
 
    It disables server-side rendering for a dynamically imported component, ensuring it only loads on the client side.
 
@@ -1142,51 +1181,51 @@
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-7. ### How do you add Google Analytics to a Next.js project?
+9. ### How do you add Google Analytics to a Next.js project?
 
-   By using the next/script component to load the Google Analytics script.
+By using the next/script component to load the Google Analytics script.
 
-   ```jsx
-   import Script from "next/script";
+```jsx
+import Script from "next/script";
 
-   export default function MyApp() {
-     return (
-       <>
-         <Script
-           src={`https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID`}
-           strategy="afterInteractive"
-         />
-         <Script id="google-analytics" strategy="afterInteractive">
-           {`
-             window.dataLayer = window.dataLayer || [];
-             function gtag(){dataLayer.push(arguments);}
-             gtag('js', new Date());
-             gtag('config', 'YOUR_TRACKING_ID');
-           `}
-         </Script>
-       </>
-     );
-   }
-   ```
+export default function MyApp() {
+  return (
+    <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'YOUR_TRACKING_ID');
+        `}
+      </Script>
+    </>
+  );
+}
+```
 
-   [:arrow_up: Back to Top](#app-router-table-of-contents)
+[:arrow_up: Back to Top](#app-router-table-of-contents)
 
-8. ### How do you handle CORS in Next.js API routes?
+10. ### How do you handle CORS in Next.js API routes?
 
-   By setting appropriate headers in the API route response.
+By setting appropriate headers in the API route response.
 
-   ```js
-   export default function handler(req, res) {
-     res.setHeader("Access-Control-Allow-Origin", "*");
-     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-     res.status(200).json({ message: "CORS enabled" });
-   }
-   ```
+```js
+export default function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.status(200).json({ message: "CORS enabled" });
+}
+```
 
-   [:arrow_up: Back to Top](#app-router-table-of-contents)
+[:arrow_up: Back to Top](#app-router-table-of-contents)
 
-9. ### How do you manage cookies in Next.js?
+10. ### How do you manage cookies in Next.js?
 
 By using the cookie package or next-cookies to read and write cookies in API routes or server-side functions.
 
