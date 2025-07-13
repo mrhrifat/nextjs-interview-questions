@@ -83,8 +83,9 @@
 
 |  No | Contents                                                                                                                                       |
 | --: | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-|   6 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                  |
-|   5 | [What do you create route at pages based routing in Next.js?](#what-do-you-create-route-at-pages-based-routing-in-nextjs)                      |
+|   1 | [What is the Pages Router in Next.js?](#what-is-the-pages-router-in-nextjs)                                                                    |
+|   2 | [How do you create a route in the Pages Router?](#how-do-you-create-a-route-in-the-pages-router)                                               |
+|   6 | [How do you create a dynamic route in pages router of Next.js ](#how-do-you-create-a-dynamic-route-in-pages-router-of-next.js)                 |
 |  90 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                    |
 |  34 | [What is the \_error.js file in Next.js?](#what-is-the-_errorjs-file-in-nextjs)                                                                |
 |  91 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                          |
@@ -832,7 +833,7 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What do you create route at pages based routing in Next.js?
+1. ### How do you create a route in the Pages Router?
 
    In Next.js pages router, you create routes by adding files to the `pages` directory:
 
@@ -843,7 +844,7 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### How do you create a dynamic route in Next.js?
+1. ### How do you create a dynamic route in pages router of Next.js
 
    In the pages directory, you can add bracket syntax to create dynamic routes:
 
