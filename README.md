@@ -85,7 +85,8 @@
 | --: | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 |   1 | [What is the Pages Router in Next.js?](#what-is-the-pages-router-in-nextjs)                                                                    |
 |   2 | [How do you create a route in the Pages Router?](#how-do-you-create-a-route-in-the-pages-router)                                               |
-|   6 | [How do you create a dynamic route in pages router of Next.js ](#how-do-you-create-a-dynamic-route-in-pages-router-of-next.js)                 |
+|   6 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                  |
+|   3 | [What is catch all segment in Next.js?](#what-is-catch-all-segment-in-nextjs)                                                                  |
 |  90 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                    |
 |  34 | [What is the \_error.js file in Next.js?](#what-is-the-_errorjs-file-in-nextjs)                                                                |
 |  91 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                          |
@@ -103,7 +104,7 @@
 | --: | ------------------------------------------------------------------------------------------------------------------------------------ |
 |  23 | [What is the App Router in Next.js?](#what-is-the-app-router-in-nextjs)                                                              |
 |  22 | [How do you create a route in the App Router?](#how-do-you-create-a-route-in-the-app-router)                                         |
-|  39 | [How do you create a dynamic route in Next.js App Router?](#how-do-you-create-a-dynamic-route-in-nextjs-app-router)                  |
+|  39 | [How do you create a dynamic route with app router in Next.js?](#how-do-you-create-a-dynamic-route-with-app-router-in-nextjs)        |
 |  94 | [How do you create custom error pages in Next.js?](#how-do-you-create-custom-error-pages-in-nextjs)                                  |
 |  55 | [What is the use of next-seo in Next.js?](#what-is-the-use-of-next-seo-in-nextjs)                                                    |
 |  57 | [How do you configure next-i18next in Next.js?](#how-do-you-configure-next-i18next-in-nextjs)                                        |
@@ -833,7 +834,7 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### How do you create a route in the Pages Router?
+2. ### How do you create a route in the Pages Router?
 
    In Next.js pages router, you create routes by adding files to the `pages` directory:
 
@@ -844,7 +845,7 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### How do you create a dynamic route in pages router of Next.js
+3. ### How do you create a dynamic route in Next.js?
 
    In the pages directory, you can add bracket syntax to create dynamic routes:
 
@@ -857,183 +858,198 @@
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is the \_app.js file in Next.js?
+4. ### What is catch all segment in Next.js?
+
+   A catch-all segment allows you to match multiple segments in a dynamic route. It is defined using `[[...param]]` syntax.
+
+   This allows you to create routes that can match multiple segments, such as `/docs/nextjs`, `/docs/react`, etc.
+
+   ```jsx
+   // pages/docs/[[...slug]].js
+   export default function Docs({ params }) {
+     return <div>Docs: {params.slug.join("/")}</div>;
+   }
+   ```
+
+   [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+5. ### What is the \_app.js file in Next.js?
 
    A special file for initializing pages. It's used for layout, state, or custom error handling.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is the \_document.js file in Next.js?
+6. ### What is the \_document.js file in Next.js?
 
    A custom document for augmenting the application's HTML and body tags.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is the difference between \_app.js and \_document.js?
+7. ### What is the difference between \_app.js and \_document.js?
 
    \_app.js is for page initialization, \_document.js is for custom document structure.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is the \_error.js file in Next.js?
+8. ### What is the \_error.js file in Next.js?
 
    The `_error.js` file is used to create a custom error page for handling errors such as 404 and 500 in Next.js applications.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### How do you create a 404 page in Next.js?
+9. ### How do you create a 404 page in Next.js?
 
    By adding a `pages/404.js` file.
 
    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### How do you fetch data in a Next.js page?
+10. ### How do you fetch data in a Next.js page?
 
-   Using getStaticProps or getServerSideProps in server side.
+    Using getStaticProps or getServerSideProps in server side.
 
-   ```jsx
-   // getStaticProps
-   export async function getStaticProps() {
-     const res = await fetch("https://api.github.com/repos/vercel/next.js");
-     const repo = await res.json();
-     return { props: { repo } };
-   }
+    ```jsx
+    // getStaticProps
+    export async function getStaticProps() {
+      const res = await fetch("https://api.github.com/repos/vercel/next.js");
+      const repo = await res.json();
+      return { props: { repo } };
+    }
 
-   export default function Page({ repo }) {
-     return repo.stargazers_count;
-   }
-   ```
+    export default function Page({ repo }) {
+      return repo.stargazers_count;
+    }
+    ```
 
-   ```jsx
-   // getServerSideProps
-   export async function getServerSideProps() {
-     // Fetch data from external API
-     const res = await fetch("https://api.github.com/repos/vercel/next.js");
-     const repo = await res.json();
-     // Pass data to the page via props
-     return { props: { repo } };
-   }
+    ```jsx
+    // getServerSideProps
+    export async function getServerSideProps() {
+      // Fetch data from external API
+      const res = await fetch("https://api.github.com/repos/vercel/next.js");
+      const repo = await res.json();
+      // Pass data to the page via props
+      return { props: { repo } };
+    }
 
-   export default function Page({ repo }) {
-     return (
-       <main>
-         <p>{repo.stargazers_count}</p>
-       </main>
-     );
-   }
-   ```
+    export default function Page({ repo }) {
+      return (
+        <main>
+          <p>{repo.stargazers_count}</p>
+        </main>
+      );
+    }
+    ```
 
-   [:arrow_up: Back to Top](#pages-router-table-of-contents)
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is getStaticProps?
+11. ### What is getStaticProps?
 
-   A function that runs at build time to fetch data for a page.
+    A function that runs at build time to fetch data for a page.
 
-   ```jsx
-   export async function getStaticProps(context) {
-     const res = await fetch(`https://...`);
-     const data = await res.json();
+    ```jsx
+    export async function getStaticProps(context) {
+      const res = await fetch(`https://...`);
+      const data = await res.json();
 
-     if (!data) {
-       return {
-         notFound: true,
-       };
-     }
+      if (!data) {
+        return {
+          notFound: true,
+        };
+      }
 
-     return {
-       props: { data }, // will be passed to the page component as props
-     };
-   }
-   ```
+      return {
+        props: { data }, // will be passed to the page component as props
+      };
+    }
+    ```
 
-   [:arrow_up: Back to Top](#pages-router-table-of-contents)
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is getServerSideProps?
+12. ### What is getServerSideProps?
 
-   A function that runs on each request to fetch data for a page.
+    A function that runs on each request to fetch data for a page.
 
-   ```jsx
-   export async function getServerSideProps(context) {
-     const res = await fetch(`https://...`);
-     const data = await res.json();
+    ```jsx
+    export async function getServerSideProps(context) {
+      const res = await fetch(`https://...`);
+      const data = await res.json();
 
-     if (!data) {
-       return {
-         notFound: true,
-       };
-     }
+      if (!data) {
+        return {
+          notFound: true,
+        };
+      }
 
-     return {
-       props: { data }, // will be passed to the page component as props
-     };
-   }
-   ```
+      return {
+        props: { data }, // will be passed to the page component as props
+      };
+    }
+    ```
 
-   [:arrow_up: Back to Top](#pages-router-table-of-contents)
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is the difference between getStaticProps and getServerSideProps?
+13. ### What is the difference between getStaticProps and getServerSideProps?
 
-   getStaticProps runs at build time, getServerSideProps runs on each request.
+    getStaticProps runs at build time, getServerSideProps runs on each request.
 
-   [:arrow_up: Back to Top](#pages-router-table-of-contents)
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is getStaticPaths?
+14. ### What is getStaticPaths?
 
-   A function that specifies dynamic routes to pre-render based on data.
+    A function that specifies dynamic routes to pre-render based on data.
 
-   ```jsx
-   export async function getStaticPaths() {
-     const res = await fetch("https://.../posts");
-     const posts = await res.json();
+    ```jsx
+    export async function getStaticPaths() {
+      const res = await fetch("https://.../posts");
+      const posts = await res.json();
 
-     // Get the paths we want to pre-render based on posts
-     const paths = posts.map((post) => ({
-       params: { id: post.id },
-     }));
+      // Get the paths we want to pre-render based on posts
+      const paths = posts.map((post) => ({
+        params: { id: post.id },
+      }));
 
-     // We'll pre-render only these paths at build time.
-     // { fallback: false } means other routes should 404.
-     return { paths, fallback: false };
-   }
-   ```
+      // We'll pre-render only these paths at build time.
+      // { fallback: false } means other routes should 404.
+      return { paths, fallback: false };
+    }
+    ```
 
-   [:arrow_up: Back to Top](#pages-router-table-of-contents)
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-1. ### What is fallback in getStaticPaths?
+15. ### What is fallback in getStaticPaths?
 
-   Determines how to handle missing paths, with true, false, or 'blocking'.
+    Determines how to handle missing paths, with true, false, or 'blocking'.
 
-   ```jsx
-   export async function getStaticPaths() {
-     const paths = await getAllPostIds();
-     return {
-       paths,
-       fallback: true, // this will enable fallback for all paths which are not generated at build time
-     };
-   }
-   ```
+    ```jsx
+    export async function getStaticPaths() {
+      const paths = await getAllPostIds();
+      return {
+        paths,
+        fallback: true, // this will enable fallback for all paths which are not generated at build time
+      };
+    }
+    ```
 
-   ```jsx
-   export async function getStaticPaths() {
-     const paths = await getAllPostIds();
-     return {
-       paths,
-       fallback: false, // this will return 404 for all paths which are not generated at build time
-     };
-   }
-   ```
+    ```jsx
+    export async function getStaticPaths() {
+      const paths = await getAllPostIds();
+      return {
+        paths,
+        fallback: false, // this will return 404 for all paths which are not generated at build time
+      };
+    }
+    ```
 
-   ```jsx
-   export async function getStaticPaths() {
-     const paths = await getAllPostIds();
-     return {
-       paths,
-       fallback: "blocking", // this will return a static page for all paths which are not generated at build time
-     };
-   }
-   ```
+    ```jsx
+    export async function getStaticPaths() {
+      const paths = await getAllPostIds();
+      return {
+        paths,
+        fallback: "blocking", // this will return a static page for all paths which are not generated at build time
+      };
+    }
+    ```
 
-   [:arrow_up: Back to Top](#pages-router-table-of-contents)
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
 ### [App Router](#app-router)
 
@@ -1062,7 +1078,7 @@
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-3. ### How do you create a dynamic route in the App Router?
+3. ### How do you create a dynamic route with app router in Next.js?
 
    In the App Router, you create dynamic routes by using square brackets in the file name. For example, to create a dynamic blog post route, you would create a file named `[slug]/page.js` inside the `blog` directory.
 
