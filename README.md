@@ -29,14 +29,14 @@
 |   3 | [What is the purpose of the `pages or app` directory in Next.js?](#what-is-the-purpose-of-the-pages-or-app-directory-in-nextjs)                                      |
 |   4 | [What is file based routing in Next.js?](#what-is-file-based-routing-in-nextjs)                                                                                      |
 |   5 | [What are the key features of Next.js?](#what-are-the-key-features-of-nextjs)                                                                                        |
-|   8 | [What are the differences between Next.js and React.js](#what-are-the-differences-between-nextjs-and-reactjs)                                                        |
-|   6 | [What is the difference between client-side and server-side rendering in Next.js?](#what-is-the-difference-between-client-side-and-server-side-rendering-in-nextjs)  |
-|  14 | [What is the Link component in Next.js?](#what-is-the-link-component-in-nextjs)                                                                                      |
-|  15 | [What is the useRouter hook in Next.js?](#what-is-the-userouter-hook-in-nextjs)                                                                                      |
-|  65 | [What is the difference between push and replace in useRouter?](#what-is-the-difference-between-push-and-replace-in-userouter)                                       |
-|  16 | [How do you navigate programmatically in Next.js?](#how-do-you-navigate-programmatically-in-nextjs)                                                                  |
-|  24 | [How do you enable TypeScript in a Next.js project?](#how-do-you-enable-typescript-in-a-nextjs-project)                                                              |
-|  40 | [How do you handle environment variables in Next.js?](#how-do-you-handle-environment-variables-in-nextjs)                                                            |
+|   6 | [What are the differences between Next.js and React.js](#what-are-the-differences-between-nextjs-and-reactjs)                                                        |
+|   7 | [What is the difference between client-side and server-side rendering in Next.js?](#what-is-the-difference-between-client-side-and-server-side-rendering-in-nextjs)  |
+|   8 | [What is the Link component in Next.js?](#what-is-the-link-component-in-nextjs)                                                                                      |
+|   9 | [What is the useRouter hook in Next.js?](#what-is-the-userouter-hook-in-nextjs)                                                                                      |
+|  10 | [What is the difference between push and replace in useRouter?](#what-is-the-difference-between-push-and-replace-in-userouter)                                       |
+|  11 | [How do you navigate programmatically in Next.js?](#how-do-you-navigate-programmatically-in-nextjs)                                                                  |
+|  12 | [How do you enable TypeScript in a Next.js project?](#how-do-you-enable-typescript-in-a-nextjs-project)                                                              |
+|  13 | [How do you handle environment variables in Next.js?](#how-do-you-handle-environment-variables-in-nextjs)                                                            |
 |  25 | [What is API Routes in Next.js?](#what-is-api-routes-in-nextjs)                                                                                                      |
 |  37 | [What is the public folder in Next.js?](#what-is-the-public-folder-in-nextjs)                                                                                        |
 |  39 | [What is dynamic import in Next.js?](#what-is-dynamic-import-in-nextjs)                                                                                              |
@@ -1200,74 +1200,74 @@
 
 9. ### How do you add Google Analytics to a Next.js project?
 
-By using the next/script component to load the Google Analytics script.
+   By using the next/script component to load the Google Analytics script.
 
-```jsx
-import Script from "next/script";
+   ```jsx
+   import Script from "next/script";
 
-export default function MyApp() {
-  return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'YOUR_TRACKING_ID');
-        `}
-      </Script>
-    </>
-  );
-}
-```
+   export default function MyApp() {
+     return (
+       <>
+         <Script
+           src={`https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID`}
+           strategy="afterInteractive"
+         />
+         <Script id="google-analytics" strategy="afterInteractive">
+           {`
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+             gtag('config', 'YOUR_TRACKING_ID');
+           `}
+         </Script>
+       </>
+     );
+   }
+   ```
 
 [:arrow_up: Back to Top](#app-router-table-of-contents)
 
 10. ### How do you handle CORS in Next.js API routes?
 
-By setting appropriate headers in the API route response.
+    By setting appropriate headers in the API route response.
 
-```js
-export default function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.status(200).json({ message: "CORS enabled" });
-}
-```
+    ```js
+    export default function handler(req, res) {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      res.status(200).json({ message: "CORS enabled" });
+    }
+    ```
 
 [:arrow_up: Back to Top](#app-router-table-of-contents)
 
 10. ### How do you manage cookies in Next.js?
 
-By using the cookie package or next-cookies to read and write cookies in API routes or server-side functions.
+    By using the cookie package or next-cookies to read and write cookies in API routes or server-side functions.
 
-```js
-import Cookies from "cookies";
+    ```js
+    import Cookies from "cookies";
 
-export default function handler(req, res) {
-  const cookies = new Cookies(req, res);
-  cookies.set("token", "value", { httpOnly: true });
-  res.status(200).json({ message: "Cookie set" });
-}
-```
+    export default function handler(req, res) {
+      const cookies = new Cookies(req, res);
+      cookies.set("token", "value", { httpOnly: true });
+      res.status(200).json({ message: "Cookie set" });
+    }
+    ```
 
 [:arrow_up: Back to Top](#app-router-table-of-contents)
 
 10. ### How do you create custom error pages in Next.js?
 
-By creating error.js files in app directory.
+    By creating error.js files in app directory.
 
-```jsx
-// app/error.js
-export default function ErrorPage() {
-  return <h1>Custom Error Page</h1>;
-}
-```
+    ```jsx
+    // app/error.js
+    export default function ErrorPage() {
+      return <h1>Custom Error Page</h1>;
+    }
+    ```
 
 [:arrow_up: Back to Top](#app-router-table-of-contents)
 
