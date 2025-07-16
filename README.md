@@ -76,6 +76,14 @@
 |  50 | [How do you perform client-side data fetching in Next.js?](#how-do-you-perform-client-side-data-fetching-in-nextjs)                                                  |
 |  51 | [How do you set up GraphQL in Next.js?](#how-do-you-set-up-graphql-in-nextjs)                                                                                        |
 |  52 | [ How do you create API endpoints in Next.js?](#how-do-you-create-api-endpoints-in-nextjs)                                                                           |
+|  53 | [What is the use of next-seo in Next.js?](#what-is-the-use-of-next-seo-in-nextjs)                                                                                    |
+|  54 | [How do you handle routing in a Next.js app?](#how-do-you-handle-routing-in-a-nextjs-app)                                                                            |
+|  55 | [How do you configure next-i18next in Next.js?](#how-do-you-configure-next-i18next-in-nextjs)                                                                        |
+|  56 | [What is ssr: false in dynamic import?](#what-is-ssr-false-in-dynamic-import)                                                                                        |
+|  57 | [How do you add Google Analytics to a Next.js project?](#how-do-you-add-google-analytics-to-a-nextjs-project)                                                        |
+|  58 | [How do you add meta tags in Next.js?](#how-do-you-add-meta-tags-in-nextjs)                                                                                          |
+|  59 | [How to add sitemap in nextjs app?](#how-to-add-sitemap-in-nextjs-app)                                                                                               |
+|  60 | [How do you handle CORS in Next.js API routes?](#how-do-you-handle-cors-in-nextjs-api-routes)                                                                        |
 
 ### Pages Router Table of Contents
 
@@ -83,44 +91,28 @@
 | --: | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 |   1 | [What is the Pages Router in Next.js?](#what-is-the-pages-router-in-nextjs)                                                                    |
 |   2 | [How do you create a route in the Pages Router?](#how-do-you-create-a-route-in-the-pages-router)                                               |
-|   6 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                  |
-|   3 | [What is catch all segment in Next.js?](#what-is-catch-all-segment-in-nextjs)                                                                  |
-|  90 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                    |
-|  91 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                          |
-|  34 | [What is the \_error.js file in Next.js?](#what-is-the-_errorjs-file-in-nextjs)                                                                |
-|  24 | [How do you create a 404 page in Next.js?](#how-do-you-create-a-404-page-in-nextjs)                                                            |
-|  38 | [How do you fetch data in a Next.js page?](#how-do-you-fetch-data-in-a-nextjs-page)                                                            |
-|  10 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                             |
-|  11 | [What is getServerSideProps?](#what-is-getserversideprops)                                                                                     |
+|   3 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                  |
+|   4 | [What is catch all segment in Next.js?](#what-is-catch-all-segment-in-nextjs)                                                                  |
+|   5 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                    |
+|   6 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                          |
+|   7 | [What is the difference between \_app.js and \_document.js?](#what-is-the-difference-between-_appjs-and-_documentjs)                           |
+|   8 | [What is the \_error.js file in Next.js?](#what-is-the-_errorjs-file-in-nextjs)                                                                |
+|   9 | [How do you create a 404 page in Next.js?](#how-do-you-create-a-404-page-in-nextjs)                                                            |
+|  10 | [How do you fetch data in a Next.js page?](#how-do-you-fetch-data-in-a-nextjs-page)                                                            |
+|  11 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                             |
+|  12 | [What is getServerSideProps?](#what-is-getserversideprops)                                                                                     |
 |  13 | [What is the difference between getStaticProps and getServerSideProps?](#what-is-the-difference-between-getstaticprops-and-getserversideprops) |
-|  12 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                             |
-|  41 | [What is fallback in getStaticPaths?](#what-is-fallback-in-getstaticpaths)                                                                     |
-|  28 | [How to add authjs in nextjs app router?](#how-to-add-authjs-in-nextjs-app-router)                                                             |
-|  29 | [How to add credentials in nextjs app router?](#how-to-add-credentials-in-nextjs-app-router)                                                   |
-|  34 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                                                |
-|  35 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)                       |
-|  32 | [How to consider security in nextjs app router?](#how-to-consider-security-in-nextjs-app-router)                                               |
-|  78 | [What is next/script used for?](#what-is-nextscript-used-for)                                                                                  |
-|  97 | [What is the next/image component used for?](#what-is-the-nextimage-component-used-for)                                                        |
-|  31 | [How to add sitemap in nextjs app router?](#how-to-add-sitemap-in-nextjs-app-router)                                                           |
+|  14 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                             |
+|  15 | [What is fallback in getStaticPaths?](#what-is-fallback-in-getstaticpaths)                                                                     |
 
 ### App Router Table of Contents
 
 |  No | Contents                                                                                                                             |
 | --: | ------------------------------------------------------------------------------------------------------------------------------------ |
-|  23 | [What is the App Router in Next.js?](#what-is-the-app-router-in-nextjs)                                                              |
-|  22 | [How do you create a route in the App Router?](#how-do-you-create-a-route-in-the-app-router)                                         |
+|   1 | [What is the App Router in Next.js?](#what-is-the-app-router-in-nextjs)                                                              |
+|   2 | [How do you create a route in the App Router?](#how-do-you-create-a-route-in-the-app-router)                                         |
 |  39 | [How do you create a dynamic route with app router in Next.js?](#how-do-you-create-a-dynamic-route-with-app-router-in-nextjs)        |
 |  94 | [How do you create custom error pages in Next.js?](#how-do-you-create-custom-error-pages-in-nextjs)                                  |
-|  55 | [What is the use of next-seo in Next.js?](#what-is-the-use-of-next-seo-in-nextjs)                                                    |
-|  57 | [How do you configure next-i18next in Next.js?](#how-do-you-configure-next-i18next-in-nextjs)                                        |
-|  66 | [What is ssr: false in dynamic import?](#what-is-ssr-false-in-dynamic-import)                                                        |
-|  68 | [How do you add Google Analytics to a Next.js project?](#how-do-you-add-google-analytics-to-a-nextjs-project)                        |
-|  74 | [How do you perform client-side data fetching in Next.js?](#how-do-you-perform-client-side-data-fetching-in-nextjs)                  |
-|  75 | [What is the use of next-seo in Next.js?](#what-is-the-use-of-next-seo-in-nextjs)                                                    |
-|  77 | [How do you configure next-i18next in Next.js?](#how-do-you-configure-next-i18next-in-nextjs)                                        |
-|  79 | [How do you enable custom fonts in Next.js?](#how-do-you-enable-custom-fonts-in-nextjs)                                              |
-|  84 | [How do you handle CORS in Next.js API routes?](#how-do-you-handle-cors-in-nextjs-api-routes)                                        |
 |  86 | [How do you manage cookies in Next.js?](#how-do-you-manage-cookies-in-nextjs)                                                        |
 |  87 | [How do you handle authentication tokens in Next.js?](#how-do-you-handle-authentication-tokens-in-nextjs)                            |
 |  93 | [What is the useTranslation hook in Next.js?](#what-is-the-usetranslation-hook-in-nextjs)                                            |
@@ -129,6 +121,13 @@
 |  98 | [What is the next/link component used for?](#what-is-the-nextlink-component-used-for)                                                |
 |  99 | [What is the difference between pages and components directories?](#what-is-the-difference-between-pages-and-components-directories) |
 | 100 | [How do you handle middleware in Next.js?](#how-do-you-handle-middleware-in-nextjs)                                                  |
+|  28 | [How to add authjs in nextjs app router?](#how-to-add-authjs-in-nextjs-app-router)                                                   |
+|  29 | [How to add credentials in nextjs app router?](#how-to-add-credentials-in-nextjs-app-router)                                         |
+|  34 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                                      |
+|  35 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)             |
+|  32 | [How to consider security in nextjs app router?](#how-to-consider-security-in-nextjs-app-router)                                     |
+|  78 | [What is next/script used for?](#what-is-nextscript-used-for)                                                                        |
+|  97 | [What is the next/image component used for?](#what-is-the-nextimage-component-used-for)                                              |
 
 <!-- TOC End -->
 
@@ -829,6 +828,205 @@
 
     [:arrow_up: Back to Top](#common-table-of-contents)
 
+53. ### What is the use of next-seo in Next.js?
+
+    next-seo is a plugin for managing SEO metadata in Next.js applications, making it easier to set and manage meta tags, Open Graph tags, and other SEO-related elements.
+
+    ```jsx
+    import { DefaultSeo } from "next-seo";
+
+    function MyApp({ Component, pageProps }) {
+      return (
+        <>
+          <DefaultSeo
+            title="My Next.js App"
+            description="A description of my Next.js app"
+            openGraph={{
+              type: "website",
+              locale: "en_IE",
+              url: "https://www.example.com/",
+              site_name: "My Next.js App",
+            }}
+          />
+          <Component {...pageProps} />
+        </>
+      );
+    }
+
+    export default MyApp;
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+54. ### How do you handle routing in a Next.js app?
+
+    Using file-based routing in the pages or app directory.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+55. ### How do you configure next-i18next in Next.js?
+
+    By creating a next-i18next.config.js file and initializing it in the app.
+
+    ```js
+    // next-i18next.config.js
+    module.exports = {
+      i18n: {
+        defaultLocale: "en",
+        locales: ["en", "fr"],
+      },
+    };
+    ```
+
+    Then, initialize it in your app:
+
+    ```jsx
+    import { appWithTranslation } from "next-i18next";
+    import nextI18NextConfig from "../next-i18next.config";
+
+    function MyApp({ Component, pageProps }) {
+      return <Component {...pageProps} />;
+    }
+
+    export default appWithTranslation(MyApp, nextI18NextConfig);
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+56. ### What is ssr: false in dynamic import?
+
+    It disables server-side rendering for a dynamically imported component, ensuring it only loads on the client side.
+
+    ```jsx
+    import dynamic from "next/dynamic";
+
+    const DynamicComponent = dynamic(() => import("../components/hello"), {
+      ssr: false,
+    });
+
+    function Home() {
+      return (
+        <div>
+          <Header />
+          <DynamicComponent />
+          <Footer />
+        </div>
+      );
+    }
+
+    export default Home;
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+57. ### How do you add Google Analytics to a Next.js project?
+
+    By using the next/script component to load the Google Analytics script.
+
+    ```jsx
+    import Script from "next/script";
+
+    export default function MyApp() {
+      return (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'YOUR_TRACKING_ID');
+            `}
+          </Script>
+        </>
+      );
+    }
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+58. ### How do you add meta tags in Next.js?
+
+    Using the Head component from next/head.
+
+    ```jsx
+    import Head from "next/head";
+
+    function IndexPage() {
+      return (
+        <div>
+          <Head>
+            <title>My page title</title>
+            <meta
+              name="viewport"
+              content="initial-scale=1.0, width=device-width"
+            />
+            <meta property="og:title" content="My page title" key="title" />
+          </Head>
+          <p>Hello world!</p>
+        </div>
+      );
+    }
+
+    export default IndexPage;
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+59. ### How to add sitemap in nextjs app?
+
+    To add a sitemap in Next.js app router, you can use the `next-sitemap` package. First, install it:
+
+    ```bash
+    npm install next-sitemap
+    ```
+
+    Then, create a `next-sitemap.config.js` file in the root of your project and configure your sitemap options.
+
+    ```js
+    /** @type {import('next-sitemap').IConfig} */
+    module.exports = {
+      siteUrl: process.env.SITE_URL || "https://example.com",
+      generateRobotsTxt: true, // (optional)
+      changefreq: "daily", // (optional)
+      priority: 0.7, // (optional)
+      sitemapSize: 7000, // (optional)
+      exclude: ["/404", "/500"], // (optional)
+      robotsTxtOptions: {
+        policies: [
+          { userAgent: "*", allow: "/" },
+          { userAgent: "Googlebot", disallow: "/private" },
+        ],
+      },
+    };
+    ```
+
+    Finally, run the following command to generate the sitemap:
+
+    ```bash
+    npx next-sitemap
+    ```
+
+    This will create a `sitemap.xml` file in the `public` directory of your Next.js app.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+60. ### How do you handle CORS in Next.js API routes?
+
+    By setting appropriate headers in the API route response.
+
+    ```js
+    export default function handler(req, res) {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      res.status(200).json({ message: "CORS enabled" });
+    }
+    ```
+
 ### [Pages Router](#pages-router)
 
 [:arrow_up: Back to Top](#groups)
@@ -1096,43 +1294,18 @@
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-4. ### What is the use of next-seo in Next.js?
+4. ### How do you create custom error pages in Next.js?
 
-   next-seo is a plugin for managing SEO metadata in Next.js applications, making it easier to set and manage meta tags, Open Graph tags, and other SEO-related elements.
+   By creating error.js files in app directory.
 
    ```jsx
-   import { DefaultSeo } from "next-seo";
-
-   function MyApp({ Component, pageProps }) {
-     return (
-       <>
-         <DefaultSeo
-           title="My Next.js App"
-           description="A description of my Next.js app"
-           openGraph={{
-             type: "website",
-             locale: "en_IE",
-             url: "https://www.example.com/",
-             site_name: "My Next.js App",
-           }}
-         />
-         <Component {...pageProps} />
-       </>
-     );
+   // app/error.js
+   export default function ErrorPage() {
+     return <h1>Custom Error Page</h1>;
    }
-
-   export default MyApp;
    ```
 
-   [:arrow_up: Back to Top](#app-router-table-of-contents)
-
-5. ### How do you handle routing in a Next.js app?
-
-   Using file-based routing in the pages or app directory.
-
-   [:arrow_up: Back to Top](#app-router-table-of-contents)
-
-6. ### How do you handle authentication tokens in Next.js?
+5. ### How do you handle authentication tokens in Next.js?
 
    By using cookies or local storage to store authentication tokens and accessing them in API routes or server-side functions.
 
@@ -1147,103 +1320,6 @@
    ```
 
    [:arrow_up: Back to Top](#app-router-table-of-contents)
-
-7. ### How do you configure next-i18next in Next.js?
-
-   By creating a next-i18next.config.js file and initializing it in the app.
-
-   ```js
-   // next-i18next.config.js
-   module.exports = {
-     i18n: {
-       defaultLocale: "en",
-       locales: ["en", "fr"],
-     },
-   };
-   ```
-
-   Then, initialize it in your app:
-
-   ```jsx
-   import { appWithTranslation } from "next-i18next";
-   import nextI18NextConfig from "../next-i18next.config";
-
-   function MyApp({ Component, pageProps }) {
-     return <Component {...pageProps} />;
-   }
-
-   export default appWithTranslation(MyApp, nextI18NextConfig);
-   ```
-
-   [:arrow_up: Back to Top](#app-router-table-of-contents)
-
-8. ### What is ssr: false in dynamic import?
-
-   It disables server-side rendering for a dynamically imported component, ensuring it only loads on the client side.
-
-   ```jsx
-   import dynamic from "next/dynamic";
-
-   const DynamicComponent = dynamic(() => import("../components/hello"), {
-     ssr: false,
-   });
-
-   function Home() {
-     return (
-       <div>
-         <Header />
-         <DynamicComponent />
-         <Footer />
-       </div>
-     );
-   }
-
-   export default Home;
-   ```
-
-   [:arrow_up: Back to Top](#app-router-table-of-contents)
-
-9. ### How do you add Google Analytics to a Next.js project?
-
-   By using the next/script component to load the Google Analytics script.
-
-   ```jsx
-   import Script from "next/script";
-
-   export default function MyApp() {
-     return (
-       <>
-         <Script
-           src={`https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID`}
-           strategy="afterInteractive"
-         />
-         <Script id="google-analytics" strategy="afterInteractive">
-           {`
-             window.dataLayer = window.dataLayer || [];
-             function gtag(){dataLayer.push(arguments);}
-             gtag('js', new Date());
-             gtag('config', 'YOUR_TRACKING_ID');
-           `}
-         </Script>
-       </>
-     );
-   }
-   ```
-
-[:arrow_up: Back to Top](#app-router-table-of-contents)
-
-10. ### How do you handle CORS in Next.js API routes?
-
-    By setting appropriate headers in the API route response.
-
-    ```js
-    export default function handler(req, res) {
-      res.setHeader("Access-Control-Allow-Origin", "*");
-      res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-      res.status(200).json({ message: "CORS enabled" });
-    }
-    ```
 
 [:arrow_up: Back to Top](#app-router-table-of-contents)
 
@@ -1261,22 +1337,9 @@
     }
     ```
 
-[:arrow_up: Back to Top](#app-router-table-of-contents)
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-10. ### How do you create custom error pages in Next.js?
-
-    By creating error.js files in app directory.
-
-    ```jsx
-    // app/error.js
-    export default function ErrorPage() {
-      return <h1>Custom Error Page</h1>;
-    }
-    ```
-
-[:arrow_up: Back to Top](#app-router-table-of-contents)
-
-11. ### What is the purpose of next/dynamic?
+1.  ### What is the purpose of next/dynamic?
 
     For dynamic importing of components with support for SSR.
 
@@ -1306,79 +1369,13 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-12. ### How do you add meta tags in Next.js?
-
-    Using the Head component from next/head.
-
-    ```jsx
-    import Head from "next/head";
-
-    function IndexPage() {
-      return (
-        <div>
-          <Head>
-            <title>My page title</title>
-            <meta
-              name="viewport"
-              content="initial-scale=1.0, width=device-width"
-            />
-            <meta property="og:title" content="My page title" key="title" />
-          </Head>
-          <p>Hello world!</p>
-        </div>
-      );
-    }
-
-    export default IndexPage;
-    ```
-
-    [:arrow_up: Back to Top](#app-router-table-of-contents)
-
-13. ### How to add sitemap in nextjs app router?
-
-    To add a sitemap in Next.js app router, you can use the `next-sitemap` package. First, install it:
-
-    ```bash
-    npm install next-sitemap
-    ```
-
-    Then, create a `next-sitemap.config.js` file in the root of your project and configure your sitemap options.
-
-    ```js
-    /** @type {import('next-sitemap').IConfig} */
-    module.exports = {
-      siteUrl: process.env.SITE_URL || "https://example.com",
-      generateRobotsTxt: true, // (optional)
-      changefreq: "daily", // (optional)
-      priority: 0.7, // (optional)
-      sitemapSize: 7000, // (optional)
-      exclude: ["/404", "/500"], // (optional)
-      robotsTxtOptions: {
-        policies: [
-          { userAgent: "*", allow: "/" },
-          { userAgent: "Googlebot", disallow: "/private" },
-        ],
-      },
-    };
-    ```
-
-    Finally, run the following command to generate the sitemap:
-
-    ```bash
-    npx next-sitemap
-    ```
-
-    This will create a `sitemap.xml` file in the `public` directory of your Next.js app.
-
-    [:arrow_up: Back to Top](#app-router-table-of-contents)
-
-14. ### How do you handle form submissions in Next.js?
+1.  ### How do you handle form submissions in Next.js?
 
     Using client-side form handling or API routes for server-side handling.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-15. ### How to consider security in nextjs app router?
+1.  ### How to consider security in nextjs app router?
 
     To consider security in Next.js app router, you can follow these best practices:
 
@@ -1392,55 +1389,55 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-16. ### What is the useTranslation hook in Next.js?
+1.  ### What is the useTranslation hook in Next.js?
 
     A hook provided by next-i18next for internationalization.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-17. ### What is AMP in Next.js?
+1.  ### What is AMP in Next.js?
 
     A framework for creating fast, mobile-friendly pages.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-18. ### How do you enable AMP in Next.js?
+1.  ### How do you enable AMP in Next.js?
 
     By adding export const config = { amp: true } to a page.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-19. ### What is the next/image component used for?
+1.  ### What is the next/image component used for?
 
     For image optimization and responsive images.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-20. ### What is the next/link component used for?
+1.  ### What is the next/link component used for?
 
     For client-side navigation between pages.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-21. ### What is the difference between pages and components directories?
+1.  ### What is the difference between pages and components directories?
 
     Pages are routes, components are reusable UI elements.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-22. ### How do you handle middleware in Next.js?
+1.  ### How do you handle middleware in Next.js?
 
     By creating a middleware.js file in the app directory.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-23. ### How do you implement authentication in Next.js?
+1.  ### How do you implement authentication in Next.js?
 
     Using next-auth or a custom authentication solution.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-24. ### How to add authjs in nextjs app router?
+1.  ### How to add authjs in nextjs app router?
 
     To add authjs in nextjs app router, you can use the `next-auth` package. First, install it:
 
@@ -1503,7 +1500,7 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-25. ### How to add credentials in nextjs app router?
+1.  ### How to add credentials in nextjs app router?
 
     To add credentials in Next.js app router, you can use the `next-auth` package with the Credentials provider. First, install it:
 
@@ -1559,9 +1556,9 @@
     });
     ```
 
-    [:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-26. ### What is use server in Next.js?
+1.  ### What is use server in Next.js?
 
     The `use server` directive is used to indicate that a function should be executed on the server side. It allows you to write server-side logic in a component or function that can be called from the client side.
 
@@ -1574,9 +1571,9 @@
     }
     ```
 
-    [:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-27. ### Difference between using & not using use server in Next.js?
+1.  ### Difference between using & not using use server in Next.js?
 
     **Using `use server`**: The function is executed on the server side, allowing access to server-side resources and APIs. It can be used to perform operations that require server-side logic, such as database queries or API calls.
 
@@ -1624,4 +1621,4 @@
       }
       ```
 
-    [:arrow_up: Back to Top](#table-of-contents)
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
