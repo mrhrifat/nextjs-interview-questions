@@ -93,6 +93,14 @@
 |  67 | [What is the next/image component used for?](#what-is-the-nextimage-component-used-for)                                                                              |
 |  68 | [What is the next/link component used for?](#what-is-the-nextlink-component-used-for)                                                                                |
 |  69 | [What is the difference between pages and components directories?](#what-is-the-difference-between-pages-and-components-directories)                                 |
+|  70 | [How do you handle static files in Next.js?](#how-do-you-handle-static-files-in-nextjs)                                                                              |
+|  71 | [List some common performance optimization techniques in Next.js?](#list-some-common-performance-optimization-techniques-in-nextjs)                                  |
+|  72 | [Mention some common security practices in Next.js?](#mention-some-common-security-practices-in-nextjs)                                                              |
+|  73 | [Are there any limitations of Next.js?](#are-there-any-limitations-of-nextjs)                                                                                        |
+|  74 | [Is Next.js suitable for large-scale applications?](#is-nextjs-suitable-for-large-scale-applications)                                                                |
+|  75 | [How nextjs are full stack framework?](#how-nextjs-are-full-stack-framework)                                                                                         |
+|  76 | [Prevent API routes from being accessed by the client?](#prevent-api-routes-from-being-accessed-by-the-client)                                                       |
+|  77 | [JWT Token in Next.js?](#jwt-token-in-nextjs)                                                                                                                        |
 
 ### Pages Router Table of Contents
 
@@ -130,6 +138,7 @@
 |  10 | [How to add credentials in nextjs app router?](#how-to-add-credentials-in-nextjs-app-router)                                  |
 |  11 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                               |
 |  12 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)      |
+|  13 | [How do you handle API routes in Next.js?](#how-do-you-handle-api-routes-in-nextjs)                                           |
 
 <!-- TOC End -->
 
@@ -1127,6 +1136,108 @@
 
     [:arrow_up: Back to Top](#common-table-of-contents)
 
+70. ### How do you handle static files in Next.js?
+
+    By placing them in the `public` directory, which is served at the root URL.
+
+    ```
+    public/
+    ├── images/
+    │   └── logo.png
+    └── favicon.ico
+    ```
+
+    You can access these files using `/images/logo.png` or `/favicon.ico`.
+
+    [:arrow_up: Back to Top](#common-table-of-contents)
+
+71. ### List some common performance optimization techniques in Next.js.
+
+    - Use static generation (SSG) for pages that can be pre-rendered.
+    - Implement incremental static regeneration (ISR) for dynamic content.
+    - Use the next/image component for optimized images.
+    - Enable code splitting and tree shaking.
+    - Use dynamic imports for large components.
+    - Optimize CSS with CSS modules or styled-components.
+    - Leverage caching strategies for API routes.
+
+    [:arrow_up: Back to Top](#common-table-of-contents)
+
+72. ### Mention some common security practices in Next.js.
+
+    - Use HTTPS for secure communication.
+    - Implement authentication and authorization.
+    - Sanitize user input to prevent XSS attacks.
+    - Use environment variables for sensitive data.
+    - Regularly update dependencies to patch vulnerabilities.
+    - Implement Content Security Policy (CSP) headers.
+    - Use secure cookies with `HttpOnly` and `Secure` flags.
+
+    [:arrow_up: Back to Top](#common-table-of-contents)
+
+73. ### Are there any limitations of Next.js?
+
+    - Limited support for non-React libraries.
+    - Requires a Node.js server for server-side rendering.
+    - Some features may not be compatible with static site generation.
+    - Learning curve for developers new to React or Next.js.
+
+    [:arrow_up: Back to Top](#common-table-of-contents)
+
+74. ### Is Next.js suitable for large-scale applications?
+
+    Yes, Next.js is suitable for large-scale applications due to its features like server-side rendering, static site generation, and API routes. It also supports code splitting, dynamic imports, and incremental static regeneration, which help in managing large codebases efficiently.
+
+    [:arrow_up: Back to Top](#common-table-of-contents)
+
+75. ### How nextjs are full stack framework?
+
+    Next.js is considered a full-stack framework because it allows developers to build both the frontend and backend of web applications within a single codebase. It provides features like server-side rendering, static site generation, API routes, and database integration, enabling the development of complete web applications without needing separate frameworks for the frontend and backend.
+
+    [:arrow_up: Back to Top](#common-table-of-contents)
+
+76. ### Prevent API routes from being accessed by the client?
+
+    To prevent API routes from being accessed by the client, you can implement authentication and authorization checks in your API route handlers. This ensures that only authenticated users can access the API endpoints.
+
+    ```js
+    export default function handler(req, res) {
+      const token = req.headers.authorization;
+
+      if (!token || !isValidToken(token)) {
+        return res.status(401).json({ error: "Unauthorized" });
+      }
+
+      // Handle the request
+      res.status(200).json({ message: "Success" });
+    }
+    ```
+
+    [:arrow_up: Back to Top](#common-table-of-contents)
+
+77. ### JWT Token in Next.js?
+
+    JSON Web Tokens (JWT) can be used in Next.js for authentication and authorization. You can create a JWT token upon user login and store it in a cookie or local storage. Then, you can verify the token in API routes or server-side functions to authenticate users.
+
+    ```js
+    import jwt from "jsonwebtoken";
+
+    // Create a JWT token
+    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    // Verify the JWT token
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+      if (err) {
+        return res.status(401).json({ error: "Invalid token" });
+      }
+      // Proceed with authenticated user
+    });
+    ```
+
+    [:arrow_up: Back to Top](#common-table-of-contents)
+
 ### [Pages Router](#pages-router)
 
 [:arrow_up: Back to Top](#groups)
@@ -1627,5 +1738,18 @@
         return <div>{data}</div>;
       }
       ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+13. ### How do you handle API routes in Next.js?
+
+    By creating files in the `app/api` directory, where each file corresponds to an API endpoint.
+
+    ```jsx
+    // app/api/hello/route.js
+    export async function GET(request) {
+      return new Response("Hello, World!");
+    }
+    ```
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
