@@ -1753,3 +1753,95 @@
     ```
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+14. ### How do middleware work in Next.js?
+
+    Middleware in Next.js allows you to run code before a request is completed. You can use it to modify the request or response, redirect users, or perform authentication checks.
+
+    ```js
+    // app/middleware.js
+    import { NextResponse } from "next/server";
+    export function middleware(request) {
+      // Perform some logic here
+      if (request.nextUrl.pathname === "/") {
+        return NextResponse.redirect(new URL("/home", request.url));
+      }
+      return NextResponse.next();
+    }
+    ```
+
+    You can also specify which paths the middleware should apply to:
+
+    ```js
+    // app/middleware.js
+    export const config = {
+      matcher: ["/about/:path*", "/blog/:path*"],
+    };
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+15. ### What is form action in Next.js?
+
+    The `formAction` is a special attribute used in Next.js to define the action URL for a form submission. It allows you to specify a server-side function that will handle the form submission.
+
+    ```jsx
+    // app/form-example/page.js
+    "use server";
+
+    export async function handleSubmit(formData) {
+      const name = formData.get("name");
+      console.log("Form submitted with name:", name);
+      return { success: true };
+    }
+
+    export default function FormExample() {
+      return (
+        <form action={handleSubmit}>
+          <input type="text" name="name" />
+          <button type="submit">Submit</button>
+        </form>
+      );
+    }
+    ```
+
+    In this example, when the form is submitted, the `handleSubmit` function will be called on the server side with the form data.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+16. ### How do you handle file uploads in Next.js?
+
+    By using the `formData` API in a server action to handle file uploads.
+
+    ```jsx
+    // app/upload/page.js
+    "use server";
+
+    export async function handleUpload(formData) {
+      const file = formData.get("file");
+      // Process the file (e.g., save it to a storage service)
+      console.log("File uploaded:", file.name);
+      return { success: true };
+    }
+
+    export default function UploadPage() {
+      return (
+        <form action={handleUpload} encType="multipart/form-data">
+          <input type="file" name="file" />
+          <button type="submit">Upload</button>
+        </form>
+      );
+    }
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+17. ### Mention some common use cases for the App Router in Next.js.
+
+    - Creating nested routes with layouts.
+    - Implementing server-side rendering for dynamic content.
+    - Handling API routes for backend functionality.
+    - Managing authentication and authorization flows.
+    - Building complex applications with shared layouts and components.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
