@@ -139,6 +139,10 @@
 |  11 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                               |
 |  12 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)      |
 |  13 | [How do you handle API routes in Next.js?](#how-do-you-handle-api-routes-in-nextjs)                                           |
+|  14 | [How do middleware work in Next.js?](#how-do-middleware-work-in-nextjs)                                                       |
+|  15 | [What is form action in Next.js?](#what-is-form-action-in-nextjs)                                                             |
+|  16 | [How do you handle file uploads in Next.js?](#how-do-you-handle-file-uploads-in-nextjs)                                       |
+|  17 | [Mention some common use cases for the App Router in Next.js?](#mention-some-common-use-cases-for-the-app-router-in-nextjs)   |
 
 <!-- TOC End -->
 
