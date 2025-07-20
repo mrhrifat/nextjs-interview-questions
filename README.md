@@ -124,25 +124,28 @@
 
 ### App Router Table of Contents
 
-|  No | Contents                                                                                                                      |
-| --: | ----------------------------------------------------------------------------------------------------------------------------- |
-|   1 | [What is the App Router in Next.js?](#what-is-the-app-router-in-nextjs)                                                       |
-|   2 | [How do you create a route in the App Router?](#how-do-you-create-a-route-in-the-app-router)                                  |
-|   3 | [How do you create a dynamic route with app router in Next.js?](#how-do-you-create-a-dynamic-route-with-app-router-in-nextjs) |
-|   4 | [How do you create custom error pages in Next.js?](#how-do-you-create-custom-error-pages-in-nextjs)                           |
-|   5 | [How do you handle form submissions in Next.js?](#how-do-you-handle-form-submissions-in-nextjs)                               |
-|   6 | [How do you handle middleware in Next.js?](#how-do-you-handle-middleware-in-nextjs)                                           |
-|   7 | [How do you implement authentication in Next.js?](#how-do-you-implement-authentication-in-nextjs)                             |
-|   8 | [How to add authjs in nextjs app router?](#how-to-add-authjs-in-nextjs-app-router)                                            |
-|   9 | [How do you handle authentication tokens in Next.js?](#how-do-you-handle-authentication-tokens-in-nextjs)                     |
-|  10 | [How to add credentials in nextjs app router?](#how-to-add-credentials-in-nextjs-app-router)                                  |
-|  11 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                               |
-|  12 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)      |
-|  13 | [How do you handle API routes in Next.js?](#how-do-you-handle-api-routes-in-nextjs)                                           |
-|  14 | [How do middleware work in Next.js?](#how-do-middleware-work-in-nextjs)                                                       |
-|  15 | [What is form action in Next.js?](#what-is-form-action-in-nextjs)                                                             |
-|  16 | [How do you handle file uploads in Next.js?](#how-do-you-handle-file-uploads-in-nextjs)                                       |
-|  17 | [Mention some common use cases for the App Router in Next.js?](#mention-some-common-use-cases-for-the-app-router-in-nextjs)   |
+|  No | Contents                                                                                                                                                                      |
+| --: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   1 | [What is the App Router in Next.js?](#what-is-the-app-router-in-nextjs)                                                                                                       |
+|   2 | [How do you create a route in the App Router?](#how-do-you-create-a-route-in-the-app-router)                                                                                  |
+|   3 | [How do you create a dynamic route with app router in Next.js?](#how-do-you-create-a-dynamic-route-with-app-router-in-nextjs)                                                 |
+|   4 | [How do you create custom error pages in Next.js?](#how-do-you-create-custom-error-pages-in-nextjs)                                                                           |
+|   5 | [How do you handle form submissions in Next.js?](#how-do-you-handle-form-submissions-in-nextjs)                                                                               |
+|   6 | [How do you handle middleware in Next.js?](#how-do-you-handle-middleware-in-nextjs)                                                                                           |
+|   7 | [How do you implement authentication in Next.js?](#how-do-you-implement-authentication-in-nextjs)                                                                             |
+|   8 | [How to add authjs in nextjs app router?](#how-to-add-authjs-in-nextjs-app-router)                                                                                            |
+|   9 | [How do you handle authentication tokens in Next.js?](#how-do-you-handle-authentication-tokens-in-nextjs)                                                                     |
+|  10 | [How to add credentials in nextjs app router?](#how-to-add-credentials-in-nextjs-app-router)                                                                                  |
+|  11 | [What is use server in Next.js?](#what-is-use-server-in-nextjs)                                                                                                               |
+|  12 | [Difference between using & not using use server in Next.js?](#difference-between-using--not-using-use-server-in-nextjs)                                                      |
+|  13 | [How do you handle API routes in Next.js?](#how-do-you-handle-api-routes-in-nextjs)                                                                                           |
+|  14 | [How do middleware work in Next.js?](#how-do-middleware-work-in-nextjs)                                                                                                       |
+|  15 | [What is form action in Next.js?](#what-is-form-action-in-nextjs)                                                                                                             |
+|  16 | [How do you handle file uploads in Next.js?](#how-do-you-handle-file-uploads-in-nextjs)                                                                                       |
+|  17 | [Mention some common use cases for the App Router in Next.js?](#mention-some-common-use-cases-for-the-app-router-in-nextjs)                                                   |
+|  18 | [One of the main differences between the App Router and Pages Router?](#one-of-the-main-differences-between-the-app-router-and-the-pages-router-in-nextjs)                    |
+|  19 | [What is the use of the `use client` directive in Next.js?](#what-is-the-use-of-the-use-client-directive-in-nextjs)                                                           |
+|  20 | [Is it possible to use both App Router and Pages Router in the same Next.js project?](#is-it-possible-to-use-both-app-router-and-pages-router-in-the-same-nextjs-application) |
 
 <!-- TOC End -->
 
