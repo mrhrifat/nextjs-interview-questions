@@ -1242,6 +1242,32 @@
 
     [:arrow_up: Back to Top](#common-table-of-contents)
 
+78. ### How do you handle global styles in the App Router?
+
+    By creating a `globals.css` file in the `app` directory and importing it in the `_app.js` file.
+
+    ```css
+    /* app/globals.css */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    }
+    ```
+
+    Then import it in your `_app.js`:
+
+    ```jsx
+    // app/_app.js
+    import "../globals.css";
+
+    export default function MyApp({ Component, pageProps }) {
+      return <Component {...pageProps} />;
+    }
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
 ### [Pages Router](#pages-router)
 
 [:arrow_up: Back to Top](#groups)
@@ -1847,5 +1873,31 @@
     - Handling API routes for backend functionality.
     - Managing authentication and authorization flows.
     - Building complex applications with shared layouts and components.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+18. ### One of the main differences between the App Router and the Pages Router in Next.js?
+
+    The App Router allows for nested routes, layouts, and server components, while the Pages Router uses a flat file structure for routing and does not support nested routes or layouts.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+19. ### What is the use of the `use client` directive in Next.js?
+
+    The `use client` directive is used to indicate that a component should be rendered on the client side. It allows you to write client-side logic in a component that can be executed in the browser.
+
+    ```jsx
+    "use client";
+
+    export default function ClientComponent() {
+      return <div>This component is rendered on the client side.</div>;
+    }
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+20. ### Is it possible to use both App Router and Pages Router in the same Next.js application?
+
+    Yes, it is possible to use both App Router and Pages Router in the same Next.js application. You can have the `app` directory for the App Router and the `pages` directory for the Pages Router, allowing you to take advantage of both routing systems.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
