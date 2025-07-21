@@ -1904,3 +1904,86 @@
     Yes, it is possible to use both App Router and Pages Router in the same Next.js application. You can have the `app` directory for the App Router and the `pages` directory for the Pages Router, allowing you to take advantage of both routing systems.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+21. ### Are there any limitations of the App Router in Next.js?
+
+    Yes, some limitations of the App Router include:
+
+    - It is only available in Next.js 13 and later versions.
+    - It may not support all features available in the Pages Router.
+    - Some third-party libraries may not be compatible with the App Router.
+    - Many features from the Pages Router, such as `getStaticProps` and `getServerSideProps`, are not available in the App Router.
+    - The App Router is still evolving, and some features may change or be added in future releases.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+22. ### Explain the concept of authorization in middleware & routes in Next.js.
+
+    Authorization in middleware and routes in Next.js involves checking if a user has the necessary permissions to access a specific route or perform an action. This can be done by verifying user roles, permissions, or tokens in the middleware function before allowing access to the route.
+
+    ```js
+    // app/middleware.js
+    import { NextResponse } from "next/server";
+
+    export function middleware(request) {
+      const token = request.cookies.get("authToken");
+
+      if (!token) {
+        return NextResponse.redirect(new URL("/login", request.url));
+      }
+
+      // Additional authorization logic can go here
+
+      return NextResponse.next();
+    }
+
+    export const config = {
+      matcher: ["/protected/:path*"], // Apply middleware to protected routes
+    };
+    ```
+
+    In this example, the middleware checks for an authentication token in the cookies. If the token is not present, it redirects the user to the login page. If the token is valid, it allows access to the protected routes.
+
+    ```js
+    // app/api/protected/route.js
+    import { NextResponse } from "next/server";
+    export async function GET(request) {
+      const token = request.cookies.get("authToken");
+
+      if (!token) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
+
+      // Handle the request for authorized users
+      return NextResponse.json({ message: "Protected data" });
+    }
+    ```
+
+    In this example, the API route checks for the authentication token in the request cookies. If the token is not present, it returns a 401 Unauthorized response. If the token is valid, it returns the protected data.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+23. ### The difference between `use server` and `use client` in Next.js?
+
+    - **`use server`**: Indicates that the function should be executed on the server side. It allows you to write server-side logic that can be called from the client side.
+
+    - **`use client`**: Indicates that the component should be rendered on the client side. It allows you to write client-side logic that can be executed in the browser.
+
+    ```jsx
+    // Example of use server
+    "use server";
+
+    export async function fetchData() {
+      const response = await fetch("https://api.example.com/data");
+      return response.json();
+    }
+
+    // Example of use client
+    ("use client");
+
+    export default function ClientComponent() {
+      return <div>This component is rendered on the client side.</div>;
+    }
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
