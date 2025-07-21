@@ -146,6 +146,9 @@
 |  18 | [One of the main differences between the App Router and Pages Router?](#one-of-the-main-differences-between-the-app-router-and-the-pages-router-in-nextjs)                    |
 |  19 | [What is the use of the `use client` directive in Next.js?](#what-is-the-use-of-the-use-client-directive-in-nextjs)                                                           |
 |  20 | [Is it possible to use both App Router and Pages Router in the same Next.js project?](#is-it-possible-to-use-both-app-router-and-pages-router-in-the-same-nextjs-application) |
+|  21 | [Are there any limitations of the App Router in Next.js?](#are-there-any-limitations-of-the-app-router-in-nextjs)                                                             |
+|  22 | [Explain the concept of authorization in middleware & routes in Next.js?](#explain-the-concept-of-authorization-in-middleware--routes-in-nextjs)                              |
+|  23 | [The difference between `use server` and `use client` in Next.js?](#the-difference-between-use-server-and-use-client-in-nextjs)                                               |
 
 <!-- TOC End -->
 
