@@ -121,6 +121,8 @@
 |  13 | [What is the difference between getStaticProps and getServerSideProps?](#what-is-the-difference-between-getstaticprops-and-getserversideprops) |
 |  14 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                             |
 |  15 | [What is fallback in getStaticPaths?](#what-is-fallback-in-getstaticpaths)                                                                     |
+|  16 | [How do you handle API routes in Next.js?](#how-do-you-handle-api-routes-in-nextjs)                                                            |
+|  17 | [How you handle custom error pages in Next.js?](#how-do-you-handle-custom-error-pages-in-nextjs)                                               |
 
 ### App Router Table of Contents
 
@@ -1517,6 +1519,7 @@
     [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
 17. ### How do you handle custom error pages in Next.js?
+
     By creating a `_error.js` file in the `pages` directory.
 
     ```jsx
