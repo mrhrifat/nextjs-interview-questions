@@ -1501,6 +1501,39 @@
 
     [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
+16. ### How do you handle API routes in Next.js?
+
+    By creating files in the `pages/api` directory, which will be treated as API endpoints.
+
+    ```jsx
+    // pages/api/hello.js
+    export default function handler(req, res) {
+      res.status(200).json({ name: "John Doe" });
+    }
+    ```
+
+    You can access this API route at `/api/hello`.
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+17. ### How do you handle custom error pages in Next.js?
+    By creating a `_error.js` file in the `pages` directory.
+
+    ```jsx
+    // pages/_error.js
+    export default function Error({ statusCode }) {
+      return (
+        <p>
+          {statusCode
+            ? `An error ${statusCode} occurred on server`
+            : "An error occurred on client"}
+        </p>
+      );
+    }
+    ```
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
 ### [App Router](#app-router)
 
 [:arrow_up: Back to Top](#groups)
