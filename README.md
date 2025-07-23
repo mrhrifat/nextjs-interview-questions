@@ -1569,31 +1569,6 @@
 
     [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-20. ### What is the purpose of next/head in Next.js?
-
-    The `next/head` component is used to manage the `<head>` section of a Next.js page, allowing you to set meta tags, titles, and other head elements dynamically.
-
-    ```jsx
-    import Head from "next/head";
-
-    export default function Home() {
-      return (
-        <div>
-          <Head>
-            <title>My Next.js App</title>
-            <meta
-              name="description"
-              content="A description of my Next.js app"
-            />
-          </Head>
-          <h1>Hello World!</h1>
-        </div>
-      );
-    }
-    ```
-
-    [:arrow_up: Back to Top](#pages-router-table-of-contents)
-
 ### [App Router](#app-router)
 
 [:arrow_up: Back to Top](#groups)
