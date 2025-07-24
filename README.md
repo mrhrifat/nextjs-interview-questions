@@ -151,6 +151,10 @@
 |  21 | [Are there any limitations of the App Router in Next.js?](#are-there-any-limitations-of-the-app-router-in-nextjs)                                                             |
 |  22 | [Explain the concept of authorization in middleware & routes in Next.js?](#explain-the-concept-of-authorization-in-middleware--routes-in-nextjs)                              |
 |  23 | [The difference between `use server` and `use client` in Next.js?](#the-difference-between-use-server-and-use-client-in-nextjs)                                               |
+|  24 | [Understand the concept of server actions in Next.js?](#understand-the-concept-of-server-actions-in-nextjs)                                                                   |
+|  25 | [Whats are the benifit of using server actions in Next.js?](#whats-are-the-benifit-of-using-server-actions-in-nextjs)                                                         |
+|  26 | [Whats are the problem of using server actions in Next.js?](#whats-are-the-problem-of-using-server-actions-in-nextjs)                                                         |
+|  27 | [Alternative options instead of server actions in Next.js?](#alternative-options-instead-of-server-actions-in-nextjs)                                                         |
 
 <!-- TOC End -->
 
