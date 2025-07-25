@@ -2167,3 +2167,69 @@
     ```
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+29. ### JWT Token in Next.js App Router?
+
+    JSON Web Tokens (JWT) can be used in the Next.js App Router for authentication and authorization. You can create a JWT token upon user login and store it in a cookie or local storage. Then, you can verify the token in API routes or server-side functions to authenticate users.
+
+    ```js
+    import jwt from "jsonwebtoken";
+
+    // Create a JWT token
+    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    // Verify the JWT token
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+      if (err) {
+        return res.status(401).json({ error: "Invalid token" });
+      }
+      // Proceed with authenticated user
+    });
+    ```
+
+    Using it on application:
+
+    ```jsx
+    // app/api/auth/route.js
+    import { NextResponse } from "next/server";
+    import jwt from "jsonwebtoken";
+    export async function POST(request) {
+      const { token } = await request.json();
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        return NextResponse.json({ userId: decoded.userId });
+      } catch (error) {
+        return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+      }
+    }
+    ```
+
+    You can also use JWT tokens for protecting API routes:
+
+    ```js
+    // app/api/protected/route.js
+    import { NextResponse } from "next/server";
+    import jwt from "jsonwebtoken";
+    export async function GET(request) {
+      const token = request.cookies.get("authToken");
+
+      if (!token) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
+
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        // Handle the request for authorized users
+        return NextResponse.json({
+          message: "Protected data",
+          userId: decoded.userId,
+        });
+      } catch (error) {
+        return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+      }
+    }
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
