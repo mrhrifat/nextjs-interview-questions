@@ -155,6 +155,7 @@
 |  25 | [Whats are the benifit of using server actions in Next.js?](#whats-are-the-benifit-of-using-server-actions-in-nextjs)                                                         |
 |  26 | [Whats are the problem of using server actions in Next.js?](#whats-are-the-problem-of-using-server-actions-in-nextjs)                                                         |
 |  27 | [Alternative options instead of server actions in Next.js?](#alternative-options-instead-of-server-actions-in-nextjs)                                                         |
+|  28 | [Alternative solutions example of not using server actions in Next.js?](#alternative-solutions-example-of-not-using-server-actions-in-nextjs)                                 |
 
 <!-- TOC End -->
 
