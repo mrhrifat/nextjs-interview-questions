@@ -157,6 +157,8 @@
 |  27 | [Alternative options instead of server actions in Next.js?](#alternative-options-instead-of-server-actions-in-nextjs)                                                         |
 |  28 | [Alternative solutions example of not using server actions in Next.js?](#alternative-solutions-example-of-not-using-server-actions-in-nextjs)                                 |
 |  29 | [JWT Token in Next.js App Router?](#jwt-token-in-nextjs-app-router)                                                                                                           |
+|  30 | [Context of JWT Token in Next.js App Router?](#context-of-jwt-token-in-nextjs-app-router)                                                                                     |
+|   3 | [Is App Router better than Pages Router in Next.js?](#is-app-router-better-than-pages-router-in-nextjs)                                                                       |
 
 <!-- TOC End -->
 
