@@ -1577,6 +1577,134 @@
 
     [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
+20. ### How do you handle middleware in Next.js with the Pages Router?
+
+    By creating a custom server or using API routes to implement middleware logic.
+
+    ```js
+    // pages/api/middleware.js
+    export default function middleware(req, res, next) {
+      // Custom middleware logic
+      if (req.headers.authorization) {
+        next(); // Proceed to the next handler
+      } else {
+        res.status(401).json({ error: "Unauthorized" });
+      }
+    }
+    ```
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+21. ### How do you handle form submissions in Next.js with the Pages Router?
+
+    By using client-side form handling or API routes for server-side handling.
+
+    ```jsx
+    // pages/contact.js
+    export default function Contact() {
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          body: formData,
+        });
+        if (response.ok) {
+          alert("Form submitted successfully!");
+        } else {
+          alert("Error submitting form.");
+        }
+      };
+
+      return (
+        <form onSubmit={handleSubmit}>
+          <input name="name" type="text" placeholder="Name" required />
+          <input name="email" type="email" placeholder="Email" required />
+          <button type="submit">Submit</button>
+        </form>
+      );
+    }
+    ```
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+22. ### Are there any performance optimizations available in the Pages Router?
+
+    Yes, you can use features like static generation (SSG), server-side rendering (SSR), and incremental static regeneration (ISR) to optimize performance in the Pages Router.
+
+    - **Static Generation (SSG)**: Pre-render pages at build time.
+    - **Server-Side Rendering (SSR)**: Render pages on each request.
+    - **Incremental Static Regeneration (ISR)**: Update static pages after the build.
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+23. ### How do you handle internationalization in Next.js with the Pages Router?
+
+    By using the `next-i18next` library or the built-in internationalization features in Next.js.
+
+    ```js
+    // next.config.js
+    module.exports = {
+      i18n: {
+        locales: ["en", "fr"],
+        defaultLocale: "en",
+      },
+    };
+    ```
+
+    Then, you can use the `useTranslation` hook from `next-i18next` to handle translations in your components.
+
+    ```jsx
+    import { useTranslation } from "next-i18next";
+
+    export default function Home() {
+      const { t } = useTranslation("common");
+      return <h1>{t("welcome")}</h1>;
+    }
+    ```
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+24. ### How do you handle SEO in Next.js with the Pages Router?
+
+    By using the `next/head` component to manage meta tags and other SEO-related elements.
+
+    ```jsx
+    import Head from "next/head";
+
+    export default function Home() {
+      return (
+        <>
+          <Head>
+            <title>My Next.js App</title>
+            <meta
+              name="description"
+              content="A description of my Next.js app"
+            />
+          </Head>
+          <h1>Welcome to My Next.js App</h1>
+        </>
+      );
+    }
+    ```
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+25. ### How do you handle static assets in Next.js with the Pages Router?
+
+    By placing static assets in the `public` directory, which is served at the root URL.
+
+    ```
+    public/
+    ├── images/
+    │   └── logo.png
+    └── favicon.ico
+    ```
+
+    You can access these files using `/images/logo.png` or `/favicon.ico`.
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
 ### [App Router](#app-router)
 
 [:arrow_up: Back to Top](#groups)
