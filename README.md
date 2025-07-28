@@ -123,6 +123,9 @@
 |  15 | [What is fallback in getStaticPaths?](#what-is-fallback-in-getstaticpaths)                                                                     |
 |  16 | [How do you handle API routes in Next.js?](#how-do-you-handle-api-routes-in-nextjs)                                                            |
 |  17 | [How you handle custom error pages in Next.js?](#how-do-you-handle-custom-error-pages-in-nextjs)                                               |
+|  18 | [Are there any limitations of the Pages Router in Next.js?](#are-there-any-limitations-of-the-pages-router-in-nextjs)                          |
+|  19 | [How do you handle authentication in Next.js with the Pages Router?](#how-do-you-handle-authentication-in-nextjs-with-the-pages-router)        |
+|  20 | [How do you handle middleware in Next.js with the Pages Router?](#how-do-you-handle-middleware-in-nextjs-with-the-pages-router)                |
 
 ### App Router Table of Contents
 
