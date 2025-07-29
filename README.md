@@ -104,28 +104,31 @@
 
 ### Pages Router Table of Contents
 
-|  No | Contents                                                                                                                                       |
-| --: | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-|   1 | [What is the Pages Router in Next.js?](#what-is-the-pages-router-in-nextjs)                                                                    |
-|   2 | [How do you create a route in the Pages Router?](#how-do-you-create-a-route-in-the-pages-router)                                               |
-|   3 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                  |
-|   4 | [What is catch all segment in Next.js?](#what-is-catch-all-segment-in-nextjs)                                                                  |
-|   5 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                    |
-|   6 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                          |
-|   7 | [What is the difference between \_app.js and \_document.js?](#what-is-the-difference-between-_appjs-and-_documentjs)                           |
-|   8 | [What is the \_error.js file in Next.js?](#what-is-the-_errorjs-file-in-nextjs)                                                                |
-|   9 | [How do you create a 404 page in Next.js?](#how-do-you-create-a-404-page-in-nextjs)                                                            |
-|  10 | [How do you fetch data in a Next.js page?](#how-do-you-fetch-data-in-a-nextjs-page)                                                            |
-|  11 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                             |
-|  12 | [What is getServerSideProps?](#what-is-getserversideprops)                                                                                     |
-|  13 | [What is the difference between getStaticProps and getServerSideProps?](#what-is-the-difference-between-getstaticprops-and-getserversideprops) |
-|  14 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                             |
-|  15 | [What is fallback in getStaticPaths?](#what-is-fallback-in-getstaticpaths)                                                                     |
-|  16 | [How do you handle API routes in Next.js?](#how-do-you-handle-api-routes-in-nextjs)                                                            |
-|  17 | [How you handle custom error pages in Next.js?](#how-do-you-handle-custom-error-pages-in-nextjs)                                               |
-|  18 | [Are there any limitations of the Pages Router in Next.js?](#are-there-any-limitations-of-the-pages-router-in-nextjs)                          |
-|  19 | [How do you handle authentication in Next.js with the Pages Router?](#how-do-you-handle-authentication-in-nextjs-with-the-pages-router)        |
-|  20 | [How do you handle middleware in Next.js with the Pages Router?](#how-do-you-handle-middleware-in-nextjs-with-the-pages-router)                |
+|  No | Contents                                                                                                                                            |
+| --: | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   1 | [What is the Pages Router in Next.js?](#what-is-the-pages-router-in-nextjs)                                                                         |
+|   2 | [How do you create a route in the Pages Router?](#how-do-you-create-a-route-in-the-pages-router)                                                    |
+|   3 | [How do you create a dynamic route in Next.js?](#how-do-you-create-a-dynamic-route-in-nextjs)                                                       |
+|   4 | [What is catch all segment in Next.js?](#what-is-catch-all-segment-in-nextjs)                                                                       |
+|   5 | [What is the \_app.js file in Next.js?](#what-is-the-_appjs-file-in-nextjs)                                                                         |
+|   6 | [What is the \_document.js file in Next.js?](#what-is-the-_documentjs-file-in-nextjs)                                                               |
+|   7 | [What is the difference between \_app.js and \_document.js?](#what-is-the-difference-between-_appjs-and-_documentjs)                                |
+|   8 | [What is the \_error.js file in Next.js?](#what-is-the-_errorjs-file-in-nextjs)                                                                     |
+|   9 | [How do you create a 404 page in Next.js?](#how-do-you-create-a-404-page-in-nextjs)                                                                 |
+|  10 | [How do you fetch data in a Next.js page?](#how-do-you-fetch-data-in-a-nextjs-page)                                                                 |
+|  11 | [What is getStaticProps?](#what-is-getstaticprops)                                                                                                  |
+|  12 | [What is getServerSideProps?](#what-is-getserversideprops)                                                                                          |
+|  13 | [What is the difference between getStaticProps and getServerSideProps?](#what-is-the-difference-between-getstaticprops-and-getserversideprops)      |
+|  14 | [What is getStaticPaths?](#what-is-getstaticpaths)                                                                                                  |
+|  15 | [What is fallback in getStaticPaths?](#what-is-fallback-in-getstaticpaths)                                                                          |
+|  16 | [How do you handle API routes in Next.js?](#how-do-you-handle-api-routes-in-nextjs)                                                                 |
+|  17 | [How you handle custom error pages in Next.js?](#how-do-you-handle-custom-error-pages-in-nextjs)                                                    |
+|  18 | [Are there any limitations of the Pages Router](#are-there-any-limitations-of-the-pages-router)                                                     |
+|  19 | [How do you handle authentication in Next.js with the Pages Router?](#how-do-you-handle-authentication-in-nextjs-with-the-pages-router)             |
+|  20 | [How do you handle middleware in Next.js with the Pages Router?](#how-do-you-handle-middleware-in-nextjs-with-the-pages-router)                     |
+|  21 | [How do you handle form submissions in Next.js with the Pages Router?](#how-do-you-handle-form-submissions-in-nextjs-with-the-pages-router)         |
+|  22 | [Are there any performance optimizations available in the Pages Router?](#are-there-any-performance-optimizations-available-in-the-pages-router)    |
+|  23 | [How do you handle internationalization in Next.js with the Pages Router?](#how-do-you-handle-internationalization-in-nextjs-with-the-pages-router) |
 
 ### App Router Table of Contents
 
