@@ -129,6 +129,9 @@
 |  21 | [How do you handle form submissions in Next.js with the Pages Router?](#how-do-you-handle-form-submissions-in-nextjs-with-the-pages-router)         |
 |  22 | [Are there any performance optimizations available in the Pages Router?](#are-there-any-performance-optimizations-available-in-the-pages-router)    |
 |  23 | [How do you handle internationalization in Next.js with the Pages Router?](#how-do-you-handle-internationalization-in-nextjs-with-the-pages-router) |
+|  24 | [How do you handle seo in Next.js with the Pages Router?](#how-do-you-handle-seo-in-nextjs-with-the-pages-router)                                   |
+|  25 | [How do you handle static assets in Next.js with the Pages Router?](#how-do-you-handle-static-assets-in-nextjs-with-the-pages-router)               |
+
 
 ### App Router Table of Contents
 
