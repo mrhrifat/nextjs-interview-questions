@@ -132,7 +132,6 @@
 |  24 | [How do you handle seo in Next.js with the Pages Router?](#how-do-you-handle-seo-in-nextjs-with-the-pages-router)                                   |
 |  25 | [How do you handle static assets in Next.js with the Pages Router?](#how-do-you-handle-static-assets-in-nextjs-with-the-pages-router)               |
 
-
 ### App Router Table of Contents
 
 |  No | Contents                                                                                                                                                                      |
@@ -1711,6 +1710,78 @@
     ```
 
     You can access these files using `/images/logo.png` or `/favicon.ico`.
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+26. ### How cache works in Next.js with the Pages Router?
+
+    Next.js uses a built-in caching mechanism for static assets and API routes. You can also implement custom caching strategies using HTTP headers or libraries like `next-cache`.
+
+    - **Static Assets**: Cached by default with a long cache lifetime.
+    - **API Routes**: Can be cached using HTTP headers like `Cache-Control`.
+
+    ```js
+    export default function handler(req, res) {
+      res.setHeader("Cache-Control", "public, max-age=3600, immutable");
+      res.status(200).json({ message: "Cached response" });
+    }
+    ```
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+27. ### Cache revalidation in Next.js with the Pages Router?
+
+    Cache revalidation can be handled using the `revalidate` option in `getStaticProps` or by setting appropriate HTTP headers in API routes.
+
+    - **Using `revalidate`**: Automatically revalidates static pages after a specified time.
+
+    ```jsx
+    export async function getStaticProps() {
+      const res = await fetch("https://api.example.com/data");
+      const data = await res.json();
+
+      return {
+        props: { data },
+        revalidate: 10, // Revalidate every 10 seconds
+      };
+    }
+    ```
+
+    - **Using HTTP Headers**: Set cache control headers in API routes.
+
+    ```js
+    export default function handler(req, res) {
+      res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate");
+      res.status(200).json({ message: "Revalidated response" });
+    }
+    ```
+
+    [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+28. ### Optimizing images in Next.js with the Pages Router?
+
+    By using the `next/image` component, which automatically optimizes images for performance.
+
+    ```jsx
+    import Image from "next/image";
+
+    export default function Home() {
+      return (
+        <div>
+          <h1>My Next.js App</h1>
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={500}
+            height={300}
+            quality={75}
+          />
+        </div>
+      );
+    }
+    ```
+
+    The `next/image` component provides features like lazy loading, responsive images, and automatic format selection.
 
     [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
