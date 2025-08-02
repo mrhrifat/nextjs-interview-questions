@@ -832,6 +832,7 @@
 
     ```bash
     npm install @apollo/client graphql
+    yarn add @apollo/client graphql
     ```
 
     Then, set up Apollo Client in your \_app.js:
@@ -945,11 +946,11 @@
 
     function Home() {
       return (
-        <div>
+        <section>
           <Header />
           <DynamicComponent />
           <Footer />
-        </div>
+        </section>
       );
     }
 
