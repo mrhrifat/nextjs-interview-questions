@@ -1810,7 +1810,6 @@
 
     [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
-
 ### [App Router](#app-router)
 
 [:arrow_up: Back to Top](#groups)
@@ -2484,5 +2483,117 @@
     The App Router offers more flexibility and features compared to the Pages Router, such as nested routes, layouts, and server components. It is designed for building complex applications with shared layouts and components.
 
     However, the choice between App Router and Pages Router depends on your specific use case. If you need simple routing without nested routes or layouts, the Pages Router may be sufficient.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+32. ### How to handle global state management in Next.js with the App Router?
+
+    You can handle global state management in Next.js with the App Router using libraries like Redux, Zustand, or React Context API. These libraries allow you to create a global store that can be accessed from any component in your application.
+
+    - **Using React Context API**:
+
+    ```jsx
+    // app/context/GlobalState.js
+    import { createContext, useContext, useState } from "react";
+
+    const GlobalStateContext = createContext();
+
+    export function GlobalStateProvider({ children }) {
+      const [state, setState] = useState({ user: null });
+
+      return (
+        <GlobalStateContext.Provider value={{ state, setState }}>
+          {children}
+        </GlobalStateContext.Provider>
+      );
+    }
+
+    export function useGlobalState() {
+      return useContext(GlobalStateContext);
+    }
+    ```
+
+    Then wrap your application with the `GlobalStateProvider`:
+
+    ```jsx
+    // app/layout.js
+    import { GlobalStateProvider } from "./context/GlobalState";
+
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en">
+          <body>
+            <GlobalStateProvider>{children}</GlobalStateProvider>
+          </body>
+        </html>
+      );
+    }
+    ```
+
+    Now you can access the global state in any component using the `useGlobalState` hook.
+
+    ```jsx
+    // app/page.js
+    import { useGlobalState } from "./context/GlobalState";
+
+    export default function HomePage() {
+      const { state, setState } = useGlobalState();
+
+      return (
+        <div>
+          <h1>Welcome, {state.user ? state.user.name : "Guest"}</h1>
+          <button onClick={() => setState({ user: { name: "John Doe" } })}>
+            Log In
+          </button>
+        </div>
+      );
+    }
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+33. ### fetch api of nextjs app router?
+
+    In the Next.js App Router, you can use the `fetch` API to make HTTP requests to external APIs or your own API routes. The `fetch` function is available globally in both server and client components.
+
+    - **Example of using fetch in a server component**:
+
+    ```jsx
+    // app/api/data/route.js
+    export async function GET() {
+      const response = await fetch("https://api.example.com/data");
+      const data = await response.json();
+      return new Response(JSON.stringify(data), {
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+    ```
+
+    - **Example of using fetch in a client component**:
+
+    ```jsx
+    // app/page.js
+    import { useEffect, useState } from "react";
+
+    export default function HomePage() {
+      const [data, setData] = useState(null);
+
+      useEffect(() => {
+        async function fetchData() {
+          const response = await fetch("/api/data");
+          const result = await response.json();
+          setData(result);
+        }
+        fetchData();
+      }, []);
+
+      return (
+        <div>
+          <h1>Data from API</h1>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+        </div>
+      );
+    }
+    ```
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
