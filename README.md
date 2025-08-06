@@ -131,6 +131,11 @@
 |  23 | [How do you handle internationalization in Next.js with the Pages Router?](#how-do-you-handle-internationalization-in-nextjs-with-the-pages-router) |
 |  24 | [How do you handle seo in Next.js with the Pages Router?](#how-do-you-handle-seo-in-nextjs-with-the-pages-router)                                   |
 |  25 | [How do you handle static assets in Next.js with the Pages Router?](#how-do-you-handle-static-assets-in-nextjs-with-the-pages-router)               |
+|  26 | [How cache works in Next.js with the Pages Router?](#how-cache-works-in-nextjs-with-the-pages-router)                                               |
+|  27 | [Cache revalidation in Next.js with the Pages Router?](#cache-revalidation-in-nextjs-with-the-pages-router)                                         |
+|  28 | [Optimizing images in Next.js with the Pages Router?](#optimizing-images-in-nextjs-with-the-pages-router)                                           |
+|  29 | [When to choose Pages Router over App Router in Next.js?](#when-to-choose-pages-router-over-app-router-in-nextjs)                                   |
+|  30 | [When to choose App Router over Pages Router in Next.js?](#when-to-choose-app-router-over-pages-router-in-nextjs)                                   |
 
 ### App Router Table of Contents
 
