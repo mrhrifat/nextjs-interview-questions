@@ -257,6 +257,7 @@
 
    <Link href="/">Home</Link>
    <Link href="/about">About</Link>
+   <Link href="/contact" prefetch={false}>Contact</Link>
    ```
 
    [:arrow_up: Back to Top](#common-table-of-contents)
