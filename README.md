@@ -343,7 +343,7 @@
 
 16. ### How do you handle environment variables in Next.js?
 
-    By adding them to .env.local and accessing via process.env.
+    By adding them to `.env.local` and accessing via `process.env.`
 
     [:arrow_up: Back to Top](#common-table-of-contents)
 
