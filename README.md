@@ -1,6 +1,6 @@
 ## NextJS Interview Questions & Answers
 
-:rocket: This repository aimed to contains 500 nextjs interview questions & answers with exmample.
+:rocket: This repository aimed to contains 500 nextjs interview questions & answers with exmample. 
 
 ---
 
@@ -1299,6 +1299,8 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
+---
+
 ### [Pages Router](#pages-router)
 
 [:arrow_up: Back to Top](#groups)
@@ -1815,6 +1817,8 @@
     The App Router is suitable for larger applications or when you want to take advantage of the latest features in Next.js 13.
 
     [:arrow_up: Back to Top](#pages-router-table-of-contents)
+
+---
 
 ### [App Router](#app-router)
 
