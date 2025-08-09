@@ -177,7 +177,7 @@
 
 ---
 
-<!-- Question & Answers Start -->
+<!-- Common Question & Answers Start -->
 
 ### [Common](#common)
 
@@ -1299,7 +1299,12 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
+
+<!-- Common Question & Answers End -->
+
 ---
+
+<!-- Pages Question & Answers Start -->
 
 ### [Pages Router](#pages-router)
 
@@ -1818,7 +1823,12 @@
 
     [:arrow_up: Back to Top](#pages-router-table-of-contents)
 
+
+<!-- Page Question & Answers End -->
+
 ---
+
+<!-- App Question & Answers Start -->
 
 ### [App Router](#app-router)
 
@@ -2607,3 +2617,5 @@
     ```
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+<!-- App Question & Answers Start -->
