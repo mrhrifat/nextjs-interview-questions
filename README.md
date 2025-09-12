@@ -172,8 +172,8 @@
 |  29 | [JWT Token in Next.js App Router?](#jwt-token-in-nextjs-app-router)                                                                                                           |
 |  30 | [Context of JWT Token in Next.js App Router?](#context-of-jwt-token-in-nextjs-app-router)                                                                                     |
 |  31 | [Is App Router better than Pages Router in Next.js?](#is-app-router-better-than-pages-router-in-nextjs)                                                                       |
-|  32 | [How to handle global state management in Next.js with the App Router?](#how-to-handle-global-state-management-in-nextjs-with-the-app-router)                               |
-|  33 | [What is the fetch API in Next.js App Router?](#what-is-the-fetch-api-in-nextjs-app-router)                                                                                  |
+|  32 | [How to handle global state management in Next.js with the App Router?](#how-to-handle-global-state-management-in-nextjs-with-the-app-router)                                 |
+|  33 | [What is the fetch API in Next.js App Router?](#what-is-the-fetch-api-in-nextjs-app-router)                                                                                   |
 |  34 | [How do you create route groups in the App Router?](#how-do-you-create-route-groups-in-the-app-router)                                                                        |
 |  35 | [What are parallel routes in Next.js App Router?](#what-are-parallel-routes-in-nextjs-app-router)                                                                             |
 |  36 | [How do you implement intercepting routes in App Router?](#how-do-you-implement-intercepting-routes-in-app-router)                                                            |
@@ -2697,8 +2697,9 @@
     ```
 
     The `(..)` convention indicates that you want to intercept routes at the same level. Intercepting routes use conventions like:
+
     - `(.)` - match segments on the same level
-    - `(..)` - match segments one level above  
+    - `(..)` - match segments one level above
     - `(..)(..)` - match segments two levels above
     - `(...)` - match segments from the root app directory
 
@@ -2740,7 +2741,7 @@
 
     ```jsx
     // app/not-found.js
-    import Link from 'next/link';
+    import Link from "next/link";
 
     export default function NotFound() {
       return (
@@ -2757,15 +2758,15 @@
 
     ```jsx
     // app/page.js
-    import { notFound } from 'next/navigation';
+    import { notFound } from "next/navigation";
 
     export default function Page({ params }) {
       const post = getPost(params.id);
-      
+
       if (!post) {
         notFound();
       }
-      
+
       return <div>{post.title}</div>;
     }
     ```
@@ -2779,19 +2780,17 @@
     ```jsx
     // app/template.js
     export default function Template({ children }) {
-      return (
-        <div className="template-wrapper">
-          {children}
-        </div>
-      );
+      return <div className="template-wrapper">{children}</div>;
     }
     ```
 
     Key differences from layout:
+
     - **Layout**: State is preserved, DOM elements are not re-created
     - **Template**: New instance on navigation, DOM elements are re-created
 
     Templates are useful when you need:
+
     - CSS/JS animations on route changes
     - Features that rely on `useEffect` and `useState`
     - To change the default browser behavior
@@ -2847,11 +2846,13 @@
     In the App Router, API routes are now called "Route Handlers" and use the `route.js` file convention instead of the pages-based approach.
 
     **Pages Router (API Routes)**:
+
     ```
     pages/api/users.js
     ```
 
     **App Router (Route Handlers)**:
+
     ```
     app/api/users/route.js
     ```
@@ -2876,7 +2877,7 @@
     }
 
     export async function DELETE(request) {
-      await deleteUser(request.nextUrl.searchParams.get('id'));
+      await deleteUser(request.nextUrl.searchParams.get("id"));
       return new Response(null, { status: 204 });
     }
     ```
@@ -2891,7 +2892,7 @@
 
     ```jsx
     // app/page.js
-    import { Suspense } from 'react';
+    import { Suspense } from "react";
 
     async function UserProfile({ userId }) {
       const user = await getUserData(userId); // This can be slow
@@ -2902,7 +2903,7 @@
       const posts = await getUserPosts(userId); // This can also be slow
       return (
         <div>
-          {posts.map(post => (
+          {posts.map((post) => (
             <div key={post.id}>{post.title}</div>
           ))}
         </div>
@@ -2925,6 +2926,7 @@
     ```
 
     Benefits of streaming:
+
     - Faster initial page load
     - Better perceived performance
     - Progressive enhancement
@@ -2937,12 +2939,13 @@
     React Server Components (RSC) are a new React feature that allows components to be rendered on the server. In the App Router, components are Server Components by default.
 
     **Server Components** (default):
+
     ```jsx
     // app/page.js - This is a Server Component
     async function ServerComponent() {
-      const data = await fetch('https://api.example.com/data');
+      const data = await fetch("https://api.example.com/data");
       const result = await data.json();
-      
+
       return (
         <div>
           <h1>Server Rendered Data</h1>
@@ -2953,30 +2956,31 @@
     ```
 
     **Client Components** (opt-in with "use client"):
+
     ```jsx
     // app/components/ClientComponent.js
-    'use client';
-    
-    import { useState } from 'react';
-    
+    "use client";
+
+    import { useState } from "react";
+
     export default function ClientComponent() {
       const [count, setCount] = useState(0);
-      
+
       return (
-        <button onClick={() => setCount(count + 1)}>
-          Count: {count}
-        </button>
+        <button onClick={() => setCount(count + 1)}>Count: {count}</button>
       );
     }
     ```
 
     **Benefits of Server Components**:
+
     - Direct access to server-side resources (databases, file system)
     - No JavaScript bundle sent to client
     - Improved performance and SEO
     - Automatic code splitting
 
     **When to use Client Components**:
+
     - Interactive features (event handlers, state)
     - Browser-only APIs (localStorage, geolocation)
     - React hooks (useState, useEffect)
