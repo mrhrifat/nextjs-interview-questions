@@ -172,6 +172,18 @@
 |  29 | [JWT Token in Next.js App Router?](#jwt-token-in-nextjs-app-router)                                                                                                           |
 |  30 | [Context of JWT Token in Next.js App Router?](#context-of-jwt-token-in-nextjs-app-router)                                                                                     |
 |  31 | [Is App Router better than Pages Router in Next.js?](#is-app-router-better-than-pages-router-in-nextjs)                                                                       |
+|  32 | [How to handle global state management in Next.js with the App Router?](#how-to-handle-global-state-management-in-nextjs-with-the-app-router)                               |
+|  33 | [What is the fetch API in Next.js App Router?](#what-is-the-fetch-api-in-nextjs-app-router)                                                                                  |
+|  34 | [How do you create route groups in the App Router?](#how-do-you-create-route-groups-in-the-app-router)                                                                        |
+|  35 | [What are parallel routes in Next.js App Router?](#what-are-parallel-routes-in-nextjs-app-router)                                                                             |
+|  36 | [How do you implement intercepting routes in App Router?](#how-do-you-implement-intercepting-routes-in-app-router)                                                            |
+|  37 | [What is the loading.js file in App Router?](#what-is-the-loadingjs-file-in-app-router)                                                                                       |
+|  38 | [How do you handle not-found pages in App Router?](#how-do-you-handle-not-found-pages-in-app-router)                                                                          |
+|  39 | [What is the template.js file in App Router?](#what-is-the-templatejs-file-in-app-router)                                                                                     |
+|  40 | [How do you implement nested layouts in App Router?](#how-do-you-implement-nested-layouts-in-app-router)                                                                      |
+|  41 | [What are route handlers vs API routes in App Router?](#what-are-route-handlers-vs-api-routes-in-app-router)                                                                  |
+|  42 | [How do you handle streaming and suspense in App Router?](#how-do-you-handle-streaming-and-suspense-in-app-router)                                                            |
+|  43 | [What is React Server Components (RSC) in App Router?](#what-is-react-server-components-rsc-in-app-router)                                                                    |
 
 <!-- TOC End -->
 
@@ -2196,7 +2208,7 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-18. ### One of the main differences between the App Router and the Pages Router in Next.js?
+18. ### One of the main differences between the App Router and Pages Router in Next.js?
 
     The App Router allows for nested routes, layouts, and server components, while the Pages Router uses a flat file structure for routing and does not support nested routes or layouts.
 
@@ -2216,9 +2228,9 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-20. ### Is it possible to use both App Router and Pages Router in the same Next.js application?
+20. ### Is it possible to use both App Router and Pages Router in the same Next.js project?
 
-    Yes, it is possible to use both App Router and Pages Router in the same Next.js application. You can have the `app` directory for the App Router and the `pages` directory for the Pages Router, allowing you to take advantage of both routing systems.
+    Yes, it is possible to use both App Router and Pages Router in the same Next.js project. You can have the `app` directory for the App Router and the `pages` directory for the Pages Router, allowing you to take advantage of both routing systems.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
@@ -2264,6 +2276,7 @@
     ```js
     // app/api/protected/route.js
     import { NextResponse } from "next/server";
+    import jwt from "jsonwebtoken";
     export async function GET(request) {
       const token = request.cookies.get("authToken");
 
@@ -2271,8 +2284,16 @@
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
       }
 
-      // Handle the request for authorized users
-      return NextResponse.json({ message: "Protected data" });
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        // Handle the request for authorized users
+        return NextResponse.json({
+          message: "Protected data",
+          userId: decoded.userId,
+        });
+      } catch (error) {
+        return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+      }
     }
     ```
 
@@ -2292,7 +2313,8 @@
 
     export async function fetchData() {
       const response = await fetch("https://api.example.com/data");
-      return response.json();
+      const data = await response.json();
+      return data;
     }
 
     // Example of use client
@@ -2557,7 +2579,7 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-33. ### fetch api of nextjs app router?
+33. ### What is the fetch API in Next.js App Router?
 
     In the Next.js App Router, you can use the `fetch` API to make HTTP requests to external APIs or your own API routes. The `fetch` function is available globally in both server and client components.
 
@@ -2600,5 +2622,363 @@
       );
     }
     ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+34. ### How do you create route groups in the App Router?
+
+    Route groups allow you to organize routes without affecting the URL structure. You create them by wrapping folder names in parentheses `()`.
+
+    ```
+    app/
+    ├── (marketing)/
+    │   ├── about/
+    │   │   └── page.js     // /about
+    │   └── contact/
+    │       └── page.js     // /contact
+    ├── (shop)/
+    │   ├── products/
+    │   │   └── page.js     // /products
+    │   └── cart/
+    │       └── page.js     // /cart
+    └── layout.js           // Shared layout
+    ```
+
+    Route groups are useful for organizing code, creating different layouts for different sections, or conditionally including layouts.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+35. ### What are parallel routes in Next.js App Router?
+
+    Parallel routes allow you to render multiple pages simultaneously in the same layout. They are defined using slots with the `@` convention.
+
+    ```
+    app/
+    ├── layout.js
+    ├── page.js
+    ├── @analytics/
+    │   └── page.js
+    └── @team/
+        └── page.js
+    ```
+
+    ```jsx
+    // app/layout.js
+    export default function Layout({ children, analytics, team }) {
+      return (
+        <div>
+          <div>{children}</div>
+          <div>{analytics}</div>
+          <div>{team}</div>
+        </div>
+      );
+    }
+    ```
+
+    This allows you to render independent pages that can load at different speeds and handle their own loading and error states.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+36. ### How do you implement intercepting routes in App Router?
+
+    Intercepting routes allow you to load a route from another part of your application while keeping the context of the current page, similar to modals.
+
+    ```
+    app/
+    ├── feed/
+    │   └── page.js
+    ├── photo/
+    │   └── [id]/
+    │       └── page.js
+    └── @modal/
+        └── (..)photo/
+            └── [id]/
+                └── page.js
+    ```
+
+    The `(..)` convention indicates that you want to intercept routes at the same level. Intercepting routes use conventions like:
+    - `(.)` - match segments on the same level
+    - `(..)` - match segments one level above  
+    - `(..)(..)` - match segments two levels above
+    - `(...)` - match segments from the root app directory
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+37. ### What is the loading.js file in App Router?
+
+    The `loading.js` file creates loading UI that shows instantly while route segments are loading. It automatically wraps the page and its children in a React Suspense boundary.
+
+    ```jsx
+    // app/dashboard/loading.js
+    export default function Loading() {
+      return (
+        <div className="loading">
+          <p>Loading dashboard...</p>
+          <div className="spinner"></div>
+        </div>
+      );
+    }
+    ```
+
+    ```
+    app/
+    ├── dashboard/
+    │   ├── loading.js      // Loading UI for dashboard
+    │   ├── page.js
+    │   └── settings/
+    │       ├── loading.js  // Loading UI for settings
+    │       └── page.js
+    ```
+
+    The loading UI will be shown immediately on navigation and can be nested for granular loading states.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+38. ### How do you handle not-found pages in App Router?
+
+    You can create custom not-found pages using the `not-found.js` file. This file defines UI to render when the `notFound()` function is thrown within a route segment.
+
+    ```jsx
+    // app/not-found.js
+    import Link from 'next/link';
+
+    export default function NotFound() {
+      return (
+        <div>
+          <h2>Not Found</h2>
+          <p>Could not find requested resource</p>
+          <Link href="/">Return Home</Link>
+        </div>
+      );
+    }
+    ```
+
+    You can also trigger the not-found page programmatically:
+
+    ```jsx
+    // app/page.js
+    import { notFound } from 'next/navigation';
+
+    export default function Page({ params }) {
+      const post = getPost(params.id);
+      
+      if (!post) {
+        notFound();
+      }
+      
+      return <div>{post.title}</div>;
+    }
+    ```
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+39. ### What is the template.js file in App Router?
+
+    The `template.js` file is similar to `layout.js` but creates a new instance for each of its children on navigation. This means state is not preserved and effects are re-synchronized.
+
+    ```jsx
+    // app/template.js
+    export default function Template({ children }) {
+      return (
+        <div className="template-wrapper">
+          {children}
+        </div>
+      );
+    }
+    ```
+
+    Key differences from layout:
+    - **Layout**: State is preserved, DOM elements are not re-created
+    - **Template**: New instance on navigation, DOM elements are re-created
+
+    Templates are useful when you need:
+    - CSS/JS animations on route changes
+    - Features that rely on `useEffect` and `useState`
+    - To change the default browser behavior
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+40. ### How do you implement nested layouts in App Router?
+
+    Nested layouts are implemented by creating `layout.js` files in different route segments. Layouts are nested automatically based on the folder structure.
+
+    ```
+    app/
+    ├── layout.js           // Root layout
+    ├── page.js             // Home page
+    └── dashboard/
+        ├── layout.js       // Dashboard layout
+        ├── page.js         // Dashboard page
+        └── settings/
+            ├── layout.js   // Settings layout
+            └── page.js     // Settings page
+    ```
+
+    ```jsx
+    // app/layout.js (Root Layout)
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en">
+          <body>
+            <nav>Global Navigation</nav>
+            {children}
+          </body>
+        </html>
+      );
+    }
+
+    // app/dashboard/layout.js
+    export default function DashboardLayout({ children }) {
+      return (
+        <div className="dashboard">
+          <aside>Dashboard Sidebar</aside>
+          <main>{children}</main>
+        </div>
+      );
+    }
+    ```
+
+    When visiting `/dashboard/settings`, all three layouts (root, dashboard, settings) will be rendered in a nested structure.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+41. ### What are route handlers vs API routes in App Router?
+
+    In the App Router, API routes are now called "Route Handlers" and use the `route.js` file convention instead of the pages-based approach.
+
+    **Pages Router (API Routes)**:
+    ```
+    pages/api/users.js
+    ```
+
+    **App Router (Route Handlers)**:
+    ```
+    app/api/users/route.js
+    ```
+
+    ```jsx
+    // app/api/users/route.js
+    export async function GET(request) {
+      const users = await getUsers();
+      return Response.json(users);
+    }
+
+    export async function POST(request) {
+      const data = await request.json();
+      const user = await createUser(data);
+      return Response.json(user, { status: 201 });
+    }
+
+    export async function PUT(request) {
+      const data = await request.json();
+      const user = await updateUser(data);
+      return Response.json(user);
+    }
+
+    export async function DELETE(request) {
+      await deleteUser(request.nextUrl.searchParams.get('id'));
+      return new Response(null, { status: 204 });
+    }
+    ```
+
+    Route handlers support all HTTP methods and provide better TypeScript support and Web APIs compatibility.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+42. ### How do you handle streaming and suspense in App Router?
+
+    The App Router has built-in support for streaming and React Suspense, allowing you to progressively render and stream UI to the client.
+
+    ```jsx
+    // app/page.js
+    import { Suspense } from 'react';
+
+    async function UserProfile({ userId }) {
+      const user = await getUserData(userId); // This can be slow
+      return <div>Welcome, {user.name}!</div>;
+    }
+
+    async function UserPosts({ userId }) {
+      const posts = await getUserPosts(userId); // This can also be slow
+      return (
+        <div>
+          {posts.map(post => (
+            <div key={post.id}>{post.title}</div>
+          ))}
+        </div>
+      );
+    }
+
+    export default function Page({ params }) {
+      return (
+        <div>
+          <h1>User Dashboard</h1>
+          <Suspense fallback={<div>Loading profile...</div>}>
+            <UserProfile userId={params.id} />
+          </Suspense>
+          <Suspense fallback={<div>Loading posts...</div>}>
+            <UserPosts userId={params.id} />
+          </Suspense>
+        </div>
+      );
+    }
+    ```
+
+    Benefits of streaming:
+    - Faster initial page load
+    - Better perceived performance
+    - Progressive enhancement
+    - SEO-friendly as search engines can index content as it streams
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+43. ### What is React Server Components (RSC) in App Router?
+
+    React Server Components (RSC) are a new React feature that allows components to be rendered on the server. In the App Router, components are Server Components by default.
+
+    **Server Components** (default):
+    ```jsx
+    // app/page.js - This is a Server Component
+    async function ServerComponent() {
+      const data = await fetch('https://api.example.com/data');
+      const result = await data.json();
+      
+      return (
+        <div>
+          <h1>Server Rendered Data</h1>
+          <p>{result.message}</p>
+        </div>
+      );
+    }
+    ```
+
+    **Client Components** (opt-in with "use client"):
+    ```jsx
+    // app/components/ClientComponent.js
+    'use client';
+    
+    import { useState } from 'react';
+    
+    export default function ClientComponent() {
+      const [count, setCount] = useState(0);
+      
+      return (
+        <button onClick={() => setCount(count + 1)}>
+          Count: {count}
+        </button>
+      );
+    }
+    ```
+
+    **Benefits of Server Components**:
+    - Direct access to server-side resources (databases, file system)
+    - No JavaScript bundle sent to client
+    - Improved performance and SEO
+    - Automatic code splitting
+
+    **When to use Client Components**:
+    - Interactive features (event handlers, state)
+    - Browser-only APIs (localStorage, geolocation)
+    - React hooks (useState, useEffect)
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
