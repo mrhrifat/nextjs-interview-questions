@@ -2986,3 +2986,154 @@
     - React hooks (useState, useEffect)
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+44. ### How do you handle error boundaries in App Router?
+
+    You can create error boundaries using the `error.js` file in a route segment. This file defines UI to render when an error is thrown within that segment.
+
+    ```jsx
+    // app/error.js
+    import Link from "next/link";
+
+    export default function Error({ error, reset }) {
+      return (
+        <div>
+          <h2>Something went wrong!</h2>
+          <p>{error.message}</p>
+          <button onClick={reset}>Try Again</button>
+          <Link href="/">Return Home</Link>
+        </div>
+      );
+    }
+    ```
+
+    You can also throw errors programmatically:
+
+    ```jsx
+    // app/page.js
+    export default function Page() {
+      throw new Error("An unexpected error occurred!");
+      return <div>This will not be rendered.</div>;
+    }
+    ```
+
+    The error boundary will catch the error and display the custom error UI defined in `error.js`.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+45. ### How do you differentiate between server and client components in Next.js?
+
+    In Next.js, components are Server Components by default. To differentiate and create Client Components, you need to add the `"use client"` directive at the top of the component file.
+
+    - **Server Components**: These run on the server and can access server-side resources like databases and file systems. They do not include any client-side JavaScript in the bundle.
+
+      ```jsx
+      // app/page.js - This is a Server Component
+      async function ServerComponent() {
+        const data = await fetch("https://api.example.com/data");
+        const result = await data.json();
+
+        return (
+          <div>
+            <h1>Server Rendered Data</h1>
+            <p>{result.message}</p>
+          </div>
+        );
+      }
+      ```
+
+    - **Client Components**: These run on the client side and can use React hooks, manage state, and handle user interactions. They must include the `"use client"` directive.
+
+      ```jsx
+      // app/components/ClientComponent.js
+      "use client";
+
+      import { useState } from "react";
+
+      export default function ClientComponent() {
+        const [count, setCount] = useState(0);
+
+        return (
+          <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+        );
+      }
+      ```
+
+    Use Server Components for static content and data fetching, and Client Components for interactivity and state management.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+46. ### How do you handle internationalization (i18n) in Next.js with the App Router?
+
+    Next.js provides built-in support for internationalization (i18n) in the App Router. You can configure i18n settings in the `next.config.js` file.
+
+    ```js
+    // next.config.js
+    module.exports = {
+      i18n: {
+        locales: ["en", "fr", "de"],
+        defaultLocale: "en",
+      },
+    };
+    ```
+
+    You can then create localized content by using dynamic route segments for different languages.
+
+    ```
+    app/
+    ├── [locale]/
+    │   ├── page.js         // Localized home page
+    │   └── about/
+    │       └── page.js     // Localized about page
+    ```
+
+    ```jsx
+    // app/[locale]/page.js
+    import { useRouter } from "next/router";
+
+    export default function HomePage() {
+      const { locale } = useRouter();
+
+      return <div>Welcome to the {locale} version of the site!</div>;
+    }
+    ```
+
+    You can also use libraries like `next-translate` or `react-i18next` for more advanced i18n features.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+47. What is use server, why and when to use it in Next.js?
+
+    The `"use server"` directive in Next.js is used to indicate that a function should be executed on the server side. It allows you to write server-side logic that can be called from the client side, such as handling form submissions or processing data.
+
+    You should use `"use server"` when you need to perform operations that require server-side capabilities, such as:
+
+    - Accessing databases or file systems
+    - Performing secure operations that should not be exposed to the client
+    - Handling form submissions and processing data on the server
+
+    Example usage:
+
+    ```jsx
+    // app/form-example/page.js
+    "use server";
+
+    export async function handleSubmit(formData) {
+      const name = formData.get("name");
+      console.log("Form submitted with name:", name);
+      return { success: true };
+    }
+
+    export default function FormExample() {
+      return (
+        <form action={handleSubmit}>
+          <input type="text" name="name" />
+          <button type="submit">Submit</button>
+        </form>
+      );
+    }
+    ```
+
+    In this example, the `handleSubmit` function is marked with `"use server"`, indicating that it will run on the server when the form is submitted.
+
+    [:arrow_up: Back to Top](#app-router-table-of-contents)
