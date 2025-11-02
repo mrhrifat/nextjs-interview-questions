@@ -184,6 +184,10 @@
 |  41 | [What are route handlers vs API routes in App Router?](#what-are-route-handlers-vs-api-routes-in-app-router)                                                                  |
 |  42 | [How do you handle streaming and suspense in App Router?](#how-do-you-handle-streaming-and-suspense-in-app-router)                                                            |
 |  43 | [What is React Server Components (RSC) in App Router?](#what-is-react-server-components-rsc-in-app-router)                                                                    |
+|  44 | [How do you handle error boundaries in App Router?](#how-do-you-handle-error-boundaries-in-app-router)                                                                        |
+|  45 | [How do you differentiate between server and client components in Next.js?](#how-do-you-differentiate-between-server-and-client-components-in-nextjs)                         |
+|  46 | [How do you handle internationalization (i18n) in Next.js with the App Router?](#how-do-you-handle-internationalization-i18n-in-nextjs-with-the-app-router)                   |
+|  47 | [What is use server, why and when to use it in Next.js?](#what-is-use-server-why-and-when-to-use-it-in-nextjs)                                                                |
 
 <!-- TOC End -->
 
@@ -3102,7 +3106,7 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
 
-47. What is use server, why and when to use it in Next.js?
+47. ### What is use server, why and when to use it in Next.js?
 
     The `"use server"` directive in Next.js is used to indicate that a function should be executed on the server side. It allows you to write server-side logic that can be called from the client side, such as handling form submissions or processing data.
 
