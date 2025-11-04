@@ -188,6 +188,9 @@
 |  45 | [How do you differentiate between server and client components in Next.js?](#how-do-you-differentiate-between-server-and-client-components-in-nextjs)                         |
 |  46 | [How do you handle internationalization (i18n) in Next.js with the App Router?](#how-do-you-handle-internationalization-i18n-in-nextjs-with-the-app-router)                   |
 |  47 | [What is use server, why and when to use it in Next.js?](#what-is-use-server-why-and-when-to-use-it-in-nextjs)                                                                |
+|  48 | [What are the best practices of nextjs api routes?](#what-are-the-best-practices-of-nextjs-api-routes)                                                                        |
+|  49 | [How to validate and sanitize input data in Next.js API routes?](#how-to-validate-and-sanitize-input-data-in-nextjs-api-routes)                                               |
+|  50 | [How to use proper HTTP methods in Next.js API routes?](#how-to-use-proper-http-methods-in-nextjs-api-routes)                                                                 |
 
 <!-- TOC End -->
 
