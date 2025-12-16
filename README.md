@@ -191,6 +191,9 @@
 |  48 | [What are the best practices of nextjs api routes?](#what-are-the-best-practices-of-nextjs-api-routes)                                                                        |
 |  49 | [How to validate and sanitize input data in Next.js API routes?](#how-to-validate-and-sanitize-input-data-in-nextjs-api-routes)                                               |
 |  50 | [How to use proper HTTP methods in Next.js API routes?](#how-to-use-proper-http-methods-in-nextjs-api-routes)                                                                 |
+|  51 | [How to handle errors in Next.js API routes?](#how-to-handle-errors-in-nextjs-api-routes)                                                                                     |
+|  52 | [How to use middleware in Next.js API routes?](#how-to-use-middleware-in-nextjs-api-routes)                                                                                   |
+|  53 | [How to keep Next.js API routes modular and organized?](#how-to-keep-nextjs-api-routes-modular-and-organized)                                                                 |
 
 <!-- TOC End -->
 
