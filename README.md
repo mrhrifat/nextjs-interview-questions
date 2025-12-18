@@ -195,6 +195,7 @@
 |  52 | [How to use middleware in Next.js API routes?](#how-to-use-middleware-in-nextjs-api-routes)                                                                                   |
 |  53 | [How to kee Next.js API routes modular and organized?](#how-to-keep-nextjs-api-routes-modular-and-organized)                                                                  |
 |  54 | [RTK Query with Next.js App Router?](#rtk-query-with-nextjs-app-router)                                                                                                       |
+|  55 | [Redux Toolkit with Next.js App Router?](#redux-toolkit-with-nextjs-app-router)                                                                                               |
 
 <!-- TOC End -->
 
@@ -3470,6 +3471,92 @@
               <li key={user.id}>{user.name}</li>
             ))}
           </ul>
+        </div>
+      );
+    }
+    ```
+
+55. ### Redux Toolkit with Next.js App Router?
+
+    Redux Toolkit (RTK) can be seamlessly integrated with Next.js App Router to manage global state in your application. Here's how to set up Redux Toolkit in a Next.js App Router project:
+
+    1. **Install Redux Toolkit and React-Redux**:
+
+    ```bash
+    npm install @reduxjs/toolkit react-redux
+    ```
+
+    2. **Create a Redux slice**:
+
+    ```jsx
+    // app/store/counterSlice.js
+    import { createSlice } from "@reduxjs/toolkit";
+
+    const counterSlice = createSlice({
+      name: "counter",
+      initialState: { value: 0 },
+      reducers: {
+        increment: (state) => {
+          state.value += 1;
+        },
+        decrement: (state) => {
+          state.value -= 1;
+        },
+      },
+    });
+
+    export const { increment, decrement } = counterSlice.actions;
+    export default counterSlice.reducer;
+    ```
+
+    3. **Set up the Redux store**:
+
+    ```jsx
+    // app/store/store.js
+    import { configureStore } from "@reduxjs/toolkit";
+    import counterReducer from "./counterSlice";
+
+    export const store = configureStore({
+      reducer: {
+        counter: counterReducer,
+      },
+    });
+    ```
+
+    4. **Wrap your application with the Redux Provider**:
+
+    ```jsx
+    // app/layout.js
+    import { Provider } from "react-redux";
+    import { store } from "./store/store";
+
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en">
+          <body>
+            <Provider store={store}>{children}</Provider>
+          </body>
+        </html>
+      );
+    }
+    ```
+
+    5. **Use Redux state and actions in your components**:
+
+    ```jsx
+    // app/page.js
+    import { useSelector, useDispatch } from "react-redux";
+    import { increment, decrement } from "./store/counterSlice";
+
+    export default function HomePage() {
+      const count = useSelector((state) => state.counter.value);
+      const dispatch = useDispatch();
+
+      return (
+        <div>
+          <h1>Counter: {count}</h1>
+          <button onClick={() => dispatch(increment())}>Increment</button>
+          <button onClick={() => dispatch(decrement())}>Decrement</button>
         </div>
       );
     }
