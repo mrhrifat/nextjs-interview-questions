@@ -193,7 +193,8 @@
 |  50 | [How to use proper HTTP methods in Next.js API routes?](#how-to-use-proper-http-methods-in-nextjs-api-routes)                                                                 |
 |  51 | [How to handle errors in Next.js API routes?](#how-to-handle-errors-in-nextjs-api-routes)                                                                                     |
 |  52 | [How to use middleware in Next.js API routes?](#how-to-use-middleware-in-nextjs-api-routes)                                                                                   |
-|  53 | [How to keep Next.js API routes modular and organized?](#how-to-keep-nextjs-api-routes-modular-and-organized)                                                                 |
+|  53 | [How to kee Next.js API routes modular and organized?](#how-to-keep-nextjs-api-routes-modular-and-organized)                                                                  |
+|  54 | [RTK Query with Next.js App Router?](#rtk-query-with-nextjs-app-router)                                                                                                       |
 
 <!-- TOC End -->
 
@@ -3384,3 +3385,92 @@
     By following these practices, you can maintain a clean and organized codebase for your Next.js API routes.
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
+
+54. ### RTK Query with Next.js App Router?
+
+    RTK Query is a powerful data fetching and caching tool built on top of Redux Toolkit. You can use RTK Query in a Next.js App Router application to manage server state and interact with APIs efficiently.
+
+    Here's how to set up RTK Query in a Next.js App Router project:
+
+    1. **Install Redux Toolkit and RTK Query**:
+
+    ```bash
+    npm install @reduxjs/toolkit react-redux
+    ```
+
+    2. **Create an API slice**:
+
+    ```jsx
+    // app/store/apiSlice.js
+    import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+    export const apiSlice = createApi({
+      reducerPath: "api",
+      baseQuery: fetchBaseQuery({ baseUrl: "/api" }),
+      endpoints: (builder) => ({
+        getUsers: builder.query({
+          query: () => "users",
+        }),
+      }),
+    });
+
+    export const { useGetUsersQuery } = apiSlice;
+    ```
+
+    3. **Set up the Redux store**:
+
+    ```jsx
+    // app/store/store.js
+    import { configureStore } from "@reduxjs/toolkit";
+    import { apiSlice } from "./apiSlice";
+
+    export const store = configureStore({
+      reducer: {
+        [apiSlice.reducerPath]: apiSlice.reducer,
+      },
+      middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(apiSlice.middleware),
+    });
+    ```
+
+    4. **Wrap your application with the Redux Provider**:
+
+    ```jsx
+    // app/layout.js
+    import { Provider } from "react-redux";
+    import { store } from "./store/store";
+
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en">
+          <body>
+            <Provider store={store}>{children}</Provider>
+          </body>
+        </html>
+      );
+    }
+    ```
+
+    5. **Use RTK Query hooks in your components**:
+
+    ```jsx
+    // app/page.js
+    import { useGetUsersQuery } from "./store/apiSlice";
+
+    export default function HomePage() {
+      const { data: users, error, isLoading } = useGetUsersQuery();
+
+      if (isLoading) return <div>Loading...</div>;
+      if (error) return <div>Error loading users</div>;
+      return (
+        <div>
+          <h1>User List</h1>
+          <ul>
+            {users.map((user) => (
+              <li key={user.id}>{user.name}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+    ```
