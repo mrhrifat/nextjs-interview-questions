@@ -312,7 +312,7 @@
     Using useRouter() hook.
 
     ```jsx
-    const router = userRouter();
+    const router = useRouter();
 
     function handleClick() {
       router.push(`/path`);
