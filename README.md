@@ -418,6 +418,7 @@
     // styles.module.css
     .example {
       color: red;
+ font-size:18px;
     }
 
     // Component.js
