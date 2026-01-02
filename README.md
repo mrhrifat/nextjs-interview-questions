@@ -1320,7 +1320,78 @@
     }
     ```
 
+79. ### How do you use the Edge Runtime for API routes?
+
+    You can opt into the Edge Runtime to run API routes on the V8/edge environment. Add `export const runtime = "edge";` at the top of a route handler and use the Web `Request/Response` APIs.
+
+    ```js
+    // app/api/hello/route.js
+    export const runtime = "edge";
+
+    export async function GET(request) {
+      return new Response(JSON.stringify({ message: "Hello from the Edge" }), {
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+    ```
+
+80. ### How do you use placeholders with the next/image component?
+
+    Use `placeholder="blur"` with a `blurDataURL` or let Next.js generate it when importing static images. This shows a low-quality blurred preview while the image loads.
+
+    ```jsx
+    import profilePic from "../public/profile.jpg";
+
+    <Image src={profilePic} alt="Profile" placeholder="blur" />;
+    ```
+
+81. ### How do you enable ISR (revalidation) in the App Router?
+
+    In the App Router you can control revalidation when fetching data by passing the `next` option to `fetch`. For example, to revalidate every 10 seconds:
+
+    ```js
+    const res = await fetch("https://api.example.com/data", {
+      next: { revalidate: 10 },
+    });
+    const data = await res.json();
+    ```
+
+82. ### How should you expose environment variables to the client safely?
+
+    Only expose non-sensitive variables by prefixing them with `NEXT_PUBLIC_`. Keep secrets (API keys, DB credentials) server-only in `.env` and access them from server-side code or API routes.
+
+    ```env
+    NEXT_PUBLIC_API_BASE=https://api.example.com
+    SECRET_API_KEY=supersecret
+    ```
+
+83. ### How can you implement simple rate limiting for API routes?
+
+    For basic protection you can use an in-memory store (suitable for single-instance apps) or a shared store (Redis) for multiple instances. Example memory-based limiter using a `Map`:
+
+    ```js
+    // pages/api/limited.js
+    const hits = new Map();
+    const WINDOW_MS = 60_000; // 1 minute
+    const MAX = 60;
+
+    export default function handler(req, res) {
+      const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+      const now = Date.now();
+      const entry = hits.get(ip) || { count: 0, start: now };
+      if (now - entry.start > WINDOW_MS) (entry.count = 0), (entry.start = now);
+      entry.count += 1;
+      hits.set(ip, entry);
+      if (entry.count > MAX)
+        return res.status(429).json({ error: "Too many requests" });
+      res.status(200).json({ ok: true });
+    }
+    ```
+
+    ```
+
     [:arrow_up: Back to Top](#app-router-table-of-contents)
+    ```
 
 ### [Pages Router](#pages-router)
 
