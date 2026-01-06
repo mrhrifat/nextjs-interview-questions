@@ -485,7 +485,7 @@
     // styles.module.css
     .example {
       color: red;
- font-size:18px;
+    font-size:18px;
     }
 
     // Component.js
@@ -3699,4 +3699,67 @@
         </div>
       );
     }
+    ```
+
+56. ### How do you read and set cookies in the App Router?
+
+    On the server (server components or route handlers) use `cookies()` from `next/headers` to read cookies. To set cookies from a route handler, return a `Response` with a `Set-Cookie` header or use a helper library in API routes.
+
+    ```js
+    // server component
+    import { cookies } from "next/headers";
+    const cookieStore = cookies();
+    const token = cookieStore.get("token")?.value;
+
+    // route handler (set cookie)
+    export function GET() {
+      return new Response("ok", {
+        headers: { "Set-Cookie": "token=abc; HttpOnly; Path=/" },
+      });
+    }
+    ```
+
+57. ### How can you stream responses from a route handler?
+
+    Use the Web Streams API (ReadableStream) in a route handler to stream data progressively to the client. This is useful for large payloads or server-sent updates.
+
+    ```js
+    export async function GET() {
+      const stream = new ReadableStream({
+        start(controller) {
+          controller.enqueue(new TextEncoder().encode("chunk1"));
+          controller.enqueue(new TextEncoder().encode("chunk2"));
+          controller.close();
+        },
+      });
+      return new Response(stream, {
+        headers: { "Content-Type": "text/plain" },
+      });
+    }
+    ```
+
+58. ### How do you test App Router components and pages?
+
+    Use React Testing Library for components and Jest for unit tests. For full page integration you can use `next-router-mock` or render server components with `@testing-library/react` plus mocked fetch/next/navigation. For route handler tests, use Supertest or node's fetch mocks.
+
+59. ### How to implement optimistic UI with the App Router?
+
+    Use client components for local state and immediately update UI optimistically, then call a server action or route handler to persist. On success, revalidate server data; on failure, rollback local state.
+
+    ```jsx
+    // client component
+    const [items, setItems] = useState(serverItems);
+    function add(item) {
+      setItems((prev) => [item, ...prev]); // optimistic
+      fetch("/api/add", { method: "POST", body: JSON.stringify(item) })
+        .then(() => router.refresh())
+        .catch(() => setItems((prev) => prev.filter((i) => i.id !== item.id)));
+    }
+    ```
+
+60. ### How do you choose between Edge and Node runtimes for route handlers?
+
+    Use the Edge runtime for low-latency global responses and where Node APIs are not needed. Choose Node (default) when you require native Node modules, filesystem access, or heavy CPU tasks. You can set `export const runtime = 'edge'` or leave it for Node.
+
+
     ```
