@@ -283,7 +283,74 @@
    <Link href="/about">About</Link>
    ```
 
-   [:arrow_up: Back to Top](#common-table-of-contents)
+9. ### What is the `metadata` export in the App Router and how do you use it?
+
+   The App Router supports a `metadata` export (or `metadata.js/ts`) to define route-level metadata like title, description, open graph tags and robots. You can export a static object or an async function that returns metadata.
+
+   ```js
+   // app/blog/[slug]/page.js
+   export const metadata = {
+     title: "Blog Post",
+     description: "A useful blog post",
+   };
+
+   export default function PostPage() {
+     /* ... */
+   }
+   ```
+
+10. ### What is `generateStaticParams` and when should you use it?
+
+    `generateStaticParams` is used in the App Router to statically generate dynamic routes at build time (SSG). Return an array of param objects for routes like `[slug]` so Next.js can pre-render those pages.
+
+    ```js
+    // app/blog/[slug]/page.js
+    export async function generateStaticParams() {
+      const posts = await fetch("https://api.example.com/posts").then((r) =>
+        r.json()
+      );
+      return posts.map((p) => ({ slug: p.slug }));
+    }
+    ```
+
+11. ### How do fetch cache options work in the App Router?
+
+    The `fetch` API in server components supports caching controls via `{ next: { revalidate } }` and cache modes like `cache: 'no-store'` or `cache: 'force-cache'`. Use `no-store` for always-fresh data and `force-cache` to reuse cached responses.
+
+    ```js
+    const res = await fetch("https://api.example.com/data", {
+      cache: "no-store",
+    });
+    // or
+    const res2 = await fetch("/api/data", { next: { revalidate: 60 } });
+    ```
+
+12. ### What does the `dynamic` export do in the App Router?
+
+    Exporting `dynamic` controls how a route is rendered: `'force-dynamic'`, `'force-static'`, or `'auto'`. Use it to override Next.js detection — for example, force dynamic when you need per-request rendering.
+
+    ```js
+    // app/dashboard/page.js
+    export const dynamic = "force-dynamic";
+    ```
+
+13. ### How do you set head metadata per-route with `head.js` / `head.tsx`?
+
+    In the App Router you can create a `head.js` or `head.tsx` file inside a route segment to return `<head>` elements (title, meta, link) for that segment. This is preferred for complex/head-only components.
+
+    ```jsx
+    // app/about/head.js
+    export default function Head() {
+      return (
+        <>
+          <title>About Us</title>
+          <meta name="description" content="About page" />
+        </>
+      );
+    }
+    ```
+
+[:arrow_up: Back to Top](#common-table-of-contents)
 
 9. ### What is the useRouter hook in Next.js?
 
