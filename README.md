@@ -101,6 +101,7 @@
 |  75 | [How nextjs are full stack framework?](#how-nextjs-are-full-stack-framework)                                                                                         |
 |  76 | [Prevent API routes from being accessed by the client?](#prevent-api-routes-from-being-accessed-by-the-client)                                                       |
 |  77 | [JWT Token in Next.js?](#jwt-token-in-nextjs)                                                                                                                        |
+|  84 | [What is Partial Prerendering in Next.js?](#what-is-partial-prerendering-in-nextjs)                                                                                  |
 
 ### Pages Router Table of Contents
 
@@ -1460,6 +1461,17 @@
 
     [:arrow_up: Back to Top](#app-router-table-of-contents)
     ```
+
+84. ### What is Partial Prerendering (PPR) in Next.js?
+
+**Answer:**
+
+Partial Prerendering (PPR) is an experimental optimization that combines static and dynamic rendering on the same page. It allows Next.js to serve a **static "shell"** of the page immediately (using SSG/ISR) while streaming the **dynamic parts** (wrapped in React Suspense) as they are rendered on the server.
+
+Key benefits:
+- **Fast Initial Load:** The static shell is served from a CDN instantly.
+- **Dynamic Flexibility:** Personalised or real-time data is filled in as it's ready.
+- **Optimized SEO:** Core content is pre-rendered for search engines, while user-specific data is streamed.
 
 ### [Pages Router](#pages-router)
 
